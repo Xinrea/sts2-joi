@@ -1,5 +1,37 @@
+# Godot-specific
+.import/
+export.cfg
+export_presets.cfg
+.mono/
+data_*/
+mono_crash.*.json
+
+# C# / .NET
 bin/
 obj/
 /packages/
-riderModule.iml
+*.user
+*.suo
+*.userprefs
+.vs/
+.vscode/
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Rider
+.idea/
+*.sln.iml
 /_ReSharper.Caches/
+riderModule.iml
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
