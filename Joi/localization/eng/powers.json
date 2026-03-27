@@ -1,3 +1,4 @@
 {
-  
+  "JOI-BlackHolePower.description": "At the end of your turn, if this has 10 or more stacks, take damage equal to the number of stacks and remove this power.",
+  "JOI-BlackHolePower.name": "Black Hole"
 }

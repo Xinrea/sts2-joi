@@ -1,5 +1,6 @@
 ﻿using BaseLib.Abstracts;
 using Joi.JoiCode.Extensions;
+using Joi.JoiCode.Relics;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
@@ -33,7 +34,7 @@ public class Joi : PlaceholderCharacterModel
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<BurningBlood>()
+        ModelDb.Relic<CosmicOriginRelic>()
     ];
     
     public override CardPoolModel CardPool => ModelDb.CardPool<JoiCardPool>();
