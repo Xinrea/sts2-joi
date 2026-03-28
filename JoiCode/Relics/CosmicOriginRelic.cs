@@ -1,3 +1,4 @@
+using Joi.JoiCode.Minions;
 using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -14,6 +15,12 @@ public class CosmicOriginRelic : JoiRelic
 
     public override decimal ModifyHpLostBeforeOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
+        // Don't apply relic effect to summoned creatures
+        if (target.Monster is ZhouXin)
+        {
+            return amount;
+        }
+
         if (target == Owner.Creature && dealer != Owner.Creature && amount > 0)
         {
             var reduced = amount * 0.5m;
