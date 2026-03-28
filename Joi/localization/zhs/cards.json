@@ -1,0 +1,8 @@
+{
+  "JOI-STRIKE.title": "打击",
+  "JOI-STRIKE.description": "造成{Damage:diff()}点伤害。",
+  "JOI-DEFEND.title": "防御",
+  "JOI-DEFEND.description": "获得{Block:diff()}点格挡。",
+  "JOI-BLACK_HOLE_STRIKE.title": "黑洞打击",
+  "JOI-BLACK_HOLE_STRIKE.description": "造成{Damage:diff()}点伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。"
+}

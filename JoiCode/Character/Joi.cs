@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using Joi.JoiCode.Cards;
 using Joi.JoiCode.Extensions;
 using Joi.JoiCode.Relics;
 using Godot;
@@ -20,16 +21,16 @@ public class Joi : PlaceholderCharacterModel
     public override int StartingHp => 70;
     
     public override IEnumerable<CardModel> StartingDeck => [
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>()
+        ModelDb.Card<Strike>(),
+        ModelDb.Card<Strike>(),
+        ModelDb.Card<Strike>(),
+        ModelDb.Card<Strike>(),
+        ModelDb.Card<Strike>(),
+        ModelDb.Card<Defend>(),
+        ModelDb.Card<Defend>(),
+        ModelDb.Card<Defend>(),
+        ModelDb.Card<Defend>(),
+        ModelDb.Card<BlackHoleStrike>()
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>

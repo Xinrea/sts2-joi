@@ -1,3 +1,8 @@
 {
-  
+  "JOI-STRIKE.title": "Strike",
+  "JOI-STRIKE.description": "Deal {Damage:diff()} damage.",
+  "JOI-DEFEND.title": "Defend",
+  "JOI-DEFEND.description": "Gain {Block:diff()} Block.",
+  "JOI-BLACK_HOLE_STRIKE.title": "Black Hole Strike",
+  "JOI-BLACK_HOLE_STRIKE.description": "Deal {Damage:diff()} damage.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself."
 }
