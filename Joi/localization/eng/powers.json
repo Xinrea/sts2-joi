@@ -1,4 +1,5 @@
 {
-  "JOI-BlackHolePower.description": "At the end of your turn, if this has 10 or more stacks, take damage equal to the number of stacks and remove this power.",
-  "JOI-BlackHolePower.name": "Black Hole"
+  "JOI-BLACK_HOLE_POWER.title": "Black Hole",
+  "JOI-BLACK_HOLE_POWER.description": "At the end of your turn, if this has 10 or more stacks, lose HP equal to the number of stacks and remove this power.",
+  "JOI-BLACK_HOLE_POWER.smartDescription": "At the end of your turn, if this has 10 or more stacks, lose [blue]{Amount}[/blue] HP and remove this power."
 }

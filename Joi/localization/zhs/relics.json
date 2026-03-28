@@ -1,4 +1,5 @@
 {
-  "JOI-CosmicOriginRelic.description": "受到的所有伤害减免50%。当此遗物减免伤害时，获得与减免伤害数值相同层数的黑洞。",
-  "JOI-CosmicOriginRelic.name": "宇宙本源"
+  "JOI-COSMIC_ORIGIN_RELIC.title": "宇宙本源",
+  "JOI-COSMIC_ORIGIN_RELIC.description": "受到的所有伤害减免50%。当此遗物减免伤害时，获得与减免伤害数值相同层数的[gold]黑洞[/gold]。",
+  "JOI-COSMIC_ORIGIN_RELIC.flavor": "万物的起源与终结。"
 }
