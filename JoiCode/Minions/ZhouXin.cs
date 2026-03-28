@@ -3,7 +3,7 @@ using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 
 namespace Joi.JoiCode.Minions;
 
-public class AxisCore : MonsterModel
+public class ZhouXin : MonsterModel
 {
     public override int MinInitialHp => 1;
     public override int MaxInitialHp => 1;

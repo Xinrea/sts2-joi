@@ -22,7 +22,7 @@ public static class BirthPatch
             var birth = blackHole.Owner.GetPower<BirthPower>();
             if (birth != null)
             {
-                var existingCore = blackHole.Owner.CombatState.Allies.FirstOrDefault(c => c.Monster is AxisCore);
+                var existingCore = blackHole.Owner.CombatState.Allies.FirstOrDefault(c => c.Monster is ZhouXin);
                 if (existingCore != null)
                 {
                     var hpIncrease = blackHole.Amount + (birth.Amount > 1 ? birth.Amount - 1 : 0);
@@ -31,7 +31,7 @@ public static class BirthPatch
                 }
                 else
                 {
-                    var core = (AxisCore)ModelDb.Monster<AxisCore>().MutableClone();
+                    var core = (ZhouXin)ModelDb.Monster<ZhouXin>().MutableClone();
                     var creature = await CreatureCmd.Add(core, blackHole.Owner.CombatState, blackHole.Owner.Side);
                     creature.SetMaxHpInternal(blackHole.Amount);
                     creature.HealInternal(blackHole.Amount);
