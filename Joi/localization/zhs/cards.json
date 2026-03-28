@@ -4,5 +4,15 @@
   "JOI-DEFEND.title": "防御",
   "JOI-DEFEND.description": "获得{Block:diff()}点格挡。",
   "JOI-BLACK_HOLE_STRIKE.title": "黑洞打击",
-  "JOI-BLACK_HOLE_STRIKE.description": "造成{Damage:diff()}点伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。"
+  "JOI-BLACK_HOLE_STRIKE.description": "造成{Damage:diff()}点伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
+  "JOI-COMPRESS.title": "压缩",
+  "JOI-COMPRESS.description": "移除{BlackHole:diff()}层[gold]黑洞[/gold]。",
+  "JOI-BIRTH.title": "诞生",
+  "JOI-BIRTH.description": "抽{Cards:diff()}张牌。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
+  "JOI-HEAVY_HAMMER.title": "重头槌",
+  "JOI-HEAVY_HAMMER.description": "造成{Damage:diff()}点伤害。\n施加{WeakPower:diff()}层[gold]虚弱[/gold]和{VulnerablePower:diff()}层[gold]易伤[/gold]。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
+  "JOI-COSMIC_EXPLOSION.title": "宇宙爆炸",
+  "JOI-COSMIC_EXPLOSION.description": "对所有敌人造成X次与[gold]黑洞[/gold]层数相等的伤害，并清空[gold]黑洞[/gold]。",
+  "JOI-TWO_POLE_REVERSAL.title": "两极反转",
+  "JOI-TWO_POLE_REVERSAL.description": "为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]和{WhiteHole:diff()}层[gold]白洞[/gold]，然后将[gold]黑洞[/gold]与[gold]白洞[/gold]层数互换。"
 }

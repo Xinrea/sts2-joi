@@ -4,5 +4,15 @@
   "JOI-DEFEND.title": "Defend",
   "JOI-DEFEND.description": "Gain {Block:diff()} Block.",
   "JOI-BLACK_HOLE_STRIKE.title": "Black Hole Strike",
-  "JOI-BLACK_HOLE_STRIKE.description": "Deal {Damage:diff()} damage.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself."
+  "JOI-BLACK_HOLE_STRIKE.description": "Deal {Damage:diff()} damage.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
+  "JOI-COMPRESS.title": "Compress",
+  "JOI-COMPRESS.description": "Remove {BlackHole:diff()} [gold]Black Hole[/gold].",
+  "JOI-BIRTH.title": "Birth",
+  "JOI-BIRTH.description": "Draw {Cards:diff()} card(s).\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
+  "JOI-HEAVY_HAMMER.title": "Heavy Hammer",
+  "JOI-HEAVY_HAMMER.description": "Deal {Damage:diff()} damage.\nApply {WeakPower:diff()} [gold]Weak[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
+  "JOI-COSMIC_EXPLOSION.title": "Cosmic Explosion",
+  "JOI-COSMIC_EXPLOSION.description": "Deal damage equal to your [gold]Black Hole[/gold] stacks to ALL enemies X times, then clear [gold]Black Hole[/gold].",
+  "JOI-TWO_POLE_REVERSAL.title": "Two-Pole Reversal",
+  "JOI-TWO_POLE_REVERSAL.description": "Apply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself, then swap their stacks."
 }

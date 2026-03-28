@@ -1,5 +1,8 @@
 {
   "JOI-BLACK_HOLE_POWER.title": "黑洞",
   "JOI-BLACK_HOLE_POWER.description": "在你的回合结束时，如果层数大于等于10，失去等同于层数的生命，并移除此能力。",
-  "JOI-BLACK_HOLE_POWER.smartDescription": "在你的回合结束时，如果层数大于等于10，失去[blue]{Amount}[/blue]点生命，并移除此能力。"
+  "JOI-BLACK_HOLE_POWER.smartDescription": "在你的回合结束时，如果层数大于等于10，失去[blue]{Amount}[/blue]点生命，并移除此能力。",
+  "JOI-WHITE_HOLE_POWER.title": "白洞",
+  "JOI-WHITE_HOLE_POWER.description": "在你的回合结束时，如果层数大于等于10，对所有敌人造成等同于层数的伤害，并移除此能力。",
+  "JOI-WHITE_HOLE_POWER.smartDescription": "在你的回合结束时，如果层数大于等于10，对所有敌人造成[blue]{Amount}[/blue]点伤害，并移除此能力。"
 }
