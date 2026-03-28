@@ -8,22 +8,25 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 namespace Joi.JoiCode.Cards;
 
 [Pool(typeof(JoiCardPool))]
-public class Birth : JoiCard
+public class TimeAcceleration : JoiCard
 {
-    public Birth() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
+    public TimeAcceleration() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Amount", 1)
+        new CardsVar(1),
+        new DynamicVar("BlackHole", 2)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.ApplySelf<BirthPower>(this, 1);
+        await CommonActions.Draw(this, choiceContext);
+        await CommonActions.ApplySelf<BlackHolePower>(this, DynamicVars["BlackHole"].BaseValue);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Amount"].UpgradeValueBy(5);
+        DynamicVars.Cards.UpgradeValueBy(1);
+        DynamicVars["BlackHole"].UpgradeValueBy(1);
     }
 }

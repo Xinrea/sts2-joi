@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://02eca81f2509bd54"]
+
+[ext_resource type="Script" path="res://JoiCode/Minions/NAxisCoreVisuals.cs" id="1_axis_core_visuals"]
+
+[node name="AxisCore" type="Node2D"]
+script = ExtResource("1_axis_core_visuals")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -50)
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 40.0
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -100)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -50)
