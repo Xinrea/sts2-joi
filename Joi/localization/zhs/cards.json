@@ -82,6 +82,8 @@
   "JOI-WHITE_HOLE_REFLUX.description": "清除所有[gold]白洞[/gold]，回复等同于被清除层数的生命，然后为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-PURE_WHITE_FORM.title": "纯白形态",
   "JOI-PURE_WHITE_FORM.description": "将所有[gold]黑洞[/gold]转换为等量的[gold]白洞[/gold]。升级后，额外附加3层[gold]白洞[/gold]。",
+  "JOI-IDOL_CHARM.title": "偶像魅惑",
+  "JOI-IDOL_CHARM.description": "使一名敌人获得[gold]魅惑[/gold]。",
   "JOI-ORIGINAL_CHICKEN.title": "原味鸡",
   "JOI-ORIGINAL_CHICKEN.description": "将[gold]白洞[/gold]层数翻倍。",
   "JOI-QUESTION_BOX.title": "提问箱",

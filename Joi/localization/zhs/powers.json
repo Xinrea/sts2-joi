@@ -20,6 +20,9 @@
   "JOI-GRAVITY_FIELD_POWER.title": "引力场",
   "JOI-GRAVITY_FIELD_POWER.description": "每当白洞层数增加时，对所有敌人造成伤害。",
   "JOI-GRAVITY_FIELD_POWER.smartDescription": "每当白洞层数增加时，对所有敌人造成[blue]{Amount}[/blue]点伤害。",
+  "JOI-IDOL_CHARM_POWER.title": "魅惑",
+  "JOI-IDOL_CHARM_POWER.description": "伤害改为由该单位承受。",
+  "JOI-IDOL_CHARM_POWER.smartDescription": "伤害改为由该单位承受。",
   "JOI-VACUUM_FLUCTUATION_POWER.title": "真空涨落",
   "JOI-VACUUM_FLUCTUATION_POWER.description": "每回合你首次获得黑洞或白洞时，获得1点能量。",
   "JOI-VACUUM_FLUCTUATION_POWER.smartDescription": "每回合你前[blue]{Amount}[/blue]次获得黑洞或白洞时，获得1点能量。"
