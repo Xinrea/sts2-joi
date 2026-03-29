@@ -15,11 +15,6 @@ public class CosmicOriginRelic : JoiRelic
 {
     public override RelicRarity Rarity => RelicRarity.Starter;
 
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-    {
-        await PowerCmd.Apply<BlackHolePower>(player.Creature, 1, player.Creature, null);
-    }
-
     public override decimal ModifyHpLostBeforeOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
         MainFile.Logger.Info($"[CosmicOriginRelic] target={target.Name}, IsPet={target.IsPet}, amount={amount}, dealer={dealer?.Name}");
