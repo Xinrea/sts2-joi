@@ -27,7 +27,8 @@ public class HawkingRadiation : JoiCard
                 Owner.Creature.GainBlockInternal(DynamicVars["BlockPerStack"].BaseValue);
             }
 
-            await PowerCmd.ModifyAmount(blackHole, -stacksToRemove, Owner.Creature, this);
+            blackHole.SetAmount(blackHole.Amount - stacksToRemove, false);
+            await Task.CompletedTask;
         }
     }
 

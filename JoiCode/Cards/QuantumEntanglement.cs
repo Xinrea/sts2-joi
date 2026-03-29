@@ -23,7 +23,7 @@ public class QuantumEntanglement : JoiCard
             var transfer = blackHole.Amount / 2;
             if (transfer > 0)
             {
-                await PowerCmd.ModifyAmount(blackHole, -transfer, Owner.Creature, this);
+                blackHole.SetAmount(blackHole.Amount - transfer, false);
                 await CommonActions.ApplySelf<WhiteHolePower>(this, transfer);
             }
         }
