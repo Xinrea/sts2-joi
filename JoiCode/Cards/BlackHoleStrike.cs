@@ -15,7 +15,7 @@ public class BlackHoleStrike : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5, ValueProp.Move),
+        new DamageVar(8, ValueProp.Move),
         new DynamicVar("BlackHole", 1)
     ];
 

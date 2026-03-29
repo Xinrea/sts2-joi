@@ -15,7 +15,7 @@ public class SpacetimeDistortion : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(5, ValueProp.Move),
+        new BlockVar(8, ValueProp.Move),
         new DynamicVar("BlackHole", 2)
     ];
 
@@ -27,6 +27,6 @@ public class SpacetimeDistortion : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3);
+        DynamicVars.Block.UpgradeValueBy(2);
     }
 }

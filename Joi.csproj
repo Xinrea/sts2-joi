@@ -1,4 +1,4 @@
-﻿<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CheckDependencyPaths">
+<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CheckDependencyPaths">
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>true</ImplicitUsings>
@@ -7,6 +7,10 @@
         <DefaultItemExcludes>packages/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
         <PathMap>$(AppOutputBase)=.\</PathMap>
+        <BaseLibDir>$(MSBuildProjectDirectory)\BaseLib</BaseLibDir>
+        <BaseLibDllPath>$(BaseLibDir)\BaseLib.dll</BaseLibDllPath>
+        <BaseLibJsonPath>$(BaseLibDir)\BaseLib.json</BaseLibJsonPath>
+        <BaseLibPckPath>$(BaseLibDir)\BaseLib.pck</BaseLibPckPath>
     </PropertyGroup>
 
     <!-- OS Detection -->
@@ -26,9 +30,9 @@
         <AutoSteamPath>$(registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)\steamapps</AutoSteamPath>
         <SteamLibraryPath Condition="Exists('$(AutoSteamPath)/common/Slay the Spire 2')">$(AutoSteamPath)</SteamLibraryPath>
 
-        <GodotPath Condition="'$(GodotPath)' == ''">C:/megadot/MegaDot_v4.5.1-stable_mono_win64.exe</GodotPath>
+        <GodotPath Condition="'$(GodotPath)' == ''">D:\Projects\Godot\MegaDot_v4.5.1-stable_mono_win64.exe</GodotPath>
         <!-- If on Windows and Slay the Spire 2 is not installed in your default steam library, adjust the following.-->
-        <SteamLibraryPath Condition="'$(SteamLibraryPath)' == ''">C:/Program Files (x86)/Steam/steamapps</SteamLibraryPath>
+        <SteamLibraryPath Condition="'$(SteamLibraryPath)' == ''">D:\SteamLibrary\steamapps\</SteamLibraryPath>
 
         <!-- The below should not need to be changed. -->
         <Sts2Path>$(SteamLibraryPath)/common/Slay the Spire 2</Sts2Path>
@@ -73,8 +77,11 @@
             <HintPath>$(Sts2DataDir)/sts2.dll</HintPath>
             <Private>false</Private>
         </Reference>
+    </ItemGroup>
+
+    <ItemGroup Condition="Exists('$(BaseLibDllPath)')">
         <Reference Include="BaseLib">
-            <HintPath>$(ModsPath)/BaseLib/BaseLib.dll</HintPath>
+            <HintPath>$(BaseLibDllPath)</HintPath>
             <Private>false</Private>
         </Reference>
     </ItemGroup>
@@ -97,6 +104,7 @@
 
     <ItemGroup>
         <None Include=".gitignore" />
+        <None Include="BaseLib\**" />
         <None Include="Joi.json" />
         <None Include="project.godot" />
         <None Include="Joi/**" />
@@ -111,17 +119,17 @@
     <Target Name="CheckDependencyPaths">
         <Error Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'" Condition="'$(Sts2DataDir)' == '' or !Exists('$(Sts2DataDir)')" />
         <Error Text=" Godot not found at path '$(GodotPath)'" Condition="'$(GodotPath)' == '' or !Exists('$(GodotPath)')" />
+        <Error Text=" BaseLib.dll not found at path '$(BaseLibDllPath)'" Condition="'$(BaseLibDllPath)' == '' or !Exists('$(BaseLibDllPath)')" />
+        <Error Text=" BaseLib.json not found at path '$(BaseLibJsonPath)'" Condition="'$(BaseLibJsonPath)' == '' or !Exists('$(BaseLibJsonPath)')" />
+        <Error Text=" BaseLib.pck not found at path '$(BaseLibPckPath)'" Condition="'$(BaseLibPckPath)' == '' or !Exists('$(BaseLibPckPath)')" />
     </Target>
 
     <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
         <Message Text="Copying .dll and manifest to mods folder." Importance="high" />
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="Joi.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-        <Message Text="Copying BaseLib to mods folder." Importance="high" />
-        <ItemGroup>
-            <BaseLibFiles Include="$(NuGetPackageRoot)/alchyr.sts2.baselib/**/lib/**/BaseLib.dll;$(NuGetPackageRoot)/alchyr.sts2.baselib/**/Content/BaseLib.pck;$(NuGetPackageRoot)/alchyr.sts2.baselib/**/Content/BaseLib.json;" />
-        </ItemGroup>
-        <Copy SourceFiles="@(BaseLibFiles)" DestinationFolder="$(ModsPath)BaseLib/" />
+        <Message Text="Copying fixed BaseLib files to mods folder." Importance="high" />
+        <Copy SourceFiles="$(BaseLibDllPath);$(BaseLibJsonPath);$(BaseLibPckPath)" DestinationFolder="$(ModsPath)BaseLib/" />
     </Target>
 
     <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
