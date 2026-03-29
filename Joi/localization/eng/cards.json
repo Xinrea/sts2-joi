@@ -38,7 +38,7 @@
   "JOI-EVENT_HORIZON.title": "Event Horizon",
   "JOI-EVENT_HORIZON.description": "Whenever you gain [gold]Black Hole[/gold], gain {Block:diff()} Block.",
   "JOI-SUPERNOVA.title": "Supernova",
-  "JOI-SUPERNOVA.description": "Deal {Damage:diff()} damage.\nClear all [gold]Black Hole[/gold] and [gold]White Hole[/gold]. Deal 2 additional damage for each stack cleared. Exhaust.",
+  "JOI-SUPERNOVA.description": "Deal {Damage:diff()} damage to ALL enemies.\nClear all [gold]Black Hole[/gold] and [gold]White Hole[/gold]. Deal 2 additional damage for each stack cleared. Exhaust.",
   "JOI-TIME_DILATION.title": "Time Dilation",
   "JOI-TIME_DILATION.description": "For each card played this turn, apply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.\nDraw {Cards:diff()} card(s).",
   "JOI-GRAVITATIONAL_LENS.title": "Gravitational Lens",
