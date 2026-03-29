@@ -12,7 +12,7 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class HeavyHammer : JoiCard
 {
-    public HeavyHammer() : base(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
+    public HeavyHammer() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
