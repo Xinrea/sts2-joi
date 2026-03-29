@@ -1,7 +1,9 @@
 using System.Linq;
 using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -12,6 +14,11 @@ namespace Joi.JoiCode.Relics;
 public class CosmicOriginRelic : JoiRelic
 {
     public override RelicRarity Rarity => RelicRarity.Starter;
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        await PowerCmd.Apply<BlackHolePower>(player.Creature, 1, player.Creature, null);
+    }
 
     public override decimal ModifyHpLostBeforeOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
