@@ -1,4 +1,4 @@
-﻿using BaseLib.Abstracts;
+using BaseLib.Abstracts;
 using Joi.JoiCode.Cards;
 using Joi.JoiCode.Extensions;
 using Joi.JoiCode.Relics;
@@ -14,7 +14,7 @@ public class Joi : PlaceholderCharacterModel
 {
     public const string CharacterId = "Joi";
     
-    public static readonly Color Color = new("ffffff");
+    public static readonly Color Color = new("ffce65");
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Neutral;
