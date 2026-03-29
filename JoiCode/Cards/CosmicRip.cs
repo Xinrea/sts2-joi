@@ -16,7 +16,7 @@ public class CosmicRip : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(18, ValueProp.Move),
+        new DamageVar(30, ValueProp.Move),
         new DynamicVar("BlackHole", 10)
     ];
 
@@ -28,6 +28,6 @@ public class CosmicRip : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(6);
+        DynamicVars.Damage.UpgradeValueBy(10);
     }
 }
