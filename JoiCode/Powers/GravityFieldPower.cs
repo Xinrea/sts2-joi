@@ -1,6 +1,7 @@
 using BaseLib.Hooks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Joi.JoiCode.Powers;
@@ -23,6 +24,6 @@ public class GravityFieldPower : JoiPower, IOnPowerAmountChanged
             return;
         }
 
-        await CreatureCmd.Damage(default!, enemies, Amount * 3, ValueProp.Unpowered, Owner);
+        await CreatureCmd.Damage(new BlockingPlayerChoiceContext(), enemies, Amount * 3, ValueProp.Unpowered, Owner, context.SourceCard);
     }
 }
