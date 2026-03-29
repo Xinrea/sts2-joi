@@ -16,7 +16,7 @@ public class BlackHoleStrike : JoiCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(5, ValueProp.Move),
-        new DynamicVar("BlackHole", 2)
+        new DynamicVar("BlackHole", 1)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -28,6 +28,6 @@ public class BlackHoleStrike : JoiCard
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
-        DynamicVars["BlackHole"].UpgradeValueBy(3);
+        DynamicVars["BlackHole"].UpgradeValueBy(1);
     }
 }
