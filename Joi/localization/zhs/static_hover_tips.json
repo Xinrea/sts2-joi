@@ -1,0 +1,10 @@
+{
+  "JOI-BLACKHOLE.title": "黑洞",
+  "JOI-BLACKHOLE.description": "在你的回合结束时，如果层数大于等于5，失去等同于层数的生命，并移除此能力。",
+  "JOI-WHITEHOLE.title": "白洞",
+  "JOI-WHITEHOLE.description": "在你的回合结束时，对所有敌人造成等同于层数的伤害，然后减少1层。",
+  "JOI-CHARM.title": "魅惑",
+  "JOI-CHARM.description": "伤害改为由该单位承受，直到其回合结束。",
+  "JOI-AXISCORE.title": "轴芯",
+  "JOI-AXISCORE.description": "你的召唤物。会替你承受来自敌方的伤害。"
+}

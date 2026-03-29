@@ -1,9 +1,11 @@
-﻿using BaseLib.Abstracts;
+using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
 using Joi.JoiCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 
 namespace Joi.JoiCode.Cards;
 
@@ -23,4 +25,52 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
     //Uses card_portraits/card_name.png as image path. These should be smaller images.
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [..GetJoiTermHoverTips()];
+
+    private IEnumerable<IHoverTip> GetJoiTermHoverTips() => Id.Entry.RemovePrefix() switch
+    {
+        "BLACK_HOLE_STRIKE" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "COMPRESS" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "TIME_ACCELERATION" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "BIRTH" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-AXISCORE")],
+        "OMNISCIENT" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "HEAVY_HAMMER" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "COSMIC_EXPLOSION" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "TWO_POLE_REVERSAL" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "GRAVITATIONAL_WAVE" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "SPACETIME_DISTORTION" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "SINGULARITY" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "PHOTON_JET" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "BINARY_STAR_COLLISION" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "HAWKING_RADIATION" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "QUANTUM_ENTANGLEMENT" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "DARK_MATTER_IMPACT" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "EVENT_HORIZON" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "SUPERNOVA" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "TIME_DILATION" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "GRAVITATIONAL_LENS" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "GRAVITY_FIELD" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "COSMIC_RIP" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "DIMENSION_JUMP" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "LIGHT_SPEED_ESCAPE" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "PULSE_RAY" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "HEAD_CIRCUMFERENCE_MEASUREMENT" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "SNEEZE" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "VACUUM_FLUCTUATION" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "MUA" => [CreateStaticHoverTip("JOI-AXISCORE")],
+        "WHITE_HOLE_JET" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "WHITE_HOLE_REFLUX" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "PURE_WHITE_FORM" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "IDOL_CHARM" => [CreateStaticHoverTip("JOI-CHARM")],
+        "ORIGINAL_CHICKEN" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        _ => []
+    };
+
+    private static IHoverTip CreateStaticHoverTip(string locKey) =>
+        new HoverTip(
+            new LocString("static_hover_tips", $"{locKey}.title"),
+            new LocString("static_hover_tips", $"{locKey}.description"),
+            null!);
+
 }
