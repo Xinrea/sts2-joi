@@ -20,7 +20,7 @@ public class SleepyRadio : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var enemies = CombatState.Enemies.ToList();
+        var enemies = CombatState?.Enemies.ToList() ?? [];
         foreach (var enemy in enemies)
         {
             await PowerCmd.Apply<WeakPower>(enemy, DynamicVars.Weak.BaseValue, Owner.Creature, this);

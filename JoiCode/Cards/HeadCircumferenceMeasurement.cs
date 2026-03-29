@@ -1,6 +1,7 @@
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
 using Joi.JoiCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -14,19 +15,25 @@ public class HeadCircumferenceMeasurement : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Draw", 3),
-        new DynamicVar("BlackHole", 3)
+        new DynamicVar("TargetHandSize", 5)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.Draw(this, choiceContext);
-        await CommonActions.ApplySelf<BlackHolePower>(this, DynamicVars["BlackHole"].BaseValue);
+        var targetHandSize = (int)DynamicVars["TargetHandSize"].BaseValue;
+        var handPile = CardPile.Get(PileType.Hand, Owner);
+        var currentHandSize = handPile?.Cards.Count ?? 0;
+        var drawCount = Math.Max(0, targetHandSize - currentHandSize);
+
+        if (drawCount > 0)
+        {
+            await CardPileCmd.Draw(choiceContext, drawCount, Owner);
+            await CommonActions.ApplySelf<BlackHolePower>(this, drawCount);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Draw"].UpgradeValueBy(1);
-        DynamicVars["BlackHole"].UpgradeValueBy(1);
+        DynamicVars["TargetHandSize"].UpgradeValueBy(2);
     }
 }

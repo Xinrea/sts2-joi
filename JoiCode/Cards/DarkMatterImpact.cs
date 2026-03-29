@@ -23,7 +23,7 @@ public class DarkMatterImpact : JoiCard
         if (blackHole != null && blackHole.Amount >= 5)
         {
             var totalDamage = DynamicVars.Damage.BaseValue + blackHole.Amount;
-            await CreatureCmd.Damage(choiceContext, [cardPlay.Target], totalDamage, ValueProp.Move, Owner.Creature, this);
+            await CreatureCmd.Damage(choiceContext, cardPlay.Target != null ? [cardPlay.Target] : [], totalDamage, ValueProp.Move, Owner.Creature, this);
         }
         else
         {

@@ -22,7 +22,7 @@ public class Sneeze : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = await CommonActions.SelectSingleCard(this, default, choiceContext, PileType.Hand);
+        var card = await CommonActions.SelectSingleCard(this, default!, choiceContext, PileType.Hand);
         if (card != null)
         {
             await CardCmd.Exhaust(choiceContext, card);

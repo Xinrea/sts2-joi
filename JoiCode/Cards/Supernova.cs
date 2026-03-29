@@ -27,7 +27,7 @@ public class Supernova : JoiCard
         var bonusDamage = totalStacks * 2;
         var totalDamage = DynamicVars.Damage.BaseValue + bonusDamage;
 
-        await CreatureCmd.Damage(choiceContext, CombatState.Enemies.ToList(), totalDamage, ValueProp.Move, Owner.Creature, this);
+        await CreatureCmd.Damage(choiceContext, CombatState?.Enemies.ToList() ?? [], totalDamage, ValueProp.Move, Owner.Creature, this);
 
         if (blackHole != null) await PowerCmd.Remove(blackHole);
         if (whiteHole != null) await PowerCmd.Remove(whiteHole);

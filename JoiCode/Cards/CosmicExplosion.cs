@@ -28,7 +28,7 @@ public class CosmicExplosion : JoiCard
 
         for (int i = 0; i < times; i++)
         {
-            await CreatureCmd.Damage(choiceContext, CombatState.Enemies.ToList(), damage, ValueProp.Move, Owner.Creature, this);
+            await CreatureCmd.Damage(choiceContext, CombatState?.Enemies.ToList() ?? [], damage, ValueProp.Move, Owner.Creature, this);
         }
 
         if (times > 0)

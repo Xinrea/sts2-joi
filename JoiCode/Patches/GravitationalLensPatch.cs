@@ -33,11 +33,11 @@ public static class GravitationalLensPatch
             var lens = target.GetPower<GravitationalLensPower>();
             if (lens != null)
             {
-                var enemies = target.CombatState.Enemies.ToList();
-                if (enemies.Count > 0)
+                var enemies = target.CombatState?.Enemies.ToList();
+                if (enemies != null && enemies.Count > 0)
                 {
                     var randomTarget = enemies[Random.Shared.Next(enemies.Count)];
-                    await CreatureCmd.Damage(null, [randomTarget], lens.Amount, ValueProp.Unpowered, target, null);
+                    await CreatureCmd.Damage(default!, [randomTarget], lens.Amount, ValueProp.Unpowered, target);
                 }
             }
         }
@@ -52,11 +52,11 @@ public static class GravitationalLensPatch
             var lens = power.Owner.GetPower<GravitationalLensPower>();
             if (lens != null)
             {
-                var enemies = power.Owner.CombatState.Enemies.ToList();
-                if (enemies.Count > 0)
+                var enemies = power.Owner.CombatState?.Enemies.ToList();
+                if (enemies != null && enemies.Count > 0)
                 {
                     var randomTarget = enemies[Random.Shared.Next(enemies.Count)];
-                    await CreatureCmd.Damage(null, [randomTarget], lens.Amount, ValueProp.Unpowered, power.Owner, null);
+                    await CreatureCmd.Damage(default!, [randomTarget], lens.Amount, ValueProp.Unpowered, power.Owner);
                 }
             }
         }

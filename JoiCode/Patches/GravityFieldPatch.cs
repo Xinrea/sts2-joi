@@ -33,11 +33,11 @@ public static class GravityFieldPatch
             var gravityField = target.GetPower<GravityFieldPower>();
             if (gravityField != null)
             {
-                var enemies = target.CombatState.Enemies.ToList();
-                if (enemies.Count > 0)
+                var enemies = target.CombatState?.Enemies.ToList();
+                if (enemies != null && enemies.Count > 0)
                 {
                     var randomTarget = enemies[Random.Shared.Next(enemies.Count)];
-                    await CreatureCmd.Damage(null, [randomTarget], gravityField.Amount * 3, ValueProp.Unpowered, target, null);
+                    await CreatureCmd.Damage(default!, [randomTarget], gravityField.Amount * 3, ValueProp.Unpowered, target);
                 }
             }
         }
@@ -52,11 +52,11 @@ public static class GravityFieldPatch
             var gravityField = power.Owner.GetPower<GravityFieldPower>();
             if (gravityField != null)
             {
-                var enemies = power.Owner.CombatState.Enemies.ToList();
-                if (enemies.Count > 0)
+                var enemies = power.Owner.CombatState?.Enemies.ToList();
+                if (enemies != null && enemies.Count > 0)
                 {
                     var randomTarget = enemies[Random.Shared.Next(enemies.Count)];
-                    await CreatureCmd.Damage(null, [randomTarget], gravityField.Amount * 3, ValueProp.Unpowered, power.Owner, null);
+                    await CreatureCmd.Damage(default!, [randomTarget], gravityField.Amount * 3, ValueProp.Unpowered, power.Owner);
                 }
             }
         }

@@ -22,7 +22,7 @@ public class CosmicRip : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CreatureCmd.Damage(choiceContext, CombatState.Enemies.ToList(), DynamicVars.Damage.BaseValue, ValueProp.Move, Owner.Creature, this);
+        await CreatureCmd.Damage(choiceContext, CombatState?.Enemies.ToList() ?? [], DynamicVars.Damage.BaseValue, ValueProp.Move, Owner.Creature, this);
         await CommonActions.ApplySelf<BlackHolePower>(this, DynamicVars["BlackHole"].BaseValue);
     }
 

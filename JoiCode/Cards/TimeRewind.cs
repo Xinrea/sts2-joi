@@ -23,7 +23,7 @@ public class TimeRewind : JoiCard
 
         for (int i = 0; i < count; i++)
         {
-            var card = await CommonActions.SelectSingleCard(this, default, choiceContext, PileType.Discard);
+            var card = await CommonActions.SelectSingleCard(this, default!, choiceContext, PileType.Discard);
             if (card != null)
             {
                 await CardPileCmd.Add(card, PileType.Hand);
