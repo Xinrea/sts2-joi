@@ -14,7 +14,7 @@ public class BlackHolePower : JoiPower
 
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        if (side == CombatSide.Player && Amount >= 10)
+        if (side == CombatSide.Player && Amount >= 5)
         {
             await CreatureCmd.Damage(choiceContext, [Owner], Amount, ValueProp.Unpowered, Owner, null);
             await PowerCmd.Remove(this);
