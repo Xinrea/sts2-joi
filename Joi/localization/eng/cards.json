@@ -80,6 +80,8 @@
   "JOI-WHITE_HOLE_JET.description": "Lose {WhiteHole:diff()} [gold]White Hole[/gold], draw {Cards:diff()} card(s), and gain {Energy:energyIcons()}. If you do not have enough [gold]White Hole[/gold], nothing happens.",
   "JOI-WHITE_HOLE_REFLUX.title": "White Hole Reflux",
   "JOI-WHITE_HOLE_REFLUX.description": "Remove all [gold]White Hole[/gold]. Heal HP equal to the removed stacks, then apply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
+  "JOI-ORIGINAL_CHICKEN.title": "Original Chicken",
+  "JOI-ORIGINAL_CHICKEN.description": "Double your [gold]White Hole[/gold] stacks.",
   "JOI-QUESTION_BOX.title": "Question Box",
   "JOI-QUESTION_BOX.description": "Choose a card in your hand.\nIts cost becomes 0. Exhaust."
 }

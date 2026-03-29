@@ -80,6 +80,8 @@
   "JOI-WHITE_HOLE_JET.description": "失去{WhiteHole:diff()}层[gold]白洞[/gold]，抽{Cards:diff()}张牌，获得{Energy:energyIcons()}。若[gold]白洞[/gold]不足，则无事发生。",
   "JOI-WHITE_HOLE_REFLUX.title": "白洞回流",
   "JOI-WHITE_HOLE_REFLUX.description": "清除所有[gold]白洞[/gold]，回复等同于被清除层数的生命，然后为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
+  "JOI-ORIGINAL_CHICKEN.title": "原味鸡",
+  "JOI-ORIGINAL_CHICKEN.description": "将[gold]白洞[/gold]层数翻倍。",
   "JOI-QUESTION_BOX.title": "提问箱",
   "JOI-QUESTION_BOX.description": "选择一张手牌，将其费用变为0。消耗。"
 }
