@@ -15,7 +15,7 @@ public class Teleport : JoiCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(3, ValueProp.Move),
-        new DynamicVar("Draw", 1)
+        new CardsVar(1)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

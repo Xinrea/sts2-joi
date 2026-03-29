@@ -14,7 +14,7 @@ public class PhotonJet : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Draw", 1),
+        new CardsVar(1),
         new DynamicVar("WhiteHole", 1)
     ];
 
@@ -26,6 +26,6 @@ public class PhotonJet : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Draw"].UpgradeValueBy(1);
+        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }
