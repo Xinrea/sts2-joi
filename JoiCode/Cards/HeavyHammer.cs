@@ -16,7 +16,7 @@ public class HeavyHammer : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(3, ValueProp.Move),
+        new DamageVar(6, ValueProp.Move),
         new PowerVar<WeakPower>(1),
         new PowerVar<VulnerablePower>(1),
         new DynamicVar("BlackHole", 2)
@@ -34,7 +34,7 @@ public class HeavyHammer : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2);
+        DynamicVars.Damage.UpgradeValueBy(3);
         DynamicVars.Weak.UpgradeValueBy(1);
         DynamicVars.Vulnerable.UpgradeValueBy(1);
         DynamicVars["BlackHole"].UpgradeValueBy(2);
