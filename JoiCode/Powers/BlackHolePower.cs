@@ -16,7 +16,7 @@ public class BlackHolePower : JoiPower
     {
         if (side == CombatSide.Player && Amount >= 10)
         {
-            Owner.LoseHpInternal(Amount, ValueProp.Unblockable | ValueProp.Unpowered);
+            await CreatureCmd.Damage(choiceContext, [Owner], Amount, ValueProp.Unpowered, Owner, null);
             await PowerCmd.Remove(this);
         }
     }
