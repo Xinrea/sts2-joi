@@ -1,0 +1,20 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891B2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#0F172A"/>
+  <rect x="156" y="156" width="200" height="200" rx="20" fill="url(#boxGrad)" opacity="0.7"/>
+  <circle cx="256" cy="256" r="60" fill="#164E63" opacity="0.8"/>
+  <text x="256" y="280" font-family="Arial" font-size="72" fill="#A5F3FC" text-anchor="middle" opacity="0.9">?</text>
+  <path d="M 256 100 L 256 156" stroke="#22D3EE" stroke-width="3" opacity="0.6"/>
+  <path d="M 256 356 L 256 412" stroke="#22D3EE" stroke-width="3" opacity="0.6"/>
+  <path d="M 100 256 L 156 256" stroke="#22D3EE" stroke-width="3" opacity="0.6"/>
+  <path d="M 356 256 L 412 256" stroke="#22D3EE" stroke-width="3" opacity="0.6"/>
+  <circle cx="256" cy="100" r="10" fill="#67E8F9"/>
+  <circle cx="256" cy="412" r="10" fill="#67E8F9"/>
+  <circle cx="100" cy="256" r="10" fill="#67E8F9"/>
+  <circle cx="412" cy="256" r="10" fill="#67E8F9"/>
+</svg>

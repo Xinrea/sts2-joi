@@ -16,5 +16,8 @@
   "JOI-EVENT_HORIZON_POWER.smartDescription": "Whenever you gain Black Hole, gain [blue]{Amount}[/blue] Block.",
   "JOI-GRAVITATIONAL_LENS_POWER.title": "Gravitational Lens",
   "JOI-GRAVITATIONAL_LENS_POWER.description": "Whenever you gain White Hole, deal damage to a random enemy.",
-  "JOI-GRAVITATIONAL_LENS_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]{Amount}[/blue] damage to a random enemy."
+  "JOI-GRAVITATIONAL_LENS_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]{Amount}[/blue] damage to a random enemy.",
+  "JOI-GRAVITY_FIELD_POWER.title": "Gravity Field",
+  "JOI-GRAVITY_FIELD_POWER.description": "Whenever you gain White Hole, deal 3 damage to a random enemy.",
+  "JOI-GRAVITY_FIELD_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]3[/blue] damage to a random enemy."
 }
