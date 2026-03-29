@@ -32,14 +32,21 @@ public class YourCard : JoiCard
   - `Joi/localization/eng/powers.json` - English power text
   - `Joi/localization/zhs/powers.json` - Chinese power text
 
-### Problem 3: Card Images
-**Issue**: Cards need portrait images to display properly.
+### Problem 3: Card Images Not Loading
+**Issue**: Card images were created but didn't load in-game, showing placeholder graphics instead.
+
+**Root Cause**: Image filenames used camelCase instead of snake_case with underscores.
 
 **Solution**:
+- Card image filenames MUST use snake_case with underscores to match the game's naming convention
+- The `JoiCard` base class converts class names to lowercase with underscores: `Id.Entry.RemovePrefix().ToLowerInvariant()`
+- Examples:
+  - `PhotonJet` class → `photon_jet.png` (NOT `photonjet.png`)
+  - `BinaryStarCollision` class → `binary_star_collision.png` (NOT `binarystarcollision.png`)
+  - `DarkMatterImpact` class → `dark_matter_impact.png` (NOT `darkmatterimpact.png`)
 - Create SVG files for card art
 - Convert to PNG using: `sips -s format png input.svg --out output.png`
-- Place in `Joi/images/card_portraits/` with lowercase filename matching card class name
-- Example: `PhotonJet` class → `photonjet.png`
+- Place in `Joi/images/card_portraits/` with correct snake_case filename
 
 ## Correct Workflow for Adding New Cards
 
@@ -55,7 +62,8 @@ public class YourCard : JoiCard
 3. **Create Card Images**
    - Generate or create card portrait
    - Save as PNG in `Joi/images/card_portraits/`
-   - Use lowercase filename matching class name
+   - **IMPORTANT**: Use snake_case with underscores (e.g., `photon_jet.png`, NOT `photonjet.png`)
+   - Filename must match: ClassName → snake_case (PhotonJet → photon_jet.png)
 
 4. **Add Power Localizations (if needed)**
    - Add to both `eng/powers.json` and `zhs/powers.json`
@@ -111,6 +119,6 @@ public static class YourPatch
 
 1. **Always add Pool attribute to each card class** - Don't rely on inheritance
 2. **Add both English and Chinese localizations** - Missing either will cause errors
-3. **Create card portrait images** - Required for cards to display properly
+3. **Use snake_case for card image filenames** - Must use underscores (e.g., `photon_jet.png`, NOT `photonjet.png`)
 4. **Use Harmony patches for power triggers** - Don't try to override non-existent methods
 5. **Compile frequently** - Use `dotnet publish -c ExportRelease` to catch errors early
