@@ -10,5 +10,11 @@
   "JOI-BIRTH_POWER.smartDescription": "每当黑洞效果触发时，召唤一只血量与黑洞层数相等的轴芯到场上，如果场上已经有一只轴芯了，那么轴芯的血量增加等同于黑洞层数的值。",
   "JOI-OMNISCIENT_POWER.title": "全知全能",
   "JOI-OMNISCIENT_POWER.description": "当黑洞层数增加时，额外获得等同于层数的白洞。",
-  "JOI-OMNISCIENT_POWER.smartDescription": "当黑洞层数增加时，额外获得[blue]{Amount}[/blue]层白洞。"
+  "JOI-OMNISCIENT_POWER.smartDescription": "当黑洞层数增加时，额外获得[blue]{Amount}[/blue]层白洞。",
+  "JOI-EVENT_HORIZON_POWER.title": "事件视界",
+  "JOI-EVENT_HORIZON_POWER.description": "每当黑洞层数增加时，获得格挡。",
+  "JOI-EVENT_HORIZON_POWER.smartDescription": "每当黑洞层数增加时，获得[blue]{Amount}[/blue]点格挡。",
+  "JOI-GRAVITATIONAL_LENS_POWER.title": "引力透镜",
+  "JOI-GRAVITATIONAL_LENS_POWER.description": "每当白洞层数增加时，对随机敌人造成伤害。",
+  "JOI-GRAVITATIONAL_LENS_POWER.smartDescription": "每当白洞层数增加时，对随机敌人造成[blue]{Amount}[/blue]点伤害。"
 }
