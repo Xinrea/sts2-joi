@@ -20,9 +20,16 @@ public class ZhouXin : MonsterModel
 
     public override Creature ModifyUnblockedDamageTarget(Creature target, decimal amount, ValueProp props, Creature? dealer)
     {
-        if (target.Side == Creature.Side && !Creature.IsDead)
+        MainFile.Logger.Info($"[ZhouXin] target={target.Name}, amount={amount}, props={props}, dealer={dealer?.Name}, creatureHp={Creature.CurrentHp}");
+
+        if (target.Side == Creature.Side && !Creature.IsDead && dealer != null && dealer.Side != Creature.Side)
         {
-            return Creature;
+            // Only intercept if creature can survive the damage
+            if (Creature.CurrentHp > 0)
+            {
+                MainFile.Logger.Info($"[ZhouXin] Intercepting damage to {target.Name}, redirecting to ZhouXin");
+                return Creature;
+            }
         }
         return target;
     }

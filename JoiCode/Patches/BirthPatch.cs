@@ -22,7 +22,7 @@ public static class BirthPatch
             var birth = blackHole.Owner.GetPower<BirthPower>();
             if (birth != null)
             {
-                var existingCore = blackHole.Owner.CombatState.Allies.FirstOrDefault(c => c.Monster is ZhouXin);
+                var existingCore = blackHole.Owner.CombatState.Allies.FirstOrDefault(c => c.Monster is ZhouXin && !c.IsDead);
                 if (existingCore != null)
                 {
                     var hpIncrease = blackHole.Amount + (birth.Amount > 1 ? birth.Amount - 1 : 0);
@@ -35,6 +35,7 @@ public static class BirthPatch
                     var creature = await CreatureCmd.Add(core, blackHole.Owner.CombatState, blackHole.Owner.Side);
                     creature.SetMaxHpInternal(blackHole.Amount);
                     creature.HealInternal(blackHole.Amount);
+                    blackHole.Owner.Player?.PlayerCombatState?.AddPetInternal(creature);
                 }
             }
         }
