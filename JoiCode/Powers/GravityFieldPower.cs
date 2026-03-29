@@ -24,6 +24,6 @@ public class GravityFieldPower : JoiPower, IOnPowerAmountChanged
             return;
         }
 
-        await CreatureCmd.Damage(new BlockingPlayerChoiceContext(), enemies, Amount * 3, ValueProp.Unpowered, Owner, context.SourceCard);
+        await CreatureCmd.Damage(new BlockingPlayerChoiceContext(), enemies, Amount, ValueProp.Unpowered, Owner, context.SourceCard);
     }
 }

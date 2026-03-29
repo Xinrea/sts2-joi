@@ -27,4 +27,9 @@ public class DimensionJump : JoiCard
             await PowerCmd.Remove(blackHole);
         }
     }
+
+    protected override void OnUpgrade()
+    {
+        EnergyCost.UpgradeBy(-1);
+    }
 }

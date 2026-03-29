@@ -13,7 +13,11 @@ public class Compress : JoiCard
 {
     public Compress() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("BlackHole", 5)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new DynamicVar("BlackHole", 6),
+        new CardsVar(1)
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -26,10 +30,12 @@ public class Compress : JoiCard
             else
                 power.Amount = newAmount;
         }
+
+        await CommonActions.Draw(this, choiceContext);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["BlackHole"].UpgradeValueBy(2);
+        DynamicVars["BlackHole"].UpgradeValueBy(3);
     }
 }

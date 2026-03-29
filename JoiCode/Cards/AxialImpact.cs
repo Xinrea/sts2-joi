@@ -14,8 +14,8 @@ public class AxialImpact : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5, ValueProp.Move),
-        new BlockVar(6, ValueProp.Move)
+        new DamageVar(8, ValueProp.Move),
+        new BlockVar(8, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -27,6 +27,6 @@ public class AxialImpact : JoiCard
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
-        DynamicVars.Block.UpgradeValueBy(3);
+        DynamicVars.Block.UpgradeValueBy(2);
     }
 }

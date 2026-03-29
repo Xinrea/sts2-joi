@@ -28,4 +28,9 @@ public class QuantumEntanglement : JoiCard
             }
         }
     }
+
+    protected override void OnUpgrade()
+    {
+        EnergyCost.UpgradeBy(-1);
+    }
 }

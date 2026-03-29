@@ -18,8 +18,8 @@
   "JOI-GRAVITATIONAL_LENS_POWER.description": "Whenever you gain White Hole, deal damage to a random enemy.",
   "JOI-GRAVITATIONAL_LENS_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]{Amount}[/blue] damage to a random enemy.",
   "JOI-GRAVITY_FIELD_POWER.title": "Gravity Field",
-  "JOI-GRAVITY_FIELD_POWER.description": "Whenever you gain White Hole, deal 3 damage to ALL enemies.",
-  "JOI-GRAVITY_FIELD_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]3[/blue] damage to ALL enemies.",
+  "JOI-GRAVITY_FIELD_POWER.description": "Whenever you gain White Hole, deal damage to ALL enemies.",
+  "JOI-GRAVITY_FIELD_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]{Amount}[/blue] damage to ALL enemies.",
   "JOI-VACUUM_FLUCTUATION_POWER.title": "Vacuum Fluctuation",
   "JOI-VACUUM_FLUCTUATION_POWER.description": "Each turn, the first time you gain Black Hole or White Hole, gain 1 Energy.",
   "JOI-VACUUM_FLUCTUATION_POWER.smartDescription": "Each turn, the first [blue]{Amount}[/blue] time(s) you gain Black Hole or White Hole, gain 1 Energy."

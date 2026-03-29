@@ -12,10 +12,15 @@ public class GravityField : JoiCard
 {
     public GravityField() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Damage", 5)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.ApplySelf<GravityFieldPower>(this, 1);
+        await CommonActions.ApplySelf<GravityFieldPower>(this, DynamicVars["Damage"].BaseValue);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Damage"].UpgradeValueBy(3);
     }
 }

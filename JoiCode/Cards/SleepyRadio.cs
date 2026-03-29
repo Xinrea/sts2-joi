@@ -15,7 +15,7 @@ public class SleepyRadio : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<WeakPower>(1)
+        new PowerVar<WeakPower>(2)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

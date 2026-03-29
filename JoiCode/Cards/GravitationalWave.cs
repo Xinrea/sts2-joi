@@ -15,7 +15,7 @@ public class GravitationalWave : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(6, ValueProp.Move),
+        new DamageVar(9, ValueProp.Move),
         new DynamicVar("BlackHole", 1)
     ];
 
@@ -33,6 +33,5 @@ public class GravitationalWave : JoiCard
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
-        DynamicVars["BlackHole"].UpgradeValueBy(1);
     }
 }

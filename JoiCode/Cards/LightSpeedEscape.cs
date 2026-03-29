@@ -27,4 +27,9 @@ public class LightSpeedEscape : JoiCard
             await PowerCmd.Remove(whiteHole);
         }
     }
+
+    protected override void OnUpgrade()
+    {
+        EnergyCost.UpgradeBy(-1);
+    }
 }
