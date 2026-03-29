@@ -23,7 +23,6 @@ public class GravityFieldPower : JoiPower, IOnPowerAmountChanged
             return;
         }
 
-        var randomTarget = enemies[Random.Shared.Next(enemies.Count)];
-        await CreatureCmd.Damage(default!, [randomTarget], Amount * 3, ValueProp.Unpowered, Owner);
+        await CreatureCmd.Damage(default!, enemies, Amount * 3, ValueProp.Unpowered, Owner);
     }
 }

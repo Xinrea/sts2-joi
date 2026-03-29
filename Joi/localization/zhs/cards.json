@@ -44,7 +44,7 @@
   "JOI-GRAVITATIONAL_LENS.title": "引力透镜",
   "JOI-GRAVITATIONAL_LENS.description": "每当[gold]白洞[/gold]层数增加时，对随机敌人造成{Damage:diff()}点伤害。",
   "JOI-GRAVITY_FIELD.title": "引力场",
-  "JOI-GRAVITY_FIELD.description": "每当[gold]白洞[/gold]层数增加时，对随机敌人造成3点伤害。",
+  "JOI-GRAVITY_FIELD.description": "每当[gold]白洞[/gold]层数增加时，对所有敌人造成3点伤害。",
   "JOI-COSMIC_RIP.title": "宇宙大撕裂",
   "JOI-COSMIC_RIP.description": "对所有敌人造成{Damage:diff()}点伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
   "JOI-TIME_REWIND.title": "时间回溯",

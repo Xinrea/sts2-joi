@@ -10,7 +10,7 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class GravitationalLens : JoiCard
 {
-    public GravitationalLens() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
+    public GravitationalLens() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Damage", 3)];
 
