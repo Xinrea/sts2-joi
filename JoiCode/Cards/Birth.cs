@@ -19,7 +19,7 @@ public class Birth : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.ApplySelf<BirthPower>(this, 1);
+        await CommonActions.ApplySelf<BirthPower>(this, DynamicVars["Amount"].BaseValue);
     }
 
     protected override void OnUpgrade()

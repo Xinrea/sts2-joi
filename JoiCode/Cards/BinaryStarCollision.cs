@@ -15,7 +15,7 @@ public class BinaryStarCollision : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(12, ValueProp.Move),
+        new DamageVar(15, ValueProp.Move),
         new DynamicVar("BlackHole", 2),
         new DynamicVar("WhiteHole", 2)
     ];
@@ -29,6 +29,8 @@ public class BinaryStarCollision : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4);
+        DynamicVars.Damage.UpgradeValueBy(5);
+        DynamicVars["BlackHole"].UpgradeValueBy(3);
+        DynamicVars["WhiteHole"].UpgradeValueBy(3);
     }
 }
