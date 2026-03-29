@@ -31,7 +31,10 @@ public class CosmicExplosion : JoiCard
             await CreatureCmd.Damage(choiceContext, CombatState.Enemies.ToList(), damage, ValueProp.Move, Owner.Creature, this);
         }
 
-        await PowerCmd.Remove(blackHolePower);
+        if (times > 0)
+        {
+            await PowerCmd.Remove(blackHolePower);
+        }
     }
 
     protected override void OnUpgrade()
