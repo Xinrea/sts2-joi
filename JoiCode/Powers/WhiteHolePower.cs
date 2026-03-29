@@ -13,7 +13,7 @@ public class WhiteHolePower : JoiPower
 
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        if (side == CombatSide.Player && Amount >= 5)
+        if (side == CombatSide.Player && Amount > 0)
         {
             await CreatureCmd.Damage(choiceContext, Owner.CombatState?.Enemies.ToList() ?? [], Amount, ValueProp.Unpowered, Owner);
             SetAmount(Amount - 1, false);
