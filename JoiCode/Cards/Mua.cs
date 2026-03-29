@@ -21,16 +21,17 @@ public class Mua : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await SummonActions.SummonPet(
-            SummonDefinition.For<ZhouXin>(
-                uniqueKey: ZhouXinSummonKey,
-                policy: SummonPolicy.BuffExisting,
-                handleExisting: existing =>
-                {
-                    existing.HealInternal(DynamicVars["Heal"].IntValue);
-                    return Task.CompletedTask;
-                }),
-            Owner);
+        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
+        var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
+        if (existing != null)
+        {
+            existing.HealInternal(DynamicVars["Heal"].IntValue);
+            return;
+        }
+
+        var creature = await SummonActions.SummonPet(definition, Owner);
+        creature.SetMaxHpInternal(5);
+        creature.HealInternal(5);
     }
 
     protected override void OnUpgrade()
