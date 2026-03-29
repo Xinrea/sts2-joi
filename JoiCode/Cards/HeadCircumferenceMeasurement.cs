@@ -11,11 +11,11 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class HeadCircumferenceMeasurement : JoiCard
 {
-    public HeadCircumferenceMeasurement() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
+    public HeadCircumferenceMeasurement() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("TargetHandSize", 5)
+        new DynamicVar("TargetHandSize", 6)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
