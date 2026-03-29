@@ -71,6 +71,8 @@
   "JOI-SNEEZE.title": "喷嚏",
   "JOI-SNEEZE.description": "消耗一张手牌。\n为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-SNEEZE.selectionPrompt": "选择一张手牌消耗。",
+  "JOI-WHITE_HOLE_REFLUX.title": "白洞回流",
+  "JOI-WHITE_HOLE_REFLUX.description": "清除所有[gold]白洞[/gold]，回复等同于被清除层数的生命，然后为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-QUESTION_BOX.title": "提问箱",
   "JOI-QUESTION_BOX.description": "选择一张手牌，将其费用变为0。消耗。"
 }

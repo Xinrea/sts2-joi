@@ -71,6 +71,8 @@
   "JOI-SNEEZE.title": "Sneeze",
   "JOI-SNEEZE.description": "Exhaust 1 card from your hand.\nApply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-SNEEZE.selectionPrompt": "Choose a card from your hand to exhaust.",
+  "JOI-WHITE_HOLE_REFLUX.title": "White Hole Reflux",
+  "JOI-WHITE_HOLE_REFLUX.description": "Remove all [gold]White Hole[/gold]. Heal HP equal to the removed stacks, then apply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-QUESTION_BOX.title": "Question Box",
   "JOI-QUESTION_BOX.description": "Choose a card in your hand.\nIts cost becomes 0. Exhaust."
 }
