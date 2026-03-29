@@ -25,5 +25,8 @@
   "JOI-IDOL_CHARM_POWER.smartDescription": "伤害改为由该单位承受。",
   "JOI-VACUUM_FLUCTUATION_POWER.title": "真空涨落",
   "JOI-VACUUM_FLUCTUATION_POWER.description": "每回合你首次获得黑洞或白洞时，获得1点能量。",
-  "JOI-VACUUM_FLUCTUATION_POWER.smartDescription": "每回合你前[blue]{Amount}[/blue]次获得黑洞或白洞时，获得1点能量。"
+  "JOI-VACUUM_FLUCTUATION_POWER.smartDescription": "每回合你前[blue]{Amount}[/blue]次获得黑洞或白洞时，获得1点能量。",
+  "JOI-SLEEP_POWER.title": "沉睡",
+  "JOI-SLEEP_POWER.description": "该敌人下回合不会行动。回合结束时减少1层。",
+  "JOI-SLEEP_POWER.smartDescription": "该敌人[blue]{Amount}[/blue]回合内不会行动。"
 }

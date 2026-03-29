@@ -100,6 +100,27 @@ protected override void OnUpgrade()
 await CommonActions.ApplySelf<BlackHolePower>(this, amount);
 ```
 
+### Adding Keyword Tooltips
+For custom powers that need hover tooltips:
+
+1. **Add tooltip text** to `Joi/localization/eng/static_hover_tips.json` and `Joi/localization/zhs/static_hover_tips.json`:
+```json
+{
+  "JOI-SLEEP.title": "Sleep",
+  "JOI-SLEEP.description": "Cannot act. Loses 1 stack at the end of turn."
+}
+```
+
+2. **Register tooltip in JoiCard.cs** in the `GetJoiTermHoverTips()` method:
+```csharp
+"SLEEPY_RADIO" => [CreateStaticHoverTip("JOI-SLEEP")],
+```
+
+3. **Use in card description** with `[gold]` tags:
+```json
+"JOI-SLEEPY_RADIO.description": "Apply {SleepPower:diff()} [gold]Sleep[/gold] to ALL enemies."
+```
+
 ### Power Triggers with Harmony Patches
 For powers that trigger on events (like gaining Black Hole), use Harmony patches:
 
@@ -115,6 +136,46 @@ public static class YourPatch
 }
 ```
 
+## Using ILSpy MCP for Reverse Engineering
+
+### Problem: Understanding Game Mechanics
+**Issue**: Need to understand how game's built-in powers work to implement custom powers correctly.
+
+**Solution**: Use ILSpy MCP tool to decompile and analyze game assemblies.
+
+### Setup ILSpy MCP
+1. Add MCP server configuration:
+```bash
+claude mcp add -s project ilspy -- dotnet tools/ILSpy-Mcp/bin/Release/net8.0/ILSpy.Mcp.dll
+```
+
+2. Restart AWS Code to load the MCP server
+
+### Common ILSpy Commands
+- `mcp__ilspy__list_assembly_types` - List all types in an assembly
+- `mcp__ilspy__decompile_type` - Decompile a specific class
+- `mcp__ilspy__search_members_by_name` - Search for methods/properties by name
+- `mcp__ilspy__decompile_method` - Decompile a specific method
+
+### Example: Implementing Sleep Power
+**Problem**: Sleep power not preventing enemy actions.
+
+**Investigation Process**:
+1. Search for similar powers: `AsleepPower`, `SlumberPower`
+2. Decompile to understand implementation
+3. Found key method: `CreatureCmd.Stun()`
+
+**Solution**:
+```csharp
+public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+{
+    if (side == Owner.Side && Amount > 0)
+    {
+        await CreatureCmd.Stun(Owner);
+    }
+}
+```
+
 ## Key Takeaways
 
 1. **Always add Pool attribute to each card class** - Don't rely on inheritance
@@ -122,3 +183,4 @@ public static class YourPatch
 3. **Use snake_case for card image filenames** - Must use underscores (e.g., `photon_jet.png`, NOT `photonjet.png`)
 4. **Use Harmony patches for power triggers** - Don't try to override non-existent methods
 5. **Compile frequently** - Use `dotnet publish -c ExportRelease` to catch errors early
+6. **Use ILSpy MCP to understand game mechanics** - Decompile game code to see how built-in features work

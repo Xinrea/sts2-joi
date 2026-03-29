@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ilspy": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "tools/ILSpy-Mcp/bin/Release/net8.0/ILSpy.Mcp.dll"
+      ],
+      "env": {}
+    }
+  }
+}

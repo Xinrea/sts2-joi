@@ -4,7 +4,7 @@
         <ImplicitUsings>true</ImplicitUsings>
         <Nullable>enable</Nullable> <!--Makes code analysis regarding null values stricter.-->
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <DefaultItemExcludes>packages/**</DefaultItemExcludes>
+        <DefaultItemExcludes>packages/**;tools/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
         <PathMap>$(AppOutputBase)=.\</PathMap>
         <BaseLibDir>$(MSBuildProjectDirectory)\BaseLib</BaseLibDir>

@@ -64,6 +64,7 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "PURE_WHITE_FORM" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
         "IDOL_CHARM" => [CreateStaticHoverTip("JOI-CHARM")],
         "ORIGINAL_CHICKEN" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "SLEEPY_RADIO" => [CreateStaticHoverTip("JOI-SLEEP")],
         _ => []
     };
 

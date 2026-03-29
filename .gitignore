@@ -38,3 +38,8 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+tools/ilspy/
+tools/ILSpy-Mcp/
+
+sts2.dll

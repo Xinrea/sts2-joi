@@ -25,5 +25,8 @@
   "JOI-IDOL_CHARM_POWER.smartDescription": "Damage is redirected to this unit instead.",
   "JOI-VACUUM_FLUCTUATION_POWER.title": "Vacuum Fluctuation",
   "JOI-VACUUM_FLUCTUATION_POWER.description": "Each turn, the first time you gain Black Hole or White Hole, gain 1 Energy.",
-  "JOI-VACUUM_FLUCTUATION_POWER.smartDescription": "Each turn, the first [blue]{Amount}[/blue] time(s) you gain Black Hole or White Hole, gain 1 Energy."
+  "JOI-VACUUM_FLUCTUATION_POWER.smartDescription": "Each turn, the first [blue]{Amount}[/blue] time(s) you gain Black Hole or White Hole, gain 1 Energy.",
+  "JOI-SLEEP_POWER.title": "Sleep",
+  "JOI-SLEEP_POWER.description": "This enemy will do nothing next turn. Reduces by 1 at the end of turn.",
+  "JOI-SLEEP_POWER.smartDescription": "This enemy will do nothing for [blue]{Amount}[/blue] turn(s)."
 }

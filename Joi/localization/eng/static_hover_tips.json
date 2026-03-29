@@ -6,5 +6,7 @@
   "JOI-CHARM.title": "Charm",
   "JOI-CHARM.description": "Damage is redirected to this unit instead until the end of its turn.",
   "JOI-AXISCORE.title": "Axis Core",
-  "JOI-AXISCORE.description": "Your summon. It intercepts damage from enemies for you."
+  "JOI-AXISCORE.description": "Your summon. It intercepts damage from enemies for you.",
+  "JOI-SLEEP.title": "Sleep",
+  "JOI-SLEEP.description": "Cannot act. Loses 1 stack at the end of turn."
 }
