@@ -4,6 +4,7 @@ using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Joi.JoiCode.Cards;
@@ -22,7 +23,7 @@ public class Sneeze : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = await CommonActions.SelectSingleCard(this, default!, choiceContext, PileType.Hand);
+        var card = await CommonActions.SelectSingleCard(this, new LocString("cards", "JOI-SNEEZE.selectionPrompt"), choiceContext, PileType.Hand);
         if (card != null)
         {
             await CardCmd.Exhaust(choiceContext, card);

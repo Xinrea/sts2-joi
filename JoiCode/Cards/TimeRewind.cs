@@ -3,6 +3,7 @@ using Joi.JoiCode.Character;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Joi.JoiCode.Cards;
@@ -23,7 +24,7 @@ public class TimeRewind : JoiCard
 
         for (int i = 0; i < count; i++)
         {
-            var card = await CommonActions.SelectSingleCard(this, default!, choiceContext, PileType.Discard);
+            var card = await CommonActions.SelectSingleCard(this, new LocString("cards", "JOI-TIME_REWIND.selectionPrompt"), choiceContext, PileType.Discard);
             if (card != null)
             {
                 await CardPileCmd.Add(card, PileType.Hand);

@@ -49,6 +49,7 @@
   "JOI-COSMIC_RIP.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
   "JOI-TIME_REWIND.title": "Time Rewind",
   "JOI-TIME_REWIND.description": "Add {Retrieve:diff()} card(s) from your discard pile to your hand.",
+  "JOI-TIME_REWIND.selectionPrompt": "Choose a card from your discard pile.",
   "JOI-DIMENSION_JUMP.title": "Dimension Jump",
   "JOI-DIMENSION_JUMP.description": "Convert all [gold]Black Hole[/gold] to equal [gold]Strength[/gold]. Exhaust.",
   "JOI-LIGHT_SPEED_ESCAPE.title": "Light Speed Escape",
@@ -68,7 +69,8 @@
   "JOI-SLEEPY_RADIO.title": "Sleepy Radio",
   "JOI-SLEEPY_RADIO.description": "Apply {Weak:diff()} [gold]Weak[/gold] to ALL enemies.",
   "JOI-SNEEZE.title": "Sneeze",
-  "JOI-SNEEZE.description": "Randomly Exhaust 1 card from your hand.\nApply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
+  "JOI-SNEEZE.description": "Exhaust 1 card from your hand.\nApply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
+  "JOI-SNEEZE.selectionPrompt": "Choose a card from your hand to exhaust.",
   "JOI-QUESTION_BOX.title": "Question Box",
   "JOI-QUESTION_BOX.description": "Choose a card in your hand.\nIts cost becomes 0. Exhaust."
 }
