@@ -68,7 +68,7 @@
   "JOI-HEAD_CIRCUMFERENCE_MEASUREMENT.title": "Head Circumference Measurement",
   "JOI-HEAD_CIRCUMFERENCE_MEASUREMENT.description": "Draw cards until you have {TargetHandSize:diff()} cards in hand.\nApply X [gold]Black Hole[/gold] to yourself, where X is the number of cards drawn.",
   "JOI-SLEEPY_RADIO.title": "Sleepy Radio",
-  "JOI-SLEEPY_RADIO.description": "Apply {Weak:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "JOI-SLEEPY_RADIO.description": "Apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "JOI-SNEEZE.title": "Sneeze",
   "JOI-SNEEZE.description": "Exhaust 1 card from your hand.\nApply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-SNEEZE.selectionPrompt": "Choose a card from your hand to exhaust.",
