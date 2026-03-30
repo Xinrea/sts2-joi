@@ -60,8 +60,16 @@ public class YourCard : JoiCard
    - Format: `JOI-CARD_NAME.title` and `JOI-CARD_NAME.description`
 
 3. **Create Card Images**
-   - Generate or create card portrait
-   - Save as PNG in `Joi/images/card_portraits/`
+   - Generate card portrait using `generate_card_art.ps1`:
+     ```powershell
+     powershell.exe -File generate_card_art.ps1 -Prompt "Slay the Spire card art style, [description]" -OutputName card_name
+     ```
+   - Script automatically uses `Joi.png` as character reference
+   - If image is too large (>1MB), resize using `resize_image.ps1`:
+     ```powershell
+     powershell.exe -File resize_image.ps1 -InputFile "Joi/images/card_portraits/card_name.png" -Size 512
+     ```
+   - If Godot shows "Not a PNG file" error, delete the `.import` file and recompile
    - **IMPORTANT**: Use snake_case with underscores (e.g., `photon_jet.png`, NOT `photonjet.png`)
    - Filename must match: ClassName → snake_case (PhotonJet → photon_jet.png)
 
@@ -84,6 +92,19 @@ protected override IEnumerable<DynamicVar> CanonicalVars =>
     new DynamicVar("BlackHole", 1)
 ];
 ```
+
+### Card with Keywords
+Keywords like Exhaust, Ethereal, etc. are added via the `CanonicalKeywords` property:
+
+```csharp
+public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, CardKeyword.Ethereal];
+```
+
+**Important**:
+- Do NOT use `AddKeyword()` in the constructor - it will cause a "CanonicalModelException"
+- Use the `CanonicalKeywords` property instead
+- Do NOT add keyword descriptions (like "Exhaust." or "Ethereal.") to the card description text
+- The game automatically displays keywords based on the `CanonicalKeywords` property
 
 ### Card Upgrade
 ```csharp
@@ -174,6 +195,37 @@ public override async Task AfterSideTurnStart(CombatSide side, CombatState comba
         await CreatureCmd.Stun(Owner);
     }
 }
+```
+
+## Image Generation
+
+When generating card art or other images:
+
+**API Configuration**:
+- Endpoint: `https://openrouter.ai/api/v1/chat/completions`
+- Model: `bytedance-seed/seedream-4.5`
+- Requires: `OPENROUTER_API_KEY` environment variable
+
+**Workflow**:
+1. Generate image via OPENROUTER API with Slay the Spire style prompt
+2. Save as PNG in `Joi/images/card_portraits/`
+3. Use snake_case filename matching card class name (e.g., `photon_jet.png`)
+
+**Prompt Template**:
+Design specific character actions and gestures for each card, avoid generic descriptions:
+```
+the character from the reference image [specific action/gesture], [visual effects], no border, fantasy card game illustration
+```
+
+**Examples**:
+- Good: "holding up hands to create a gravitational lens, light bending around her fingers"
+- Bad: "with gravitational lens effect, light bending"
+- Good: "clapping hands together to generate gravitational waves, shockwave ripples emanating from her palms"
+- Bad: "creating gravitational waves, wave distortion effects"
+
+**Example Usage**:
+```bash
+powershell.exe -File generate_card_art.ps1 -Prompt "the character from the reference image collecting gold coins and rice, cheerful expression, floating gold coins" -OutputName collect_rice
 ```
 
 ## Key Takeaways

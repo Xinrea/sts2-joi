@@ -88,5 +88,7 @@
   "JOI-ORIGINAL_CHICKEN.description": "Double your [gold]White Hole[/gold] stacks.",
   "JOI-QUESTION_BOX.title": "Question Box",
   "JOI-QUESTION_BOX.description": "Choose {Cards:diff()} card(s) in your hand.\nTheir cost becomes 0.",
-  "JOI-QUESTION_BOX.selectionPrompt": "Choose card(s) to set to 0 cost."
+  "JOI-QUESTION_BOX.selectionPrompt": "Choose card(s) to set to 0 cost.",
+  "JOI-COLLECT_RICE.title": "Collect Rice",
+  "JOI-COLLECT_RICE.description": "Gain {Gold:diff()} Gold for each enemy."
 }
