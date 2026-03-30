@@ -16,7 +16,7 @@
   "JOI-HEAVY_HAMMER.title": "Heavy Hammer",
   "JOI-HEAVY_HAMMER.description": "Deal {Damage:diff()} damage.\nApply {WeakPower:diff()} [gold]Weak[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
   "JOI-COSMIC_EXPLOSION.title": "Cosmic Explosion",
-  "JOI-COSMIC_EXPLOSION.description": "Deal damage equal to your [gold]Black Hole[/gold] stacks to ALL enemies X times, then clear [gold]Black Hole[/gold].",
+  "JOI-COSMIC_EXPLOSION.description": "Deal damage equal to your [gold]Black Hole[/gold] stacks to ALL enemies X{IfUpgraded:show:+1|} times, then clear [gold]Black Hole[/gold].",
   "JOI-TWO_POLE_REVERSAL.title": "Two-Pole Reversal",
   "JOI-TWO_POLE_REVERSAL.description": "Apply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself, then swap their stacks.",
   "JOI-GRAVITATIONAL_WAVE.title": "Gravitational Wave",
@@ -90,5 +90,17 @@
   "JOI-QUESTION_BOX.description": "Choose {Cards:diff()} card(s) in your hand.\nTheir cost becomes 0.",
   "JOI-QUESTION_BOX.selectionPrompt": "Choose card(s) to set to 0 cost.",
   "JOI-COLLECT_RICE.title": "Collect Rice",
-  "JOI-COLLECT_RICE.description": "Gain {Gold:diff()} Gold for each enemy."
+  "JOI-COLLECT_RICE.description": "Gain {Gold:diff()} Gold for each enemy.",
+  "JOI-NEBUL_LULLABY.title": "Nebula Lullaby",
+  "JOI-NEBUL_LULLABY.description": "Apply {SleepPower:diff()} [gold]Sleep[/gold] to an enemy.\nGain {Block:diff()} Block.",
+  "JOI-NIGHTMARE_EROSION.title": "Nightmare Erosion",
+  "JOI-NIGHTMARE_EROSION.description": "Deal {Damage:diff()} damage.\nIf the target is [gold]Sleeping[/gold], apply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
+  "JOI-DEEP_SPACE_LULLABY.title": "Deep Space Lullaby",
+  "JOI-DEEP_SPACE_LULLABY.description": "Apply {SleepPower:diff()} [gold]Sleep[/gold] to ALL enemies.\nDraw 1 card for each enemy with [gold]Sleep[/gold].",
+  "JOI-GRAVITY_TETHER.title": "Gravity Tether",
+  "JOI-GRAVITY_TETHER.description": "Deal {Damage:diff()} damage.\nIf any enemy has [gold]Charm[/gold], deal {BonusDamage:diff()} additional damage.",
+  "JOI-CONFUSION_RAY.title": "Confusion Ray",
+  "JOI-CONFUSION_RAY.description": "Apply {WeakPower:diff()} [gold]Weak[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold] to an enemy.\nIf the target has [gold]Charm[/gold], apply to ALL enemies instead.",
+  "JOI-RESONANCE_BOND.title": "Resonance Bond",
+  "JOI-RESONANCE_BOND.description": "Apply [gold]Charm[/gold] to an enemy.\nApply {WhiteHole:diff()} [gold]White Hole[/gold] and {BlackHole:diff()} [gold]Black Hole[/gold] to yourself."
 }

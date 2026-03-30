@@ -4,6 +4,7 @@ using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 
@@ -12,11 +13,14 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class CosmicExplosion : JoiCard
 {
-    public CosmicExplosion() : base(-1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies) { }
+    public CosmicExplosion() : base(-1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies) { }
 
     protected override bool HasEnergyCostX => true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Times", 0)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new StringVar("ExtraTimes", IsUpgraded ? "+1" : "")
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -24,7 +28,11 @@ public class CosmicExplosion : JoiCard
         if (blackHolePower == null) return;
 
         var damage = blackHolePower.Amount;
-        var times = ResolveEnergyXValue() + (IsUpgraded ? 1 : 0);
+        var times = ResolveEnergyXValue();
+        if (IsUpgraded)
+        {
+            times++;
+        }
 
         for (int i = 0; i < times; i++)
         {
@@ -39,6 +47,6 @@ public class CosmicExplosion : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Times"].UpgradeValueBy(1);
+        // Upgrade is handled in OnPlay and CanonicalVars
     }
 }

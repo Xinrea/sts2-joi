@@ -82,6 +82,38 @@ public class YourCard : JoiCard
    - Check for errors
    - Test in-game
 
+## Localization Formatters
+
+### Using :show Formatter for Upgrade Display
+**Issue**: Need to show conditional text based on upgrade status (e.g., "X times" → "X+1 times").
+
+**Solution**: Use the `:show` formatter with correct syntax:
+
+```json
+{
+  "CARD.description": "Deal X{IfUpgraded:show:+1|} times damage."
+}
+```
+
+**Syntax Rules:**
+- Format: `{IfUpgraded:show:upgraded_text|non_upgraded_text}`
+- Use **colon `:`** to separate formatter name from parameters
+- Use **pipe `|`** to separate upgraded and non-upgraded text
+- Leave non-upgraded text empty if you only want to show text when upgraded
+
+**Examples:**
+```json
+// Shows "X times" when not upgraded, "X+1 times" when upgraded
+"X{IfUpgraded:show:+1|} times"
+
+// Shows "all cards" when upgraded, "1 card" when not upgraded
+"{IfUpgraded:show:all cards|1 card}"
+```
+
+**Common Mistake:**
+- ❌ Wrong: `{IfUpgraded:show|+1|}` (using pipe instead of colon)
+- ✅ Correct: `{IfUpgraded:show:+1|}` (using colon after show)
+
 ## Common Patterns
 
 ### Card with Dynamic Variables

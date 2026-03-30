@@ -16,7 +16,7 @@
   "JOI-HEAVY_HAMMER.title": "重头槌",
   "JOI-HEAVY_HAMMER.description": "造成{Damage:diff()}点伤害。\n施加{WeakPower:diff()}层[gold]虚弱[/gold]和{VulnerablePower:diff()}层[gold]易伤[/gold]。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
   "JOI-COSMIC_EXPLOSION.title": "宇宙爆炸",
-  "JOI-COSMIC_EXPLOSION.description": "对所有敌人造成X次与[gold]黑洞[/gold]层数相等的伤害，并清空[gold]黑洞[/gold]。",
+  "JOI-COSMIC_EXPLOSION.description": "对所有敌人造成X{IfUpgraded:show:+1|}次与[gold]黑洞[/gold]层数相等的伤害，并清空[gold]黑洞[/gold]。",
   "JOI-TWO_POLE_REVERSAL.title": "两极反转",
   "JOI-TWO_POLE_REVERSAL.description": "为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]和{WhiteHole:diff()}层[gold]白洞[/gold]，然后将[gold]黑洞[/gold]与[gold]白洞[/gold]层数互换。",
   "JOI-GRAVITATIONAL_WAVE.title": "引力波",
@@ -90,5 +90,17 @@
   "JOI-QUESTION_BOX.description": "选择手牌中的{Cards:diff()}张牌，将其费用变为0。",
   "JOI-QUESTION_BOX.selectionPrompt": "选择要变为0费的牌。",
   "JOI-COLLECT_RICE.title": "收米",
-  "JOI-COLLECT_RICE.description": "每有一名敌人，获得{Gold:diff()}金币。"
+  "JOI-COLLECT_RICE.description": "每有一名敌人，获得{Gold:diff()}金币。",
+  "JOI-NEBUL_LULLABY.title": "安眠星云",
+  "JOI-NEBUL_LULLABY.description": "给一名敌人施加{SleepPower:diff()}层[gold]沉睡[/gold]。\n获得{Block:diff()}点格挡。",
+  "JOI-NIGHTMARE_EROSION.title": "噩梦侵蚀",
+  "JOI-NIGHTMARE_EROSION.description": "造成{Damage:diff()}点伤害。\n若目标处于[gold]沉睡[/gold]状态，为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
+  "JOI-DEEP_SPACE_LULLABY.title": "深空摇篮曲",
+  "JOI-DEEP_SPACE_LULLABY.description": "给所有敌人施加{SleepPower:diff()}层[gold]沉睡[/gold]。\n每有一名处于[gold]沉睡[/gold]状态的敌人，抽1张牌。",
+  "JOI-GRAVITY_TETHER.title": "引力牵引",
+  "JOI-GRAVITY_TETHER.description": "造成{Damage:diff()}点伤害。\n若场上存在被[gold]魅惑[/gold]的敌人，额外造成{BonusDamage:diff()}点伤害。",
+  "JOI-CONFUSION_RAY.title": "迷惑射线",
+  "JOI-CONFUSION_RAY.description": "给一名敌人施加{WeakPower:diff()}层[gold]虚弱[/gold]和{VulnerablePower:diff()}层[gold]易伤[/gold]。\n若目标被[gold]魅惑[/gold]，改为给所有敌人施加。",
+  "JOI-RESONANCE_BOND.title": "共鸣牵绊",
+  "JOI-RESONANCE_BOND.description": "使一名敌人获得[gold]魅惑[/gold]。\n为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]和{BlackHole:diff()}层[gold]黑洞[/gold]。"
 }

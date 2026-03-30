@@ -28,5 +28,11 @@
   "JOI-VACUUM_FLUCTUATION_POWER.smartDescription": "Each turn, the first [blue]{Amount}[/blue] time(s) you gain Black Hole or White Hole, gain 1 Energy.",
   "JOI-SLEEP_POWER.title": "Sleep",
   "JOI-SLEEP_POWER.description": "This enemy will do nothing next turn. Reduces by 1 at the end of turn.",
-  "JOI-SLEEP_POWER.smartDescription": "This enemy will do nothing for [blue]{Amount}[/blue] turn(s)."
+  "JOI-SLEEP_POWER.smartDescription": "This enemy will do nothing for [blue]{Amount}[/blue] turn(s).",
+  "JOI-STELLAR_REQUIEM_POWER.title": "Stellar Requiem",
+  "JOI-STELLAR_REQUIEM_POWER.description": "Whenever an enemy's Sleep expires, gain White Hole and apply Vulnerable to that enemy.",
+  "JOI-STELLAR_REQUIEM_POWER.smartDescription": "Whenever an enemy's Sleep expires, gain [blue]{Amount}[/blue] White Hole and apply 1 Vulnerable to that enemy.",
+  "JOI-UNIVERSAL_GRAVITATION_POWER.title": "Universal Gravitation",
+  "JOI-UNIVERSAL_GRAVITATION_POWER.description": "Whenever a Charmed enemy takes damage, gain Black Hole.",
+  "JOI-UNIVERSAL_GRAVITATION_POWER.smartDescription": "Whenever a Charmed enemy takes damage, gain [blue]{Amount}[/blue] Black Hole."
 }
