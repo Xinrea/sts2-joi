@@ -15,45 +15,46 @@ public static class UniversalGravitationPatch
     }
 
     [HarmonyPostfix]
-    static async Task Postfix(Task __result, object[] __args)
+    static void Postfix(Task __result, object[] __args)
     {
-        await __result;
-
-        if (__args.Length < 2)
+        __result.ContinueWith(async _ =>
         {
-            return;
-        }
+            if (__args.Length < 2)
+            {
+                return;
+            }
 
-        Creature? dealer = __args.OfType<Creature?>().Skip(1).FirstOrDefault();
-        if (dealer?.CombatState == null)
-        {
-            return;
-        }
+            Creature? dealer = __args.OfType<Creature?>().Skip(1).FirstOrDefault();
+            if (dealer?.CombatState == null)
+            {
+                return;
+            }
 
-        var power = dealer.GetPower<UniversalGravitationPower>();
-        if (power == null)
-        {
-            return;
-        }
+            var power = dealer.GetPower<UniversalGravitationPower>();
+            if (power == null)
+            {
+                return;
+            }
 
-        // Check targets for IdolCharmPower
-        switch (__args[1])
-        {
-            case Creature target:
-                if (target.GetPower<IdolCharmPower>() != null)
-                {
-                    await PowerCmd.Apply<BlackHolePower>(dealer, power.Amount, dealer, null);
-                }
-                break;
-            case IEnumerable<Creature> targets:
-                foreach (var target in targets)
-                {
+            // Check targets for IdolCharmPower
+            switch (__args[1])
+            {
+                case Creature target:
                     if (target.GetPower<IdolCharmPower>() != null)
                     {
                         await PowerCmd.Apply<BlackHolePower>(dealer, power.Amount, dealer, null);
                     }
-                }
-                break;
-        }
+                    break;
+                case IEnumerable<Creature> targets:
+                    foreach (var target in targets)
+                    {
+                        if (target.GetPower<IdolCharmPower>() != null)
+                        {
+                            await PowerCmd.Apply<BlackHolePower>(dealer, power.Amount, dealer, null);
+                        }
+                    }
+                    break;
+            }
+        });
     }
 }
