@@ -20,6 +20,7 @@ public class TimeDilation : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await CommonActions.ApplySelf<TimeDilationPower>(this, DynamicVars["BlackHole"].BaseValue);
         await CommonActions.Draw(this, choiceContext);
     }
 

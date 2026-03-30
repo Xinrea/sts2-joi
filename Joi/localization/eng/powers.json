@@ -15,8 +15,8 @@
   "JOI-EVENT_HORIZON_POWER.description": "Whenever you gain Black Hole, gain Block.",
   "JOI-EVENT_HORIZON_POWER.smartDescription": "Whenever you gain Black Hole, gain [blue]{Amount}[/blue] Block.",
   "JOI-GRAVITATIONAL_LENS_POWER.title": "Gravitational Lens",
-  "JOI-GRAVITATIONAL_LENS_POWER.description": "Whenever you gain White Hole, deal damage to a random enemy.",
-  "JOI-GRAVITATIONAL_LENS_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]{Amount}[/blue] damage to a random enemy.",
+  "JOI-GRAVITATIONAL_LENS_POWER.description": "Whenever your White Hole stacks change, deal damage to a random enemy.",
+  "JOI-GRAVITATIONAL_LENS_POWER.smartDescription": "Whenever your White Hole stacks change, deal [blue]{Amount}[/blue] damage to a random enemy.",
   "JOI-GRAVITY_FIELD_POWER.title": "Gravity Field",
   "JOI-GRAVITY_FIELD_POWER.description": "Whenever you gain White Hole, deal damage to ALL enemies.",
   "JOI-GRAVITY_FIELD_POWER.smartDescription": "Whenever you gain White Hole, deal [blue]{Amount}[/blue] damage to ALL enemies.",
@@ -34,5 +34,8 @@
   "JOI-STELLAR_REQUIEM_POWER.smartDescription": "Whenever an enemy's Sleep expires, gain [blue]{Amount}[/blue] White Hole and apply 1 Vulnerable to that enemy.",
   "JOI-UNIVERSAL_GRAVITATION_POWER.title": "Universal Gravitation",
   "JOI-UNIVERSAL_GRAVITATION_POWER.description": "Whenever a Charmed enemy takes damage, gain Black Hole.",
-  "JOI-UNIVERSAL_GRAVITATION_POWER.smartDescription": "Whenever a Charmed enemy takes damage, gain [blue]{Amount}[/blue] Black Hole."
+  "JOI-UNIVERSAL_GRAVITATION_POWER.smartDescription": "Whenever a Charmed enemy takes damage, gain [blue]{Amount}[/blue] Black Hole.",
+  "JOI-TIME_DILATION_POWER.title": "Time Dilation",
+  "JOI-TIME_DILATION_POWER.description": "Whenever you play a card, apply Black Hole to yourself. Removed at end of turn.",
+  "JOI-TIME_DILATION_POWER.smartDescription": "Whenever you play a card, apply [blue]{Amount}[/blue] Black Hole to yourself."
 }
