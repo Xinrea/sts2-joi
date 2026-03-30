@@ -14,6 +14,8 @@ public class NebulLullaby : JoiCard
 {
     public NebulLullaby() : base(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy) { }
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal];
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("SleepPower", 1),

@@ -14,6 +14,8 @@ public class DeepSpaceLullaby : JoiCard
 {
     public DeepSpaceLullaby() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies) { }
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<SleepPower>(1)
