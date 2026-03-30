@@ -16,7 +16,7 @@ public class WhiteHolePower : JoiPower
         if (side == CombatSide.Player && Amount > 0)
         {
             await CreatureCmd.Damage(choiceContext, Owner.CombatState?.Enemies.ToList() ?? [], Amount, ValueProp.Unpowered, Owner);
-            SetAmount(Amount - 1, false);
+            await PowerCmd.Decrement(this);
         }
     }
 }

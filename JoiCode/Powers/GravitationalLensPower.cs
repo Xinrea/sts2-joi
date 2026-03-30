@@ -13,7 +13,7 @@ public class GravitationalLensPower : JoiPower, IOnPowerAmountChanged
 
     public async Task OnPowerAmountChanged(PowerChangeContext context)
     {
-        if (context.Target != Owner || context.Delta <= 0 || context.Power is not WhiteHolePower)
+        if (context.Target != Owner || context.Delta == 0 || context.Power is not WhiteHolePower)
         {
             return;
         }

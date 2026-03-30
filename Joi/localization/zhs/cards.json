@@ -42,7 +42,7 @@
   "JOI-TIME_DILATION.title": "时间膨胀",
   "JOI-TIME_DILATION.description": "本回合你每打出一张牌，为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。\n抽{Cards:diff()}张牌。",
   "JOI-GRAVITATIONAL_LENS.title": "引力透镜",
-  "JOI-GRAVITATIONAL_LENS.description": "每当[gold]白洞[/gold]层数增加时，对随机敌人造成{Damage:diff()}点伤害。",
+  "JOI-GRAVITATIONAL_LENS.description": "每当[gold]白洞[/gold]层数变化时，对随机敌人造成{Damage:diff()}点伤害。",
   "JOI-GRAVITY_FIELD.title": "引力场",
   "JOI-GRAVITY_FIELD.description": "每当[gold]白洞[/gold]层数增加时，对所有敌人造成{Damage:diff()}点伤害。",
   "JOI-COSMIC_RIP.title": "宇宙大撕裂",
