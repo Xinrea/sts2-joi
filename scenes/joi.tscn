@@ -1,22 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2rvmie3n051h"]
+[gd_scene load_steps=3 format=3 uid="uid://d2rvmie3n051h"]
 
-[ext_resource type="Texture2D" path="res://Joi/images/character/placeholder.png" id="1_joi"]
+[ext_resource type="Script" path="res://src/Core/Nodes/Combat/NCreatureVisuals.cs" id="1_script"]
+[ext_resource type="Texture2D" path="res://Joi/images/character/placeholder.png" id="2_joi"]
 
 [node name="Joi" type="Node2D"]
+script = ExtResource("1_script")
+metadata/_edit_group_ = true
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -150)
+texture = ExtResource("2_joi")
 
 [node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_left = -100.0
 offset_top = -300.0
 offset_right = 100.0
+mouse_filter = 2
 
 [node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, -150)
 
 [node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, -280)
 
-[node name="Visuals" type="Sprite2D" parent="."]
-position = Vector2(0, -150)
-texture = ExtResource("1_joi")
