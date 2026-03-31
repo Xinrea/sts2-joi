@@ -58,7 +58,7 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "HEAD_CIRCUMFERENCE_MEASUREMENT" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
         "SNEEZE" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "VACUUM_FLUCTUATION" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
-        "MUA" => [CreateStaticHoverTip("JOI-AXISCORE")],
+        "MUA" => [CreateStaticHoverTip("JOI-SUMMON"), CreateStaticHoverTip("JOI-FEED")],
         "WHITE_HOLE_JET" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "WHITE_HOLE_REFLUX" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "PURE_WHITE_FORM" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],

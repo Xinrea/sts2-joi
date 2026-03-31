@@ -8,5 +8,9 @@
   "JOI-AXISCORE.title": "Axis Core",
   "JOI-AXISCORE.description": "Your summon. It intercepts damage from enemies for you.",
   "JOI-SLEEP.title": "Sleep",
-  "JOI-SLEEP.description": "Cannot act. Loses 1 stack at the end of turn."
+  "JOI-SLEEP.description": "Cannot act. Loses 1 stack at the end of turn.",
+  "JOI-SUMMON.title": "Summon",
+  "JOI-SUMMON.description": "Summon [gold]Axis Core[/gold]. If already summoned, increase its Max HP for this combat.",
+  "JOI-FEED.title": "Feed",
+  "JOI-FEED.description": "Choose a card from your hand. When drawn, if [gold]Axis Core[/gold] is in play, automatically play it."
 }

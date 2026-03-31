@@ -3,7 +3,10 @@ param(
     [string]$Prompt,
 
     [Parameter(Mandatory=$true)]
-    [string]$OutputName
+    [string]$OutputName,
+
+    [Parameter(Mandatory=$false)]
+    [string]$OutputDir = "powers"
 )
 
 $apiKey = $env:OPENROUTER_API_KEY
@@ -67,7 +70,7 @@ $cropX = [int](($image.Width - $minDim) / 2)
 $cropY = [int](($image.Height - $minDim) / 2)
 $srcRect = New-Object System.Drawing.Rectangle($cropX, $cropY, $minDim, $minDim)
 
-# Create 128x128 intermediate with green background removal
+# Create 128x128 intermediate
 $intermediate = New-Object System.Drawing.Bitmap(128, 128, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
 $gInter = [System.Drawing.Graphics]::FromImage($intermediate)
 $gInter.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
@@ -75,27 +78,12 @@ $destRect = New-Object System.Drawing.Rectangle(0, 0, 128, 128)
 $gInter.DrawImage($image, $destRect, $srcRect, [System.Drawing.GraphicsUnit]::Pixel)
 $gInter.Dispose()
 
-# Remove green background - make pixels with high green and low red/blue transparent
-for ($x = 0; $x -lt $intermediate.Width; $x++) {
-    for ($y = 0; $y -lt $intermediate.Height; $y++) {
-        $pixel = $intermediate.GetPixel($x, $y)
-        $r = [int]$pixel.R
-        $g = [int]$pixel.G
-        $b = [int]$pixel.B
-
-        # Check if pixel is "green-ish" (green channel dominant)
-        if ($g -gt 100 -and $g -gt ($r + 40) -and $g -gt ($b + 40)) {
-            # Calculate how "green" this pixel is (0-1)
-            $greenness = [Math]::Min(1.0, [Math]::Max(0, ($g - [Math]::Max($r, $b)) / 128.0))
-            $newAlpha = [int]([Math]::Max(0, 255 * (1 - $greenness)))
-            $newPixel = [System.Drawing.Color]::FromArgb($newAlpha, $r, $g, $b)
-            $intermediate.SetPixel($x, $y, $newPixel)
-        }
-    }
-}
-
 # Save big icon (128x128)
-$bigPath = "Joi/images/powers/big/$OutputName.png"
+$bigPath = "Joi/images/$OutputDir/big/$OutputName.png"
+$bigDir = Split-Path $bigPath -Parent
+if (-not (Test-Path $bigDir)) {
+    New-Item -ItemType Directory -Path $bigDir -Force | Out-Null
+}
 $intermediate.Save($bigPath, [System.Drawing.Imaging.ImageFormat]::Png)
 
 # Generate small icon (64x64) from the processed intermediate
@@ -107,7 +95,11 @@ $smallSrc = New-Object System.Drawing.Rectangle(0, 0, 128, 128)
 $gSmall.DrawImage($intermediate, $smallDest, $smallSrc, [System.Drawing.GraphicsUnit]::Pixel)
 $gSmall.Dispose()
 
-$smallPath = "Joi/images/powers/$OutputName.png"
+$smallPath = "Joi/images/$OutputDir/$OutputName.png"
+$smallDir = Split-Path $smallPath -Parent
+if (-not (Test-Path $smallDir)) {
+    New-Item -ItemType Directory -Path $smallDir -Force | Out-Null
+}
 $small.Save($smallPath, [System.Drawing.Imaging.ImageFormat]::Png)
 
 $small.Dispose()

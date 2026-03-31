@@ -1,8 +1,13 @@
+using BaseLib.Abstracts;
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
+using Joi.JoiCode.Enchantments;
 using Joi.JoiCode.Minions;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Joi.JoiCode.Cards;
@@ -23,15 +28,49 @@ public class Mua : JoiCard
     {
         var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
         var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
+
+        Creature zhouXin;
+
         if (existing != null)
         {
+            // 轴芯已存在，增加最大生命值
+            var currentMaxHp = existing.MaxHp;
+            var newMaxHp = currentMaxHp + DynamicVars["Heal"].IntValue;
+            existing.SetMaxHpInternal(newMaxHp);
             existing.HealInternal(DynamicVars["Heal"].IntValue);
+            zhouXin = existing;
+        }
+        else
+        {
+            // 召唤新的轴芯
+            zhouXin = await SummonActions.SummonPet(definition, Owner);
+            zhouXin.SetMaxHpInternal(5);
+            zhouXin.HealInternal(5);
+        }
+
+        // 无论是否已有轴芯，都执行喂食机制
+        await FeedCardToZhouXin(choiceContext, zhouXin);
+    }
+
+    private async Task FeedCardToZhouXin(PlayerChoiceContext choiceContext, Creature zhouXin)
+    {
+        // 选择一张手牌
+        var card = await CommonActions.SelectSingleCard(
+            this,
+            new LocString("cards", "JOI-MUA.feed_prompt"),
+            choiceContext,
+            PileType.Hand
+        );
+
+        if (card == null || card == this)
+        {
             return;
         }
 
-        var creature = await SummonActions.SummonPet(definition, Owner);
-        creature.SetMaxHpInternal(5);
-        creature.HealInternal(5);
+        // 给卡牌添加喂食附魔
+        CardCmd.Enchant<FeedEnchantment>(card, 1);
+
+        MainFile.Logger.Info($"[MUA] Added feed enchantment to card {card.Id}");
     }
 
     protected override void OnUpgrade()

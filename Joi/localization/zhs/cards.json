@@ -75,7 +75,8 @@
   "JOI-VACUUM_FLUCTUATION.title": "真空涨落",
   "JOI-VACUUM_FLUCTUATION.description": "每回合你前{Amount:diff()}次获得[gold]黑洞[/gold]或[gold]白洞[/gold]时，获得{energyPrefix:energyIcons(1)}。",
   "JOI-MUA.title": "MUA",
-  "JOI-MUA.description": "召唤1只5点生命的[gold]轴芯[/gold]。若场上已有[gold]轴芯[/gold]，则改为其回复{Heal:diff()}点生命。",
+  "JOI-MUA.description": "[gold]召唤[/gold]5，选择一张牌附加[gold]喂食[/gold]。",
+  "JOI-MUA.feed_prompt": "选择一张手牌喂给轴芯",
   "JOI-WHITE_HOLE_JET.title": "白洞喷流",
   "JOI-WHITE_HOLE_JET.description": "失去{WhiteHole:diff()}层[gold]白洞[/gold]，抽{Cards:diff()}张牌，获得{Energy:energyIcons()}。若[gold]白洞[/gold]不足，则无事发生。",
   "JOI-WHITE_HOLE_REFLUX.title": "白洞回流",
@@ -102,5 +103,8 @@
   "JOI-CONFUSION_RAY.title": "迷惑射线",
   "JOI-CONFUSION_RAY.description": "给一名敌人施加{WeakPower:diff()}层[gold]虚弱[/gold]和{VulnerablePower:diff()}层[gold]易伤[/gold]。\n若目标被[gold]魅惑[/gold]，改为给所有敌人施加。",
   "JOI-RESONANCE_BOND.title": "共鸣牵绊",
-  "JOI-RESONANCE_BOND.description": "使一名敌人获得[gold]魅惑[/gold]。\n为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]和{BlackHole:diff()}层[gold]黑洞[/gold]。"
+  "JOI-RESONANCE_BOND.description": "使一名敌人获得[gold]魅惑[/gold]。\n为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]和{BlackHole:diff()}层[gold]黑洞[/gold]。",
+  "JOI-FEED_ZHOU_XIN.title": "喂食轴芯",
+  "JOI-FEED_ZHOU_XIN.description": "选择一张手牌，[gold]轴芯[/gold]会存储它并在下回合打出两次。",
+  "JOI-FEED_ZHOU_XIN.selectionPrompt": "选择要喂给轴芯的卡牌。"
 }
