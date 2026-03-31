@@ -110,5 +110,7 @@
   "JOI-ORANGE_PILE.title": "橘子堆",
   "JOI-ORANGE_PILE.description": "将两张[gold]{IfUpgraded:show:橘子+|橘子}[/gold]加入手牌。",
   "JOI-ORANGE.title": "橘子",
-  "JOI-ORANGE.description": "[gold]轴芯[/gold]提升{MaxHpIncrease:diff()}点最大生命并恢复{Heal:diff()}点生命。"
+  "JOI-ORANGE.description": "[gold]轴芯[/gold]提升{MaxHpIncrease:diff()}点最大生命并恢复{Heal:diff()}点生命。",
+  "JOI-RING_FIT.title": "健身环",
+  "JOI-RING_FIT.description": "获得{StrengthPower:diff()}点[gold]力量[/gold]。"
 }

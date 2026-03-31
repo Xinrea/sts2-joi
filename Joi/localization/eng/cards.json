@@ -110,5 +110,7 @@
   "JOI-ORANGE_PILE.title": "Orange Pile",
   "JOI-ORANGE_PILE.description": "Add two [gold]{IfUpgraded:show:Oranges+|Oranges}[/gold] to your hand.",
   "JOI-ORANGE.title": "Orange",
-  "JOI-ORANGE.description": "[gold]Axis Core[/gold] gains {MaxHpIncrease:diff()} Max HP and heals {Heal:diff()} HP."
+  "JOI-ORANGE.description": "[gold]Axis Core[/gold] gains {MaxHpIncrease:diff()} Max HP and heals {Heal:diff()} HP.",
+  "JOI-RING_FIT.title": "Ring Fit",
+  "JOI-RING_FIT.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold]."
 }
