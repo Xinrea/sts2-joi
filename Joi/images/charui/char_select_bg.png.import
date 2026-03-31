@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy0a38xh7d48q"
-path="res://.godot/imported/char_select_char_name.png-81de4b8f47a8383a794945d48aa5c073.ctex"
+uid="uid://bksoqdcyu0544"
+path="res://.godot/imported/char_select_bg.png-a250aafa03ecd0be6a2fcb0d42d0a3ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Joi/images/charui/char_select_char_name.png"
-dest_files=["res://.godot/imported/char_select_char_name.png-81de4b8f47a8383a794945d48aa5c073.ctex"]
+source_file="res://Joi/images/charui/char_select_bg.png"
+dest_files=["res://.godot/imported/char_select_bg.png-a250aafa03ecd0be6a2fcb0d42d0a3ea.ctex"]
 
 [params]
 

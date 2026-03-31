@@ -10,13 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Joi"
-config/features=PackedStringArray("4.5", "C#", "Mobile")
+config/name="新建游戏项目"
+run/main_scene="uid://dllkvxlb8jedt"
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Joi"
-
-[rendering]
-
-renderer/rendering_method="mobile"
+project/assembly_name="新建游戏项目"

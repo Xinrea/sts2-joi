@@ -43,3 +43,6 @@ tools/ilspy/
 tools/ILSpy-Mcp/
 
 sts2.dll
+
+.godot/
+android/
