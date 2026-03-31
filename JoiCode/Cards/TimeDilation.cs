@@ -14,7 +14,7 @@ public class TimeDilation : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CardsVar(2),
+        new CardsVar(3),
         new DynamicVar("BlackHole", 1)
     ];
 

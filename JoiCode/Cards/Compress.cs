@@ -15,7 +15,7 @@ public class Compress : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("BlackHole", 6),
+        new DynamicVar("BlackHole", 3),
         new CardsVar(1)
     ];
 

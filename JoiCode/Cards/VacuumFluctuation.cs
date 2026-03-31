@@ -10,20 +10,15 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class VacuumFluctuation : JoiCard
 {
-    public VacuumFluctuation() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
-
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new DynamicVar("Amount", 1)
-    ];
+    public VacuumFluctuation() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.ApplySelf<VacuumFluctuationPower>(this, DynamicVars["Amount"].BaseValue);
+        await CommonActions.ApplySelf<VacuumFluctuationPower>(this, 1);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Amount"].UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 }

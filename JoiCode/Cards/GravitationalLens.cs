@@ -12,7 +12,7 @@ public class GravitationalLens : JoiCard
 {
     public GravitationalLens() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Damage", 5)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Damage", 3)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -21,6 +21,6 @@ public class GravitationalLens : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Damage"].UpgradeValueBy(1);
+        DynamicVars["Damage"].UpgradeValueBy(3);
     }
 }

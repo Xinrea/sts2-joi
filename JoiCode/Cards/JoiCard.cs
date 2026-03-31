@@ -33,7 +33,7 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "BLACK_HOLE_STRIKE" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
         "COMPRESS" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
         "TIME_ACCELERATION" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
-        "BIRTH" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-AXISCORE")],
+        "BIRTH" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-AXISCORE"), CreateStaticHoverTip("JOI-SUMMON")],
         "OMNISCIENT" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
         "HEAVY_HAMMER" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
         "COSMIC_EXPLOSION" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
@@ -65,6 +65,13 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "IDOL_CHARM" => [CreateStaticHoverTip("JOI-CHARM")],
         "ORIGINAL_CHICKEN" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "SLEEPY_RADIO" => [CreateStaticHoverTip("JOI-SLEEP")],
+        "NEBUL_LULLABY" => [CreateStaticHoverTip("JOI-SLEEP")],
+        "NIGHTMARE_EROSION" => [CreateStaticHoverTip("JOI-SLEEP"), CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "DEEP_SPACE_LULLABY" => [CreateStaticHoverTip("JOI-SLEEP")],
+        "RESONANCE_BOND" => [CreateStaticHoverTip("JOI-CHARM"), CreateStaticHoverTip("JOI-WHITEHOLE"), CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "GRAVITY_TETHER" => [CreateStaticHoverTip("JOI-CHARM")],
+        "CONFUSION_RAY" => [CreateStaticHoverTip("JOI-CHARM")],
+        "FEED_ZHOU_XIN" => [CreateStaticHoverTip("JOI-AXISCORE")],
         _ => []
     };
 

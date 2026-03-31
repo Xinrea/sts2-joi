@@ -8,22 +8,16 @@ namespace Joi.JoiCode.Powers;
 
 public class VacuumFluctuationPower : JoiPower, IOnPowerAmountChanged
 {
-    private int remainingTriggersThisTurn;
+    private bool hasTriggeredThisTurn;
 
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Counter;
+    public override PowerStackType StackType => PowerStackType.None;
 
     public async Task OnPowerAmountChanged(PowerChangeContext context)
     {
-        if (context.Target == Owner && context.Delta > 0 && context.Power is VacuumFluctuationPower)
-        {
-            remainingTriggersThisTurn += (int)context.Delta;
-            return;
-        }
-
         if (context.Target != Owner
             || context.Delta <= 0
-            || remainingTriggersThisTurn <= 0
+            || hasTriggeredThisTurn
             || context.Power is not BlackHolePower and not WhiteHolePower
             || Owner.Player == null)
         {
@@ -31,14 +25,14 @@ public class VacuumFluctuationPower : JoiPower, IOnPowerAmountChanged
         }
 
         await PlayerCmd.GainEnergy(1, Owner.Player);
-        remainingTriggersThisTurn--;
+        hasTriggeredThisTurn = true;
     }
 
     public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         if (player == Owner.Player)
         {
-            remainingTriggersThisTurn = (int)Amount;
+            hasTriggeredThisTurn = false;
         }
 
         return Task.CompletedTask;

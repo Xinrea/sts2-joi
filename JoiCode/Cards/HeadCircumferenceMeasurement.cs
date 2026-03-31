@@ -11,7 +11,7 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class HeadCircumferenceMeasurement : JoiCard
 {
-    public HeadCircumferenceMeasurement() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
+    public HeadCircumferenceMeasurement() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

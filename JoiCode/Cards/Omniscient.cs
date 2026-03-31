@@ -10,7 +10,7 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class Omniscient : JoiCard
 {
-    public Omniscient() : base(3, CardType.Power, CardRarity.Rare, TargetType.Self) { }
+    public Omniscient() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
