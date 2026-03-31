@@ -106,5 +106,9 @@
   "JOI-RESONANCE_BOND.description": "Apply [gold]Charm[/gold] to an enemy.\nApply {WhiteHole:diff()} [gold]White Hole[/gold] and {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
   "JOI-FEED_ZHOU_XIN.title": "Feed Axis Core",
   "JOI-FEED_ZHOU_XIN.description": "Choose a card from your hand. Your [gold]Axis Core[/gold] stores it and will play it twice next turn.",
-  "JOI-FEED_ZHOU_XIN.selectionPrompt": "Choose a card to feed to Axis Core."
+  "JOI-FEED_ZHOU_XIN.selectionPrompt": "Choose a card to feed to Axis Core.",
+  "JOI-ORANGE_PILE.title": "Orange Pile",
+  "JOI-ORANGE_PILE.description": "Add two [gold]{IfUpgraded:show:Oranges+|Oranges}[/gold] to your hand.",
+  "JOI-ORANGE.title": "Orange",
+  "JOI-ORANGE.description": "[gold]Axis Core[/gold] gains {MaxHpIncrease:diff()} Max HP and heals {Heal:diff()} HP."
 }
