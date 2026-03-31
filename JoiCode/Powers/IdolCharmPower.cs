@@ -10,7 +10,7 @@ namespace Joi.JoiCode.Powers;
 public class IdolCharmPower : JoiPower
 {
     public override PowerType Type => PowerType.Debuff;
-    public override PowerStackType StackType => PowerStackType.Counter;
+    public override PowerStackType StackType => PowerStackType.None;
 
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
