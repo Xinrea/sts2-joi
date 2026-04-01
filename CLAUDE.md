@@ -116,6 +116,27 @@ public class YourCard : JoiCard
 
 ## Common Patterns
 
+### Creating Card Instances at Runtime
+**Issue**: Calling `new Orange()` or any card constructor at runtime throws `DuplicateModelException`. Using `ModelDb.Card<T>().ToMutable().CreateDupe()` throws `NullReferenceException` because the card lacks combat context.
+
+**Root Cause**: The game registers each model type as a singleton canonical model. Calling the constructor creates a duplicate. `ToMutable()` creates a card without proper combat scope, so `CreateClone()` fails.
+
+**Solution**: Use `combatState.CreateCard<T>(owner)` to create cards during combat:
+
+```csharp
+// ❌ Wrong - causes DuplicateModelException
+var card = new Orange();
+
+// ❌ Wrong - causes NullReferenceException on CreateDupe/CreateClone
+var card = ModelDb.Card<Orange>().ToMutable().CreateDupe();
+
+// ✅ Correct - use CombatState.CreateCard
+var combatState = Owner.Creature.CombatState;
+var card = combatState.CreateCard<Orange>(Owner);
+if (IsUpgraded) card.UpgradeInternal();
+await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, true);
+```
+
 ### Card with Dynamic Variables
 ```csharp
 protected override IEnumerable<DynamicVar> CanonicalVars =>

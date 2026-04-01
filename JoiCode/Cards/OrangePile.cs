@@ -1,37 +1,62 @@
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
+using Joi.JoiCode.Minions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Joi.JoiCode.Cards;
 
 [Pool(typeof(JoiCardPool))]
 public class OrangePile : JoiCard
 {
+    private const string ZhouXinSummonKey = "zhou-xin-core";
+
     public OrangePile() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Orange>(IsUpgraded)];
 
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new DynamicVar("Heal", 5)
+    ];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // 创建橘子卡的原型
-        var orangePrototype = new Orange();
+        // 召唤轴芯或增加其最大生命值
+        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
+        var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
 
-        // 如果橘子堆升级了，创建升级版的橘子
-        if (IsUpgraded)
+        if (existing != null)
         {
-            orangePrototype.UpgradeInternal();
+            var newMaxHp = existing.MaxHp + DynamicVars["Heal"].IntValue;
+            existing.SetMaxHpInternal(newMaxHp);
+            existing.HealInternal(DynamicVars["Heal"].IntValue);
+        }
+        else
+        {
+            var zhouXin = await SummonActions.SummonPet(definition, Owner);
+            zhouXin.SetMaxHpInternal(DynamicVars["Heal"].IntValue);
+            zhouXin.HealInternal(DynamicVars["Heal"].IntValue);
         }
 
-        // 创建两张橘子卡
-        var orange1 = orangePrototype.CreateDupe();
-        var orange2 = orangePrototype.CreateDupe();
+        // 通过 CombatState 创建橘子卡
+        var combatState = Owner.Creature.CombatState;
+        var orange1 = combatState.CreateCard<Orange>(Owner);
+        var orange2 = combatState.CreateCard<Orange>(Owner);
+
+        if (IsUpgraded)
+        {
+            orange1.UpgradeInternal();
+            orange2.UpgradeInternal();
+        }
 
         // 添加到手牌
-        await CardPileCmd.AddGeneratedCardToCombat(orange1, PileType.Hand, true, CardPilePosition.Random);
-        await CardPileCmd.AddGeneratedCardToCombat(orange2, PileType.Hand, true, CardPilePosition.Random);
+        await CardPileCmd.AddGeneratedCardsToCombat(
+            [orange1, orange2], PileType.Hand, true, CardPilePosition.Random);
     }
 
     protected override void OnUpgrade()
