@@ -3,12 +3,14 @@ using BaseLib.Utils;
 using Joi.JoiCode.Character;
 using Joi.JoiCode.Enchantments;
 using Joi.JoiCode.Minions;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 
 namespace Joi.JoiCode.Cards;
 
@@ -56,23 +58,32 @@ public class Mua : JoiCard
 
     private async Task FeedCardToZhouXin(PlayerChoiceContext choiceContext, Creature zhouXin)
     {
-        // 选择一张手牌
-        var card = await CommonActions.SelectSingleCard(
-            this,
-            new LocString("cards", "JOI-MUA.feed_prompt"),
-            choiceContext,
-            PileType.Hand
-        );
+        // 过滤出可以被喂食附魔的手牌
+        var feedEnchantment = ModelDb.Enchantment<FeedEnchantment>();
+        var eligibleCards = Owner.PlayerCombatState.Hand.Cards
+            .Where(c => c != this && feedEnchantment.CanEnchant(c))
+            .ToList();
 
-        if (card == null || card == this)
+        if (eligibleCards.Count == 0)
+        {
+            return;
+        }
+
+        // 选择一张手牌
+        var selectionPrefs = new CardSelectorPrefs(
+            new LocString("cards", "JOI-MUA.feed_prompt"), 1);
+        var selected = (await CardSelectCmd.FromSimpleGrid(
+            choiceContext, eligibleCards, Owner, selectionPrefs)).FirstOrDefault();
+
+        if (selected == null)
         {
             return;
         }
 
         // 给卡牌添加喂食附魔
-        CardCmd.Enchant<FeedEnchantment>(card, 1);
+        CardCmd.Enchant<FeedEnchantment>(selected, 1);
 
-        MainFile.Logger.Info($"[MUA] Added feed enchantment to card {card.Id}");
+        MainFile.Logger.Info($"[MUA] Added feed enchantment to card {selected.Id}");
     }
 
     protected override void OnUpgrade()
