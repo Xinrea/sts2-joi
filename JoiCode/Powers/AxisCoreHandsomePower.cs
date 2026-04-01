@@ -15,7 +15,7 @@ public class AxisCoreHandsomePower : JoiPower
     {
         if (cardPlay.Card.Enchantment is FeedEnchantment)
         {
-            await CardPileCmd.Draw(context, 1, Owner.Player);
+            await CardPileCmd.Draw(context, 1, Owner.Player!);
         }
     }
 }

@@ -36,7 +36,8 @@ public static class GameOverScreenPatch
         {
             if (NCombatRoom.Instance.Mode == CombatRoomMode.ActiveCombat)
             {
-                NCombatRoom.Instance.Ui.AnimOut((CombatRoom)runState.CurrentRoom);
+                if (runState.CurrentRoom is CombatRoom combatRoom)
+                    NCombatRoom.Instance.Ui.AnimOut(combatRoom);
             }
             var list2 = NCombatRoom.Instance.CreatureNodes.ToList();
             list = list2.Select((NCreature c) => c.Visuals).ToList();
