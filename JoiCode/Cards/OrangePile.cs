@@ -17,6 +17,8 @@ public class OrangePile : JoiCard
 
     public OrangePile() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Orange>(IsUpgraded)];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
