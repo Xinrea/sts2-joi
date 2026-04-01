@@ -60,7 +60,10 @@ public class Mua : JoiCard
     {
         // 过滤出可以被喂食附魔的手牌
         var feedEnchantment = ModelDb.Enchantment<FeedEnchantment>();
-        var eligibleCards = Owner.PlayerCombatState.Hand.Cards
+        var hand = Owner.PlayerCombatState?.Hand;
+        if (hand == null) return;
+
+        var eligibleCards = hand.Cards
             .Where(c => c != this && feedEnchantment.CanEnchant(c))
             .ToList();
 

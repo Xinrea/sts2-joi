@@ -19,7 +19,7 @@ public class Orange : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("MaxHpIncrease", 2),
+        new DynamicVar("Summon", 2),
         new DynamicVar("Heal", 4)
     ];
 
@@ -31,20 +31,23 @@ public class Orange : JoiCard
         if (existing != null)
         {
             // 增加轴芯的最大生命值
-            var currentMaxHp = existing.MaxHp;
-            var newMaxHp = currentMaxHp + DynamicVars["MaxHpIncrease"].IntValue;
+            var newMaxHp = existing.MaxHp + DynamicVars["Summon"].IntValue;
             existing.SetMaxHpInternal(newMaxHp);
-
             // 恢复生命值
             existing.HealInternal(DynamicVars["Heal"].IntValue);
         }
-
-        await Task.CompletedTask;
+        else
+        {
+            // 召唤新的轴芯
+            var zhouXin = await SummonActions.SummonPet(definition, Owner);
+            zhouXin.SetMaxHpInternal(DynamicVars["Summon"].IntValue);
+            zhouXin.HealInternal(DynamicVars["Summon"].IntValue);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["MaxHpIncrease"].UpgradeValueBy(2);
+        DynamicVars["Summon"].UpgradeValueBy(2);
         DynamicVars["Heal"].UpgradeValueBy(2);
     }
 }

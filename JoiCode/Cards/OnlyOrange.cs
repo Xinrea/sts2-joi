@@ -19,7 +19,9 @@ public class OnlyOrange : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var hand = Owner.PlayerCombatState.Hand;
+        var hand = Owner.PlayerCombatState?.Hand;
+        if (hand == null) return;
+
         var cardsToExhaust = hand.Cards.Where(c => c != this).ToList();
         var count = cardsToExhaust.Count;
 
@@ -35,7 +37,9 @@ public class OnlyOrange : JoiCard
         }
 
         // 生成橘子卡
-        var combatState = Owner.Creature.CombatState;
+        var combatState = Owner.Creature?.CombatState;
+        if (combatState == null) return;
+
         var oranges = new List<CardModel>();
 
         for (int i = 0; i < count; i++)

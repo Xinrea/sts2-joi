@@ -46,7 +46,8 @@ public class OrangePile : JoiCard
         }
 
         // 通过 CombatState 创建橘子卡
-        var combatState = Owner.Creature.CombatState;
+        var combatState = Owner.Creature?.CombatState;
+        if (combatState == null) return;
         var orange1 = combatState.CreateCard<Orange>(Owner);
         var orange2 = combatState.CreateCard<Orange>(Owner);
 
