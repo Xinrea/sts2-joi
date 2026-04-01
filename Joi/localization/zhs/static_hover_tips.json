@@ -12,5 +12,5 @@
   "JOI-SUMMON.title": "召唤",
   "JOI-SUMMON.description": "召唤[gold]轴芯[/gold]。如果已经召唤，则在本场战斗提升其最大生命值。",
   "JOI-FEED.title": "喂食",
-  "JOI-FEED.description": "选择一张手牌。当抽到该牌时，如果[gold]轴芯[/gold]在场，自动打出。"
+  "JOI-FEED.description": "费用减1。当抽到该牌时，如果[gold]轴芯[/gold]在场，自动打出。"
 }
