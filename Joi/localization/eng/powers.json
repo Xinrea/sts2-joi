@@ -40,5 +40,8 @@
   "JOI-TIME_DILATION_POWER.smartDescription": "Whenever you play a card, apply [blue]{Amount}[/blue] Black Hole to yourself.",
   "JOI-STORED_CARD_POWER.title": "Stored Card",
   "JOI-STORED_CARD_POWER.description": "At the start of next turn, play the stored card twice.",
-  "JOI-STORED_CARD_POWER.smartDescription": "At the start of next turn, play the stored card twice."
+  "JOI-STORED_CARD_POWER.smartDescription": "At the start of next turn, play the stored card twice.",
+  "JOI-AXIS_CORE_HANDSOME_POWER.title": "Axis Core Handsome",
+  "JOI-AXIS_CORE_HANDSOME_POWER.description": "Whenever you play a card with Feed, draw 1 card.",
+  "JOI-AXIS_CORE_HANDSOME_POWER.smartDescription": "Whenever you play a card with Feed, draw 1 card."
 }
