@@ -11,24 +11,24 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class SleepyRadio : JoiCard
 {
-    public SleepyRadio() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies) { }
+    public SleepyRadio() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy) { }
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<SleepPower>(1)
+        new PowerVar<SleepPower>(1),
+        new CardsVar(2)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var enemies = CombatState?.Enemies.ToList() ?? [];
-        foreach (var enemy in enemies)
-        {
-            await PowerCmd.Apply<SleepPower>(enemy, DynamicVars["SleepPower"].BaseValue, Owner.Creature, this);
-        }
+        await PowerCmd.Apply<SleepPower>(cardPlay.Target, DynamicVars["SleepPower"].BaseValue, Owner.Creature, this);
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["SleepPower"].UpgradeValueBy(1);
+        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }

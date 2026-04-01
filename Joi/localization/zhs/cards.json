@@ -68,7 +68,7 @@
   "JOI-HEAD_CIRCUMFERENCE_MEASUREMENT.title": "头围测量",
   "JOI-HEAD_CIRCUMFERENCE_MEASUREMENT.description": "抽牌直到手牌数达到{TargetHandSize:diff()}张。\n为自身附加X层[gold]黑洞[/gold]，X为抽牌数。",
   "JOI-SLEEPY_RADIO.title": "困困电台",
-  "JOI-SLEEPY_RADIO.description": "给所有敌人附加{SleepPower:diff()}层[gold]沉睡[/gold]。",
+  "JOI-SLEEPY_RADIO.description": "给予{SleepPower:diff()}层[gold]沉睡[/gold]。抽{Cards:diff()}张牌。",
   "JOI-SNEEZE.title": "喷嚏",
   "JOI-SNEEZE.description": "消耗一张手牌。\n为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-SNEEZE.selectionPrompt": "选择一张手牌消耗。",
