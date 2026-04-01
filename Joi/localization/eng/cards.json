@@ -116,5 +116,7 @@
   "JOI-RING_FIT.title": "Ring Fit",
   "JOI-RING_FIT.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
   "JOI-AXIS_CORE_HANDSOME.title": "Axis Core Handsome",
-  "JOI-AXIS_CORE_HANDSOME.description": "Whenever you play a card with [gold]Feed[/gold], draw 1 card."
+  "JOI-AXIS_CORE_HANDSOME.description": "Whenever you play a card with [gold]Feed[/gold], draw 1 card.",
+  "JOI-SMELLS_GOOD.title": "Smells Good",
+  "JOI-SMELLS_GOOD.description": "Heal {Heal:diff()} HP.\nIf [gold]Axis Core[/gold] is in play, it dies. Heal {BonusHeal:diff()} additional HP."
 }
