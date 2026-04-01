@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Joi.JoiCode.Powers;
@@ -18,6 +19,7 @@ public class SleepPower : JoiPower
         if (side == Owner.Side && Amount > 0)
         {
             await CreatureCmd.Stun(Owner);
+            await PowerCmd.Apply<StrengthPower>(Owner, 1, null, null, false);
         }
     }
 
