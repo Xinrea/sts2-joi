@@ -55,4 +55,8 @@ public class Joi : PlaceholderCharacterModel
 	public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
 	public override string CustomVisualPath => "res://scenes/joi.tscn";
 	public override string CustomCharacterSelectBg => "res://scenes/joi_bg.tscn";
+
+	// 使用静态图片的自定义场景
+	public override string CustomMerchantAnimPath => "res://Joi/scenes/merchant/characters/joi_merchant.tscn";
+	public override string CustomRestSiteAnimPath => "res://Joi/scenes/rest_site/characters/joi_rest_site.tscn";
 }

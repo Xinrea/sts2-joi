@@ -13,8 +13,11 @@ public partial class MainFile : Node
 
     public static void Initialize()
     {
-        Harmony harmony = new(ModId);
+        Logger.Info("[JOI] Initializing Joi mod");
 
+        Harmony harmony = new(ModId);
         harmony.PatchAll();
+
+        Logger.Info("[JOI] Mod initialization complete");
     }
 }
