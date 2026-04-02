@@ -118,5 +118,7 @@
   "JOI-AXIS_CORE_HANDSOME.title": "Axis Core Handsome",
   "JOI-AXIS_CORE_HANDSOME.description": "Whenever you play a card with [gold]Feed[/gold], draw 1 card.",
   "JOI-SMELLS_GOOD.title": "Smells Good",
-  "JOI-SMELLS_GOOD.description": "Heal {Heal:diff()} HP.\nIf [gold]Axis Core[/gold] is in play, it dies. Heal {BonusHeal:diff()} additional HP."
+  "JOI-SMELLS_GOOD.description": "Heal {Heal:diff()} HP.\nIf [gold]Axis Core[/gold] is in play, it dies. Heal {BonusHeal:diff()} additional HP.",
+  "JOI-SORRY_BUDDY.title": "Sorry Buddy",
+  "JOI-SORRY_BUDDY.description": "Draw {Cards:diff()} card.\nIf [gold]Axis Core[/gold] is in play, it dies. Draw {BonusCards:diff()} additional card and gain {Energy:energyIcons()}."
 }

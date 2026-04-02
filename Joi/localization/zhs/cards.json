@@ -118,5 +118,7 @@
   "JOI-AXIS_CORE_HANDSOME.title": "轴芯好帅",
   "JOI-AXIS_CORE_HANDSOME.description": "每当你打出带有[gold]喂食[/gold]的牌时，抽1张牌。",
   "JOI-SMELLS_GOOD.title": "好香",
-  "JOI-SMELLS_GOOD.description": "恢复{Heal:diff()}点生命。\n如果[gold]轴芯[/gold]在场，轴芯死亡，额外恢复{BonusHeal:diff()}点生命。"
+  "JOI-SMELLS_GOOD.description": "恢复{Heal:diff()}点生命。\n如果[gold]轴芯[/gold]在场，轴芯死亡，额外恢复{BonusHeal:diff()}点生命。",
+  "JOI-SORRY_BUDDY.title": "委屈一下",
+  "JOI-SORRY_BUDDY.description": "抽{Cards:diff()}张牌。\n如果[gold]轴芯[/gold]在场，轴芯死亡，额外抽{BonusCards:diff()}张牌并获得{Energy:energyIcons()}。"
 }
