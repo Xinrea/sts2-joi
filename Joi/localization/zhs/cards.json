@@ -120,5 +120,7 @@
   "JOI-SMELLS_GOOD.title": "好香",
   "JOI-SMELLS_GOOD.description": "恢复{Heal:diff()}点生命。\n如果[gold]轴芯[/gold]在场，轴芯死亡，额外恢复{BonusHeal:diff()}点生命。",
   "JOI-SORRY_BUDDY.title": "委屈一下",
-  "JOI-SORRY_BUDDY.description": "抽{Cards:diff()}张牌。\n如果[gold]轴芯[/gold]在场，轴芯死亡，额外抽{BonusCards:diff()}张牌并获得{Energy:energyIcons()}。"
+  "JOI-SORRY_BUDDY.description": "抽{Cards:diff()}张牌。\n如果[gold]轴芯[/gold]在场，轴芯死亡，额外抽{BonusCards:diff()}张牌并获得{Energy:energyIcons()}。",
+  "JOI-MUTATION.title": "变异",
+  "JOI-MUTATION.description": "给[gold]轴芯[/gold]附加{ThornsPower:diff()}点[gold]荆棘[/gold]。"
 }
