@@ -90,6 +90,7 @@ public static class JoiMerchantRoomPatch
 
             // 复制原版逻辑：重新排列玩家列表，本地玩家放第一
             var me = LocalContext.GetMe(players);
+            if (me == null) return true;
             players.Remove(me);
             players.Insert(0, me);
 
