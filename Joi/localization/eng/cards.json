@@ -128,5 +128,7 @@
   "JOI-ORANGE_TREE.title": "Orange Tree",
   "JOI-ORANGE_TREE.description": "At the start of your turn, [gold]Summon[/gold] 1 and add an [gold]Orange[/gold] to your hand.",
   "JOI-AXIS_BITE.title": "Axis Bite",
-  "JOI-AXIS_BITE.description": "Apply {WhiteHolePower:diff()} [gold]White Hole[/gold] to yourself."
+  "JOI-AXIS_BITE.description": "Apply {WhiteHolePower:diff()} [gold]White Hole[/gold] to yourself.",
+  "JOI-GOOD_NIGHT.title": "Good Night",
+  "JOI-GOOD_NIGHT.description": "Heal {Heal:diff()} HP.\nApply {SleepPower:diff()} [gold]Sleep[/gold] to ALL enemies."
 }

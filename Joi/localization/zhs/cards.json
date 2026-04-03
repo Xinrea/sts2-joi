@@ -128,5 +128,7 @@
   "JOI-ORANGE_TREE.title": "橘子树",
   "JOI-ORANGE_TREE.description": "回合开始时，[gold]召唤[/gold]1，并获得一张[gold]橘子[/gold]。",
   "JOI-AXIS_BITE.title": "轴咬",
-  "JOI-AXIS_BITE.description": "为自身附加{WhiteHolePower:diff()}层[gold]白洞[/gold]。"
+  "JOI-AXIS_BITE.description": "为自身附加{WhiteHolePower:diff()}层[gold]白洞[/gold]。",
+  "JOI-GOOD_NIGHT.title": "晚安",
+  "JOI-GOOD_NIGHT.description": "恢复{Heal:diff()}点生命。\n给所有敌人施加{SleepPower:diff()}层[gold]沉睡[/gold]。"
 }
