@@ -8,19 +8,11 @@ using MegaCrit.Sts2.Core.Models;
 namespace Joi.JoiCode.Enchantments;
 
 /// <summary>
-/// 喂食附魔：费用减1，当卡牌被抽到时，如果轴芯在场，自动打出
+/// 喂食附魔：当卡牌被抽到时，如果轴芯在场，自动打出
 /// </summary>
 public class FeedEnchantment : EnchantmentModel
 {
     public override bool HasExtraCardText => true;
-
-    protected override void OnEnchant()
-    {
-        if (!Card.EnergyCost.CostsX)
-        {
-            Card.EnergyCost.AddThisCombat(-1, false);
-        }
-    }
 
     public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {

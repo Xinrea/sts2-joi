@@ -1,5 +1,5 @@
 {
   "FEED_ENCHANTMENT.title": "喂食",
-  "FEED_ENCHANTMENT.description": "费用减1。当抽到此牌时，如果轴芯在场，自动打出。",
+  "FEED_ENCHANTMENT.description": "当抽到此牌时，如果轴芯在场，自动打出。",
   "FEED_ENCHANTMENT.extraCardText": "喂食"
 }
