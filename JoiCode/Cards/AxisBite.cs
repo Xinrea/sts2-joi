@@ -10,11 +10,11 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class AxisBite : JoiCard
 {
-    public AxisBite() : base(3, CardType.Skill, CardRarity.Common, TargetType.Self) { }
+    public AxisBite() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<WhiteHolePower>(3)
+        new PowerVar<WhiteHolePower>(5)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
