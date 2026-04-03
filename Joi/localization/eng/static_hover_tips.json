@@ -12,5 +12,7 @@
   "JOI-SUMMON.title": "Summon",
   "JOI-SUMMON.description": "Summon [gold]Axis Core[/gold]. If already summoned, increase its Max HP for this combat.",
   "JOI-FEED.title": "Feed",
-  "JOI-FEED.description": "Choose a card from your hand. When drawn, if [gold]Axis Core[/gold] is in play, automatically play it."
+  "JOI-FEED.description": "Choose a card from your hand. When drawn, if [gold]Axis Core[/gold] is in play, automatically play it.",
+  "JOI-ORANGE.title": "Orange",
+  "JOI-ORANGE.description": "A token card. [gold]Summon[/gold] or heal [gold]Axis Core[/gold]."
 }

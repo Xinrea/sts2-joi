@@ -43,5 +43,8 @@
   "JOI-STORED_CARD_POWER.smartDescription": "下回合开始时，打出存储的卡牌两次。",
   "JOI-AXIS_CORE_HANDSOME_POWER.title": "轴芯好帅",
   "JOI-AXIS_CORE_HANDSOME_POWER.description": "每当你打出带有喂食的牌时，抽1张牌。",
-  "JOI-AXIS_CORE_HANDSOME_POWER.smartDescription": "每当你打出带有喂食的牌时，抽1张牌。"
+  "JOI-AXIS_CORE_HANDSOME_POWER.smartDescription": "每当你打出带有喂食的牌时，抽1张牌。",
+  "JOI-ORANGE_EXPERT_POWER.title": "橘子专家",
+  "JOI-ORANGE_EXPERT_POWER.description": "每打出一张橘子，对随机敌人造成伤害。",
+  "JOI-ORANGE_EXPERT_POWER.smartDescription": "每打出一张橘子，对随机敌人造成[blue]{Amount}[/blue]点伤害。"
 }
