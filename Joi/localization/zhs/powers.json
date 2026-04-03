@@ -46,5 +46,8 @@
   "JOI-AXIS_CORE_HANDSOME_POWER.smartDescription": "每当你打出带有喂食的牌时，抽1张牌。",
   "JOI-ORANGE_EXPERT_POWER.title": "橘子专家",
   "JOI-ORANGE_EXPERT_POWER.description": "每打出一张橘子，对随机敌人造成伤害。",
-  "JOI-ORANGE_EXPERT_POWER.smartDescription": "每打出一张橘子，对随机敌人造成[blue]{Amount}[/blue]点伤害。"
+  "JOI-ORANGE_EXPERT_POWER.smartDescription": "每打出一张橘子，对随机敌人造成[blue]{Amount}[/blue]点伤害。",
+  "JOI-ORANGE_TREE_POWER.title": "橘子树",
+  "JOI-ORANGE_TREE_POWER.description": "回合开始时，召唤1并获得一张橘子。",
+  "JOI-ORANGE_TREE_POWER.smartDescription": "回合开始时，召唤1并获得一张橘子。"
 }

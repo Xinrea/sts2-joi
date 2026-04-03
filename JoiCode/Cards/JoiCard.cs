@@ -79,6 +79,7 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "SORRY_BUDDY" => [CreateStaticHoverTip("JOI-AXISCORE")],
         "MUTATION" => [CreateStaticHoverTip("JOI-AXISCORE")],
         "ORANGE_EXPERT" => [CreateStaticHoverTip("JOI-ORANGE")],
+        "ORANGE_TREE" => [CreateStaticHoverTip("JOI-SUMMON"), CreateStaticHoverTip("JOI-ORANGE")],
         _ => []
     };
 

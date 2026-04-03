@@ -46,5 +46,8 @@
   "JOI-AXIS_CORE_HANDSOME_POWER.smartDescription": "Whenever you play a card with Feed, draw 1 card.",
   "JOI-ORANGE_EXPERT_POWER.title": "Orange Expert",
   "JOI-ORANGE_EXPERT_POWER.description": "Whenever an Orange card is played, deal damage to a random enemy.",
-  "JOI-ORANGE_EXPERT_POWER.smartDescription": "Whenever an Orange card is played, deal [blue]{Amount}[/blue] damage to a random enemy."
+  "JOI-ORANGE_EXPERT_POWER.smartDescription": "Whenever an Orange card is played, deal [blue]{Amount}[/blue] damage to a random enemy.",
+  "JOI-ORANGE_TREE_POWER.title": "Orange Tree",
+  "JOI-ORANGE_TREE_POWER.description": "At the start of your turn, Summon 1 and add an Orange to your hand.",
+  "JOI-ORANGE_TREE_POWER.smartDescription": "At the start of your turn, Summon 1 and add an Orange to your hand."
 }

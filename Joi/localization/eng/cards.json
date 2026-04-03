@@ -124,5 +124,7 @@
   "JOI-MUTATION.title": "Mutation",
   "JOI-MUTATION.description": "Apply {ThornsPower:diff()} [gold]Thorns[/gold] to [gold]Axis Core[/gold].",
   "JOI-ORANGE_EXPERT.title": "Orange Expert",
-  "JOI-ORANGE_EXPERT.description": "Whenever an [gold]Orange[/gold] card is played, deal {Damage:diff()} damage to a random enemy."
+  "JOI-ORANGE_EXPERT.description": "Whenever an [gold]Orange[/gold] card is played, deal {Damage:diff()} damage to a random enemy.",
+  "JOI-ORANGE_TREE.title": "Orange Tree",
+  "JOI-ORANGE_TREE.description": "At the start of your turn, [gold]Summon[/gold] 1 and add an [gold]Orange[/gold] to your hand."
 }
