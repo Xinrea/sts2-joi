@@ -61,7 +61,7 @@
   "JOI-DARK_ENERGY_ARROW.title": "暗能量箭",
   "JOI-DARK_ENERGY_ARROW.description": "造成{Damage:diff()}点伤害。\n如果击杀目标，返还费用。",
   "JOI-QUANTUM_SUPERPOSITION.title": "量子叠加",
-  "JOI-QUANTUM_SUPERPOSITION.description": "复制手牌中{Cards:diff()}张费用≤1的牌。",
+  "JOI-QUANTUM_SUPERPOSITION.description": "复制手牌中{Cards:diff()}张费用小于等于1的牌。",
   "JOI-QUANTUM_SUPERPOSITION.selectionPrompt": "选择要复制的牌。",
   "JOI-AXIAL_IMPACT.title": "轴芯冲撞",
   "JOI-AXIAL_IMPACT.description": "造成{Damage:diff()}点伤害。\n获得{Block:diff()}点格挡。",

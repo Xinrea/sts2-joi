@@ -61,7 +61,7 @@
   "JOI-DARK_ENERGY_ARROW.title": "Dark Energy Arrow",
   "JOI-DARK_ENERGY_ARROW.description": "Deal {Damage:diff()} damage.\nIf this kills the target, refund the energy cost.",
   "JOI-QUANTUM_SUPERPOSITION.title": "Quantum Superposition",
-  "JOI-QUANTUM_SUPERPOSITION.description": "Copy {Cards:diff()} card(s) in your hand with cost ≤1.",
+  "JOI-QUANTUM_SUPERPOSITION.description": "Copy {Cards:diff()} card(s) in your hand with cost less than or equal to 1.",
   "JOI-QUANTUM_SUPERPOSITION.selectionPrompt": "Choose card(s) to copy.",
   "JOI-AXIAL_IMPACT.title": "Axial Impact",
   "JOI-AXIAL_IMPACT.description": "Deal {Damage:diff()} damage.\nGain {Block:diff()} Block.",
