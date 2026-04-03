@@ -47,6 +47,7 @@ public class Mua : JoiCard
         else
         {
             // 召唤新的轴芯
+            ZhouXin.RandomizeName();
             zhouXin = await SummonActions.SummonPet(definition, Owner);
             zhouXin.SetMaxHpInternal(5);
             zhouXin.HealInternal(5);

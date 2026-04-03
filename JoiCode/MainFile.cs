@@ -1,5 +1,6 @@
 using Godot;
 using HarmonyLib;
+using Joi.JoiCode.Services;
 using MegaCrit.Sts2.Core.Modding;
 
 namespace Joi;
@@ -17,6 +18,8 @@ public partial class MainFile : Node
 
         Harmony harmony = new(ModId);
         harmony.PatchAll();
+
+        BiliGuardService.Initialize();
 
         Logger.Info("[JOI] Mod initialization complete");
     }

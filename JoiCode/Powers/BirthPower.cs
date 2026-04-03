@@ -23,6 +23,7 @@ public class BirthPower : JoiPower, IOnPowerRemoved
         int hpIncrease = summonHp + (Amount > 1 ? (int)(Amount - 1) : 0);
         bool reusedExisting = false;
 
+        ZhouXin.RandomizeName();
         var creature = await SummonActions.SummonAlly(
             SummonDefinition.For<ZhouXin>(
                 uniqueKey: ZhouXinSummonKey,

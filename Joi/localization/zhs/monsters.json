@@ -1,4 +1,5 @@
 {
-  "JOI-ZHOU_XIN.name": "轴芯",
+  "JOI-ZHOU_XIN.name": "{guard-name}",
+  "JOI-ZHOU_XIN.default_name": "轴芯",
   "ZHOU_XIN.name": "轴芯"
 }

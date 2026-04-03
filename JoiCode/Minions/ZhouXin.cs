@@ -1,12 +1,9 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
 using Godot;
-using Joi.JoiCode.Powers;
-using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Cards;
+using Joi.JoiCode.Services;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -16,12 +13,30 @@ namespace Joi.JoiCode.Minions;
 
 public class ZhouXin : CustomMonsterModel
 {
+    private static string? _customName;
+
     public override string? DefaultMoveState => "idle";
 
     public override int MinInitialHp => 1;
     public override int MaxInitialHp => 1;
 
     public override bool ShouldReceiveCombatHooks => false;
+
+    public override LocString Title
+    {
+        get
+        {
+            var title = L10NMonsterLookup(Id.Entry + ".name");
+            var name = _customName ?? L10NMonsterLookup(Id.Entry + ".default_name").GetFormattedText();
+            title.Add("guard-name", name);
+            return title;
+        }
+    }
+
+    public static void RandomizeName()
+    {
+        _customName = BiliGuardService.GetRandomGuardName();
+    }
 
     public override NCreatureVisuals CreateCustomVisuals()
     {

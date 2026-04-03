@@ -39,6 +39,7 @@ public class Orange : JoiCard
         else
         {
             // 召唤新的轴芯
+            ZhouXin.RandomizeName();
             var zhouXin = await SummonActions.SummonPet(definition, Owner);
             zhouXin.SetMaxHpInternal(DynamicVars["Summon"].IntValue);
             zhouXin.HealInternal(DynamicVars["Summon"].IntValue);

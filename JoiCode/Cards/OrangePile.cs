@@ -40,6 +40,7 @@ public class OrangePile : JoiCard
         }
         else
         {
+            ZhouXin.RandomizeName();
             var zhouXin = await SummonActions.SummonPet(definition, Owner);
             zhouXin.SetMaxHpInternal(DynamicVars["Heal"].IntValue);
             zhouXin.HealInternal(DynamicVars["Heal"].IntValue);
