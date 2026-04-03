@@ -10,17 +10,15 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class EventHorizon : JoiCard
 {
-    public EventHorizon() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
-
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Block", 1)];
+    public EventHorizon() : base(3, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.ApplySelf<EventHorizonPower>(this, DynamicVars["Block"].BaseValue);
+        await CommonActions.ApplySelf<EventHorizonPower>(this, 1);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 }

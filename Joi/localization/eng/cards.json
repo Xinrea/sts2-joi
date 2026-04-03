@@ -36,7 +36,7 @@
   "JOI-DARK_MATTER_IMPACT.title": "Dark Matter Impact",
   "JOI-DARK_MATTER_IMPACT.description": "Deal {Damage:diff()} damage.\nIf you have 5+ [gold]Black Hole[/gold], deal additional damage equal to your [gold]Black Hole[/gold] stacks.",
   "JOI-EVENT_HORIZON.title": "Event Horizon",
-  "JOI-EVENT_HORIZON.description": "Whenever you gain [gold]Black Hole[/gold], gain {Block:diff()} Block.",
+  "JOI-EVENT_HORIZON.description": "Whenever you gain [gold]Black Hole[/gold], gain that much Block.",
   "JOI-SUPERNOVA.title": "Supernova",
   "JOI-SUPERNOVA.description": "Deal {Damage:diff()} damage to ALL enemies.\nClear all [gold]Black Hole[/gold] and [gold]White Hole[/gold]. Deal 2 additional damage for each stack cleared.",
   "JOI-TIME_DILATION.title": "Time Dilation",

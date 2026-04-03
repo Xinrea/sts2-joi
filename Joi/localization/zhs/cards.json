@@ -36,7 +36,7 @@
   "JOI-DARK_MATTER_IMPACT.title": "暗物质冲击",
   "JOI-DARK_MATTER_IMPACT.description": "造成{Damage:diff()}点伤害。\n如果[gold]黑洞[/gold]层数≥5，额外造成等于[gold]黑洞[/gold]层数的伤害。",
   "JOI-EVENT_HORIZON.title": "事件视界",
-  "JOI-EVENT_HORIZON.description": "每当[gold]黑洞[/gold]层数增加时，获得{Block:diff()}点格挡。",
+  "JOI-EVENT_HORIZON.description": "每当[gold]黑洞[/gold]层数增加时，获得等量的格挡。",
   "JOI-SUPERNOVA.title": "超新星",
   "JOI-SUPERNOVA.description": "对所有敌人造成{Damage:diff()}点伤害。\n清空所有[gold]黑洞[/gold]和[gold]白洞[/gold]，每清空1层，额外造成2点伤害。",
   "JOI-TIME_DILATION.title": "时间膨胀",
