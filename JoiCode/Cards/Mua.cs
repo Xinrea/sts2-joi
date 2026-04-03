@@ -51,6 +51,9 @@ public class Mua : JoiCard
             zhouXin = await SummonActions.SummonPet(definition, Owner);
             zhouXin.SetMaxHpInternal(5);
             zhouXin.HealInternal(5);
+
+            // 播放召唤特效
+            VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
         }
 
         // 无论是否已有轴芯，都执行喂食机制

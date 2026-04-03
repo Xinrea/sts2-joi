@@ -37,6 +37,9 @@ public class OrangeTreePower : JoiPower
             var zhouXin = await SummonActions.SummonPet(definition, Owner.Player!);
             zhouXin.SetMaxHpInternal(1);
             zhouXin.HealInternal(1);
+
+            // 播放召唤特效
+            VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
         }
 
         var card = combatState.CreateCard<Orange>(Owner.Player!);

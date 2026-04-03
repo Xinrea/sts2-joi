@@ -44,6 +44,9 @@ public class OrangePile : JoiCard
             var zhouXin = await SummonActions.SummonPet(definition, Owner);
             zhouXin.SetMaxHpInternal(DynamicVars["Heal"].IntValue);
             zhouXin.HealInternal(DynamicVars["Heal"].IntValue);
+
+            // 播放召唤特效
+            VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
         }
 
         // 通过 CombatState 创建橘子卡

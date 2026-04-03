@@ -2,6 +2,7 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
 using Joi.JoiCode.Minions;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -43,6 +44,9 @@ public class Orange : JoiCard
             var zhouXin = await SummonActions.SummonPet(definition, Owner);
             zhouXin.SetMaxHpInternal(DynamicVars["Summon"].IntValue);
             zhouXin.HealInternal(DynamicVars["Summon"].IntValue);
+
+            // 播放召唤特效
+            VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
         }
     }
 

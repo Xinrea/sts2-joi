@@ -1,6 +1,7 @@
 using BaseLib.Hooks;
 using BaseLib.Utils;
 using Joi.JoiCode.Minions;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
 
 namespace Joi.JoiCode.Powers;
@@ -44,6 +45,9 @@ public class BirthPower : JoiPower, IOnPowerRemoved
 
         creature.SetMaxHpInternal(summonHp);
         creature.HealInternal(summonHp);
+
+        // 播放召唤特效
+        VfxCmd.PlayOnCreature(creature, VfxCmd.healPath);
 
         if (Owner.Player != null)
         {
