@@ -14,7 +14,7 @@ public class TimeAcceleration : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CardsVar(1),
+        new CardsVar(2),
         new DynamicVar("BlackHole", 2)
     ];
 
@@ -27,6 +27,5 @@ public class TimeAcceleration : JoiCard
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);
-        DynamicVars["BlackHole"].UpgradeValueBy(1);
     }
 }
