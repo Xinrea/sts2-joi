@@ -131,6 +131,8 @@
   "JOI-AXIS_BITE.description": "为自身附加{WhiteHolePower:diff()}层[gold]白洞[/gold]。",
   "JOI-GOOD_NIGHT.title": "晚安",
   "JOI-GOOD_NIGHT.description": "恢复{Heal:diff()}点生命。\n给所有敌人施加{SleepPower:diff()}层[gold]沉睡[/gold]。",
+  "JOI-ORANGE_PEEL.title": "橘子皮",
+  "JOI-ORANGE_PEEL.description": "获得消耗牌堆中[gold]橘子[/gold]数量x{Multiplier:diff()}的格挡。",
   "JOI-SPIT_SEEDS.title": "吐籽",
   "JOI-SPIT_SEEDS.description": "造成消耗牌堆中[gold]橘子[/gold]数量x{Multiplier:diff()}的伤害。"
 }

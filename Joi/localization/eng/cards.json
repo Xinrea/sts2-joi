@@ -131,6 +131,8 @@
   "JOI-AXIS_BITE.description": "Apply {WhiteHolePower:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-GOOD_NIGHT.title": "Good Night",
   "JOI-GOOD_NIGHT.description": "Heal {Heal:diff()} HP.\nApply {SleepPower:diff()} [gold]Sleep[/gold] to ALL enemies.",
+  "JOI-ORANGE_PEEL.title": "Orange Peel",
+  "JOI-ORANGE_PEEL.description": "Gain Block equal to the number of [gold]Oranges[/gold] in your exhaust pile x{Multiplier:diff()}.",
   "JOI-SPIT_SEEDS.title": "Spit Seeds",
   "JOI-SPIT_SEEDS.description": "Deal damage equal to the number of [gold]Oranges[/gold] in your exhaust pile x{Multiplier:diff()}."
 }
