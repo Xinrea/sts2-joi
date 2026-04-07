@@ -1,4 +1,5 @@
 using BaseLib.Abstracts;
+using BaseLib.Utils;
 using BaseLib.Utils.NodeFactories;
 using Godot;
 using Joi.JoiCode.Services;
@@ -13,6 +14,8 @@ namespace Joi.JoiCode.Minions;
 
 public class ZhouXin : CustomMonsterModel
 {
+    private const string DefaultUniqueKey = "zhou-xin-core";
+
     private static string? _customName;
 
     public override string? DefaultMoveState => "idle";
@@ -38,10 +41,24 @@ public class ZhouXin : CustomMonsterModel
         _customName = BiliGuardService.GetRandomGuardName();
     }
 
+    public static SummonDefinition GetSummonDefinition(string uniqueKey = DefaultUniqueKey)
+    {
+        return SummonDefinition.For<ZhouXin>(
+            uniqueKey: uniqueKey,
+            visuals: new CreatureVisualSpec
+            {
+                ImagePath = "res://Joi/images/creatures/zhou_xin.png",
+                BoundsOffset = new Vector2(-250, 0)
+            }
+        );
+    }
+
     public override NCreatureVisuals CreateCustomVisuals()
     {
-        Texture2D texture = GD.Load<Texture2D>("res://Joi/images/creatures/zhou_xin.png");
-        return NodeFactory<NCreatureVisuals>.CreateFromResource(texture);
+        var visuals = NodeFactory<NCreatureVisuals>.CreateFromScene("res://scenes/creature_visuals/zhou_xin.tscn");
+        var sprite = visuals.GetNode<Sprite2D>("%Visuals");
+        sprite.Texture = GD.Load<Texture2D>("res://Joi/images/creatures/zhou_xin.png");
+        return visuals;
     }
 
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
@@ -56,7 +73,7 @@ public class ZhouXin : CustomMonsterModel
             && !Creature.IsDead
             && Creature.CurrentHp > 0
             && dealer != null
-            && dealer.Side != Creature.Side)
+            && dealer.Side != target.Side)
         {
             return Creature;
         }

@@ -27,7 +27,7 @@ public class SmellsGood : JoiCard
     {
         await CreatureCmd.Heal(Owner.Creature, DynamicVars.Heal.BaseValue, true);
 
-        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
+        var definition = ZhouXin.GetSummonDefinition();
         var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
 
         if (existing != null && existing.IsAlive)

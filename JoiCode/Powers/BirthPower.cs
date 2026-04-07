@@ -1,5 +1,6 @@
 using BaseLib.Hooks;
 using BaseLib.Utils;
+using Godot;
 using Joi.JoiCode.Minions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -35,6 +36,11 @@ public class BirthPower : JoiPower, IOnPowerRemoved
                     existing.SetMaxHpInternal(existing.MaxHp + hpIncrease);
                     existing.HealInternal(hpIncrease);
                     return Task.CompletedTask;
+                },
+                visuals: new CreatureVisualSpec
+                {
+                    ImagePath = "res://Joi/images/creatures/zhou_xin.png",
+                    BoundsOffset = new Vector2(-250, 0)
                 }),
             Owner);
 

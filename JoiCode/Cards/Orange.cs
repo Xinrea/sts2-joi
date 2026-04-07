@@ -26,7 +26,7 @@ public class Orange : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
+        var definition = ZhouXin.GetSummonDefinition();
         var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
 
         if (existing != null)

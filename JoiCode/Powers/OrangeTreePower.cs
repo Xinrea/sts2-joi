@@ -24,7 +24,7 @@ public class OrangeTreePower : JoiPower
 
         var stacks = (int)Amount;
 
-        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
+        var definition = ZhouXin.GetSummonDefinition();
         var existing = SummonActions.FindExistingSummon(Owner, definition);
 
         if (existing != null)

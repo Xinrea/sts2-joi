@@ -30,7 +30,7 @@ public class Mua : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
+        var definition = ZhouXin.GetSummonDefinition();
         var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
 
         Creature zhouXin;

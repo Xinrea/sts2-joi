@@ -27,7 +27,7 @@ public class FeedEnchantment : EnchantmentModel
         }
 
         // 检查轴芯是否在场
-        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: "zhou-xin-core");
+        var definition = ZhouXin.GetSummonDefinition();
         var zhouXin = SummonActions.FindExistingSummon(card.Owner.Creature, definition);
 
         if (zhouXin == null || !zhouXin.IsAlive)

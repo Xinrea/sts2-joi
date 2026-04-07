@@ -26,7 +26,7 @@ public class SorryBuddy : JoiCard
     {
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
 
-        var definition = SummonDefinition.For<ZhouXin>(uniqueKey: ZhouXinSummonKey);
+        var definition = ZhouXin.GetSummonDefinition();
         var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
 
         if (existing != null && existing.IsAlive)
