@@ -267,7 +267,7 @@ When generating card art or other images:
 3. Use snake_case filename matching card class name (e.g., `photon_jet.png`)
 
 **Prompt Template**:
-Design specific character actions and gestures for each card, avoid generic descriptions:
+Design specific character actions and gestures for each card, avoid generic descriptions. The action must be impactful and dynamic:
 ```
 the character from the reference image [specific action/gesture], [visual effects], no border, fantasy card game illustration
 ```
@@ -277,6 +277,15 @@ the character from the reference image [specific action/gesture], [visual effect
 - Bad: "with gravitational lens effect, light bending"
 - Good: "clapping hands together to generate gravitational waves, shockwave ripples emanating from her palms"
 - Bad: "creating gravitational waves, wave distortion effects"
+
+**Impact Requirements**:
+- The action must feel powerful and dynamic — avoid static poses like "standing tall" or "arms crossed"
+- Use motion blur, shockwaves, explosive energy bursts, or dramatic mid-action poses
+- Show the peak moment of an action (e.g., fist just landed, energy just released, leap at apex)
+- For attack cards: use physical strikes with shockwaves and motion blur
+- For dominance/debuff/power cards: use psychological pressure — size contrast, condescending gestures, cowering enemies, oppressive aura draining the target
+- Examples of impactful actions: "lunging forward with a devastating punch, golden shockwave exploding from fist on impact", "leaping into the air with both hands raised, massive energy orb crackling between palms"
+- Examples of bullying/dominance: "looking down arrogantly with a smug expression, pointing finger condescendingly at a cowering smaller figure below, golden oppressive aura radiating from her, the smaller figure visibly weakened and shrinking"
 
 **Example Usage**:
 ```bash

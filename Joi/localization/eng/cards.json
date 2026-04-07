@@ -115,6 +115,8 @@
   "JOI-ONLY_ORANGE.description": "Exhaust all cards in your hand. Add that many [gold]{IfUpgraded:show:Oranges+|Oranges}[/gold] to your hand.",
   "JOI-RING_FIT.title": "Ring Fit",
   "JOI-RING_FIT.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
+  "JOI-SENIORITY.title": "Seniority",
+  "JOI-SENIORITY.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].\nA random enemy loses 1 [gold]Strength[/gold].",
   "JOI-AXIS_CORE_HANDSOME.title": "Axis Core Handsome",
   "JOI-AXIS_CORE_HANDSOME.description": "Whenever you play a card with [gold]Feed[/gold], draw 1 card.",
   "JOI-SMELLS_GOOD.title": "Smells Good",
