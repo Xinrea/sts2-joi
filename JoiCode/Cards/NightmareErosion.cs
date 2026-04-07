@@ -17,7 +17,7 @@ public class NightmareErosion : JoiCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(7, ValueProp.Move),
-        new DynamicVar("BlackHole", 2)
+        new DynamicVar("WhiteHole", 2)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -27,13 +27,13 @@ public class NightmareErosion : JoiCard
         var target = cardPlay.Target;
         if (target?.GetPower<SleepPower>() != null)
         {
-            await CommonActions.ApplySelf<BlackHolePower>(this, DynamicVars["BlackHole"].BaseValue);
+            await CommonActions.ApplySelf<WhiteHolePower>(this, DynamicVars["WhiteHole"].BaseValue);
         }
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
-        DynamicVars["BlackHole"].UpgradeValueBy(1);
+        DynamicVars["WhiteHole"].UpgradeValueBy(1);
     }
 }

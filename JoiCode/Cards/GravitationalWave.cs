@@ -16,7 +16,7 @@ public class GravitationalWave : JoiCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(9, ValueProp.Move),
-        new DynamicVar("BlackHole", 1)
+        new DynamicVar("WhiteHole", 1)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -26,7 +26,7 @@ public class GravitationalWave : JoiCard
         var target = cardPlay.Target;
         if (target?.Powers.Any(p => p.Type == MegaCrit.Sts2.Core.Entities.Powers.PowerType.Debuff) == true)
         {
-            await CommonActions.ApplySelf<BlackHolePower>(this, DynamicVars["BlackHole"].BaseValue);
+            await CommonActions.ApplySelf<WhiteHolePower>(this, DynamicVars["WhiteHole"].BaseValue);
         }
     }
 
