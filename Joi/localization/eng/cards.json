@@ -134,5 +134,7 @@
   "JOI-ORANGE_PEEL.title": "Orange Peel",
   "JOI-ORANGE_PEEL.description": "Gain Block equal to the number of [gold]Oranges[/gold] in your exhaust pile x{Multiplier:diff()}.",
   "JOI-SPIT_SEEDS.title": "Spit Seeds",
-  "JOI-SPIT_SEEDS.description": "Deal damage equal to the number of [gold]Oranges[/gold] in your exhaust pile x{Multiplier:diff()}."
+  "JOI-SPIT_SEEDS.description": "Deal damage equal to the number of [gold]Oranges[/gold] in your exhaust pile x{Multiplier:diff()}.",
+  "JOI-REBOOT.title": "Reboot",
+  "JOI-REBOOT.description": "Clear [gold]White Hole[/gold] and [gold]Black Hole[/gold]. Discard your hand, then draw the same number of cards."
 }

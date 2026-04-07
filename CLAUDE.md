@@ -50,6 +50,8 @@ public class YourCard : JoiCard
 
 ## Correct Workflow for Adding New Cards
 
+> **IMPORTANT**: All steps below are MANDATORY. Do NOT skip card image generation (step 3) — every new card must have a card portrait generated.
+
 1. **Create Card Class**
    - Inherit from `JoiCard`
    - Add `[Pool(typeof(JoiCardPool))]` attribute

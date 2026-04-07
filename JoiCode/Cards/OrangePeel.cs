@@ -20,7 +20,7 @@ public class OrangePeel : JoiCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Orange>(false)];
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var exhaustPile = CardPile.Get(PileType.Exhaust, Owner);
         var orangeCount = exhaustPile?.Cards.Count(c => c is Orange) ?? 0;
@@ -32,6 +32,8 @@ public class OrangePeel : JoiCard
         {
             Owner.Creature.GainBlockInternal(block);
         }
+
+        return Task.CompletedTask;
     }
 
     protected override void OnUpgrade()
