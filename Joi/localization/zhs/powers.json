@@ -48,6 +48,6 @@
   "JOI-ORANGE_EXPERT_POWER.description": "每打出一张橘子，对随机敌人造成伤害。",
   "JOI-ORANGE_EXPERT_POWER.smartDescription": "每打出一张橘子，对随机敌人造成[blue]{Amount}[/blue]点伤害。",
   "JOI-ORANGE_TREE_POWER.title": "橘子树",
-  "JOI-ORANGE_TREE_POWER.description": "回合开始时，召唤1并获得一张橘子。",
-  "JOI-ORANGE_TREE_POWER.smartDescription": "回合开始时，召唤1并获得一张橘子。"
+  "JOI-ORANGE_TREE_POWER.description": "回合开始时，召唤并获得橘子。",
+  "JOI-ORANGE_TREE_POWER.smartDescription": "回合开始时，[gold]召唤[/gold][blue]{Amount}[/blue]并获得[blue]{Amount}[/blue]张[gold]橘子[/gold]。"
 }
