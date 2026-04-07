@@ -1,5 +1,8 @@
 {
   "JOI-COSMIC_ORIGIN_RELIC.title": "Cosmic Origin",
   "JOI-COSMIC_ORIGIN_RELIC.description": "Reduce all incoming damage by 50%. When damage is reduced by this relic, gain [gold]Black Hole[/gold] equal to the amount reduced.",
-  "JOI-COSMIC_ORIGIN_RELIC.flavor": "The origin and end of all things."
+  "JOI-COSMIC_ORIGIN_RELIC.flavor": "The origin and end of all things.",
+  "JOI-COSMIC_APEX_RELIC.title": "Cosmic Apex",
+  "JOI-COSMIC_APEX_RELIC.description": "Reduce all incoming damage by 50%. When damage is reduced by this relic, gain [gold]Black Hole[/gold] and [gold]White Hole[/gold] equal to the amount reduced.",
+  "JOI-COSMIC_APEX_RELIC.flavor": "The universe converges at its peak."
 }
