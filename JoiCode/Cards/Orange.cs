@@ -48,6 +48,8 @@ public class Orange : JoiCard
             // 播放召唤特效
             VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
         }
+
+        await CommonActions.Draw(this, 1, choiceContext);
     }
 
     protected override void OnUpgrade()
