@@ -14,7 +14,7 @@ public class Teleport : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(3, ValueProp.Move),
+        new BlockVar(5, ValueProp.Move),
         new CardsVar(1)
     ];
 
