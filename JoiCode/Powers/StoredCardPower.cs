@@ -84,9 +84,17 @@ public class StoredCardPower : JoiPower
 
         if (Owner.IsAlive)
         {
-            MainFile.Logger.Info($"[StoredCardPower] Auto-playing stored card {card.Id}");
+            // 检查玩家是否有 AxisCoreHandsomePower（打出两次）
+            var player = combatState.PlayerCreatures.FirstOrDefault(c => !c.IsPet && c.IsAlive);
+            int playCount = player?.GetPower<AxisCoreHandsomePower>() != null ? 2 : 1;
+
+            MainFile.Logger.Info($"[StoredCardPower] Auto-playing stored card {card.Id} x{playCount}");
             await CardPileCmd.Add(card, PileType.Hand);
-            await CardCmd.AutoPlay(choiceContext, card, null);
+
+            for (int i = 0; i < playCount; i++)
+            {
+                await CardCmd.AutoPlay(choiceContext, card, null);
+            }
         }
         else
         {
