@@ -40,7 +40,7 @@
   "JOI-SUPERNOVA.title": "超新星",
   "JOI-SUPERNOVA.description": "对所有敌人造成{Damage:diff()}点伤害。\n清空所有[gold]黑洞[/gold]和[gold]白洞[/gold]，每清空1层，额外造成2点伤害。",
   "JOI-TIME_DILATION.title": "时间膨胀",
-  "JOI-TIME_DILATION.description": "本回合你每打出一张牌，为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。\n抽{Cards:diff()}张牌。",
+  "JOI-TIME_DILATION.description": "本回合你每打出一张牌，为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。\n抽{Cards:diff()}张牌，抽到的牌费用减1。",
   "JOI-GRAVITATIONAL_LENS.title": "引力透镜",
   "JOI-GRAVITATIONAL_LENS.description": "每当[gold]白洞[/gold]层数变化时，对随机敌人造成{Damage:diff()}点伤害。",
   "JOI-GRAVITY_FIELD.title": "引力场",

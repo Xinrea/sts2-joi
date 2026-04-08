@@ -40,7 +40,7 @@
   "JOI-SUPERNOVA.title": "Supernova",
   "JOI-SUPERNOVA.description": "Deal {Damage:diff()} damage to ALL enemies.\nClear all [gold]Black Hole[/gold] and [gold]White Hole[/gold]. Deal 2 additional damage for each stack cleared.",
   "JOI-TIME_DILATION.title": "Time Dilation",
-  "JOI-TIME_DILATION.description": "For each card played this turn, apply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.\nDraw {Cards:diff()} card(s).",
+  "JOI-TIME_DILATION.description": "For each card played this turn, apply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.\nDraw {Cards:diff()} card(s). Drawn cards cost 1 less this turn.",
   "JOI-GRAVITATIONAL_LENS.title": "Gravitational Lens",
   "JOI-GRAVITATIONAL_LENS.description": "Whenever your [gold]White Hole[/gold] stacks change, deal {Damage:diff()} damage to a random enemy.",
   "JOI-GRAVITY_FIELD.title": "Gravity Field",
