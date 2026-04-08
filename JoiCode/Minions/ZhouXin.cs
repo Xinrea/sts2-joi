@@ -23,7 +23,7 @@ public class ZhouXin : CustomMonsterModel
     public override int MinInitialHp => 1;
     public override int MaxInitialHp => 1;
 
-    public override bool ShouldReceiveCombatHooks => false;
+    public override bool ShouldReceiveCombatHooks => true;
 
     public override LocString Title
     {

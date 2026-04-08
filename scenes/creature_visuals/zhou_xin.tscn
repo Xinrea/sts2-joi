@@ -21,3 +21,8 @@ position = Vector2(0, -160)
 [node name="CenterPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -80)
+
+[node name="StoredCardPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -250)
+scale = Vector2(0.4, 0.4)
