@@ -137,5 +137,7 @@
   "JOI-SPIT_SEEDS.title": "吐籽",
   "JOI-SPIT_SEEDS.description": "造成消耗牌堆中[gold]橘子[/gold]数量x{Multiplier:diff()}的伤害。",
   "JOI-REBOOT.title": "重启",
-  "JOI-REBOOT.description": "清空[gold]白洞[/gold]和[gold]黑洞[/gold]。丢弃所有手牌，抽取等量的牌。"
+  "JOI-REBOOT.description": "清空[gold]白洞[/gold]和[gold]黑洞[/gold]。丢弃所有手牌，抽取等量的牌。",
+  "JOI-EMOTIONLESS.title": "无感情",
+  "JOI-EMOTIONLESS.description": "对所有敌人造成[gold]黑洞[/gold]层数{IfUpgraded:show:+5|}的伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。"
 }

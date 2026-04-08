@@ -137,5 +137,7 @@
   "JOI-SPIT_SEEDS.title": "Spit Seeds",
   "JOI-SPIT_SEEDS.description": "Deal damage equal to the number of [gold]Oranges[/gold] in your exhaust pile x{Multiplier:diff()}.",
   "JOI-REBOOT.title": "Reboot",
-  "JOI-REBOOT.description": "Clear [gold]White Hole[/gold] and [gold]Black Hole[/gold]. Discard your hand, then draw the same number of cards."
+  "JOI-REBOOT.description": "Clear [gold]White Hole[/gold] and [gold]Black Hole[/gold]. Discard your hand, then draw the same number of cards.",
+  "JOI-EMOTIONLESS.title": "Emotionless",
+  "JOI-EMOTIONLESS.description": "Deal damage equal to your [gold]Black Hole[/gold] stacks{IfUpgraded:show: +5|} to ALL enemies.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself."
 }
