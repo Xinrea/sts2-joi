@@ -139,5 +139,8 @@
   "JOI-REBOOT.title": "Reboot",
   "JOI-REBOOT.description": "Clear [gold]White Hole[/gold] and [gold]Black Hole[/gold]. Discard your hand, then draw the same number of cards.",
   "JOI-EMOTIONLESS.title": "Emotionless",
-  "JOI-EMOTIONLESS.description": "Deal damage equal to your [gold]Black Hole[/gold] stacks{IfUpgraded:show: +5|} to ALL enemies.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself."
+  "JOI-EMOTIONLESS.description": "Deal damage equal to your [gold]Black Hole[/gold] stacks{IfUpgraded:show: +5|} to ALL enemies.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
+  "JOI-PERIODIC_TABLE.title": "Periodic Table",
+  "JOI-PERIODIC_TABLE.description": "At the start of next turn, choose {Cards:diff()} card(s) from your draw pile and add to your hand.",
+  "JOI-PERIODIC_TABLE.selectionPrompt": "Choose a card to add to your hand."
 }

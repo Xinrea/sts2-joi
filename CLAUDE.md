@@ -79,7 +79,23 @@ public class YourCard : JoiCard
    - Add to both `eng/powers.json` and `zhs/powers.json`
    - Include title, description, and smartDescription
 
-5. **Compile and Test**
+5. **Create Power Icons (if needed)**
+   - Generate power icon using `generate_power_icon.ps1`:
+     ```powershell
+     powershell.exe -File generate_power_icon.ps1 -Prompt "simple icon description" -OutputName power_name
+     ```
+   - Script generates two sizes: 64x64 (small) and 128x128 (big)
+   - Small icon saved to `Joi/images/powers/power_name.png`
+   - Big icon saved to `Joi/images/powers/big/power_name.png`
+   - Icon requirements:
+     - Solid bright green (#00FF00) background
+     - Simple, symbolic, minimalist design
+     - Soft glowing colors (white, light blue, purple, gold, pink)
+     - Clean geometric shapes, no realistic details
+     - No text, no border, no shadow
+   - **IMPORTANT**: Use snake_case filename matching power class name (e.g., `PeriodicTablePower` → `periodic_table_power.png`)
+
+6. **Compile and Test**
    - Run `dotnet publish -c ExportRelease`
    - Check for errors
    - Test in-game
