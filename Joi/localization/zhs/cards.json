@@ -127,7 +127,7 @@
   "JOI-ORANGE_EXPERT.title": "橘子专家",
   "JOI-ORANGE_EXPERT.description": "每打出一张[gold]橘子[/gold]，对随机敌人造成{Damage:diff()}点伤害。",
   "JOI-ORANGE_TREE.title": "橘子树",
-  "JOI-ORANGE_TREE.description": "回合开始时，[gold]召唤[/gold]1，并获得一张[gold]橘子[/gold]。",
+  "JOI-ORANGE_TREE.description": "回合开始时，[gold]召唤[/gold]3，并获得一张[gold]橘子[/gold]。",
   "JOI-AXIS_BITE.title": "轴咬",
   "JOI-AXIS_BITE.description": "为自身附加{WhiteHolePower:diff()}层[gold]白洞[/gold]。",
   "JOI-GOOD_NIGHT.title": "晚安",
@@ -142,5 +142,5 @@
   "JOI-EMOTIONLESS.description": "对所有敌人造成[gold]黑洞[/gold]层数{IfUpgraded:show:+5|}的伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
   "JOI-PERIODIC_TABLE.title": "周表",
   "JOI-PERIODIC_TABLE.description": "下回合开始时，从抽牌堆中任选{Cards:diff()}张牌加入手牌。",
-  "JOI-PERIODIC_TABLE.selectionPrompt": "选择一张牌加入手牌。"
+  "JOI-PERIODIC_TABLE.selectionPrompt": "选择牌加入手牌。"
 }

@@ -29,16 +29,16 @@ public class OrangeTreePower : JoiPower
 
         if (existing != null)
         {
-            var newMaxHp = existing.MaxHp + stacks;
+            var newMaxHp = existing.MaxHp + stacks*3;
             existing.SetMaxHpInternal(newMaxHp);
-            existing.HealInternal(stacks);
+            existing.HealInternal(stacks*3);
         }
         else
         {
             ZhouXin.RandomizeName();
             var zhouXin = await SummonActions.SummonPet(definition, Owner.Player!);
-            zhouXin.SetMaxHpInternal(stacks);
-            zhouXin.HealInternal(stacks);
+            zhouXin.SetMaxHpInternal(stacks*3);
+            zhouXin.HealInternal(stacks*3);
 
             // 播放召唤特效
             VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
