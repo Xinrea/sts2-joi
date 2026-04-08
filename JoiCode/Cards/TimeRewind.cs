@@ -11,7 +11,7 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class TimeRewind : JoiCard
 {
-    public TimeRewind() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
+    public TimeRewind() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
