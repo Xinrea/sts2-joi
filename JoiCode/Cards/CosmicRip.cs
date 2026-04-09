@@ -17,7 +17,7 @@ public class CosmicRip : JoiCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(30, ValueProp.Move),
-        new DynamicVar("BlackHole", 5)
+        new DynamicVar("BlackHole", 10)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
