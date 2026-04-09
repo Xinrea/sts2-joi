@@ -15,7 +15,7 @@ public class RingFit : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<StrengthPower>(2)
+        new PowerVar<StrengthPower>(3)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -25,6 +25,6 @@ public class RingFit : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["StrengthPower"].UpgradeValueBy(2);
+        DynamicVars["StrengthPower"].UpgradeValueBy(1);
     }
 }

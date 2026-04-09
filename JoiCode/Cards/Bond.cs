@@ -15,4 +15,10 @@ public class Bond : JoiCard
     {
         await CommonActions.ApplySelf<BondPower>(this, 1);
     }
+
+    protected override void OnUpgrade()
+    {
+        // reduce cost by 1
+        EnergyCost.UpgradeBy(-1);
+    }
 }
