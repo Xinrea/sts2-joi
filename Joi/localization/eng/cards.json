@@ -139,5 +139,7 @@
   "JOI-EMOTIONLESS.description": "Deal damage equal to your [gold]Black Hole[/gold] stacks{IfUpgraded:show: +5|} to ALL enemies.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
   "JOI-PERIODIC_TABLE.title": "Periodic Table",
   "JOI-PERIODIC_TABLE.description": "At the start of next turn, choose {Cards:diff()} card(s) from your draw pile and add to your hand.",
-  "JOI-PERIODIC_TABLE.selectionPrompt": "Choose card(s) to add to your hand."
+  "JOI-PERIODIC_TABLE.selectionPrompt": "Choose card(s) to add to your hand.",
+  "JOI-BOND.title": "Bond",
+  "JOI-BOND.description": "At the start of your turn, if [gold]Axis Core[/gold] is in play, gain 1 [gold]Energy[/gold]."
 }

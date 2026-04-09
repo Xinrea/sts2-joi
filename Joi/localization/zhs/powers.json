@@ -52,5 +52,8 @@
   "JOI-ORANGE_TREE_POWER.smartDescription": "回合开始时，[gold]召唤[/gold][blue]{Amount}[/blue]并获得[blue]{Amount}[/blue]张[gold]橘子[/gold]。",
   "JOI-PERIODIC_TABLE_POWER.title": "周表",
   "JOI-PERIODIC_TABLE_POWER.description": "下回合开始时，从抽牌堆中任选1张牌加入手牌，然后移除此能力。",
-  "JOI-PERIODIC_TABLE_POWER.smartDescription": "下回合开始时，从抽牌堆中任选[blue]{Amount}[/blue]张牌加入手牌，然后移除此能力。"
+  "JOI-PERIODIC_TABLE_POWER.smartDescription": "下回合开始时，从抽牌堆中任选[blue]{Amount}[/blue]张牌加入手牌，然后移除此能力。",
+  "JOI-BOND_POWER.title": "羁绊",
+  "JOI-BOND_POWER.description": "回合开始时，如果轴芯在场，获得1点能量。",
+  "JOI-BOND_POWER.smartDescription": "回合开始时，如果轴芯在场，获得1点能量。"
 }

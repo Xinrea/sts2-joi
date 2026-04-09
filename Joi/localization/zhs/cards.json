@@ -139,5 +139,7 @@
   "JOI-EMOTIONLESS.description": "对所有敌人造成[gold]黑洞[/gold]层数{IfUpgraded:show:+5|}的伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
   "JOI-PERIODIC_TABLE.title": "周表",
   "JOI-PERIODIC_TABLE.description": "下回合开始时，从抽牌堆中任选{Cards:diff()}张牌加入手牌。",
-  "JOI-PERIODIC_TABLE.selectionPrompt": "选择牌加入手牌。"
+  "JOI-PERIODIC_TABLE.selectionPrompt": "选择牌加入手牌。",
+  "JOI-BOND.title": "羁绊",
+  "JOI-BOND.description": "回合开始时，如果[gold]轴芯[/gold]在场，获得1点[gold]能量[/gold]。"
 }

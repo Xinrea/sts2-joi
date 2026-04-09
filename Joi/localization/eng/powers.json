@@ -55,5 +55,8 @@
   "JOI-ORANGE_TREE_POWER.smartDescription": "At the start of your turn, [gold]Summon[/gold] [blue]{Amount}[/blue] and add [blue]{Amount}[/blue] [gold]Orange(s)[/gold] to your hand.",
   "JOI-PERIODIC_TABLE_POWER.title": "Periodic Table",
   "JOI-PERIODIC_TABLE_POWER.description": "At the start of next turn, choose a card from your draw pile and add it to your hand, then remove this power.",
-  "JOI-PERIODIC_TABLE_POWER.smartDescription": "At the start of next turn, choose [blue]{Amount}[/blue] card(s) from your draw pile and add to your hand, then remove this power."
+  "JOI-PERIODIC_TABLE_POWER.smartDescription": "At the start of next turn, choose [blue]{Amount}[/blue] card(s) from your draw pile and add to your hand, then remove this power.",
+  "JOI-BOND_POWER.title": "Bond",
+  "JOI-BOND_POWER.description": "At the start of your turn, if Axis Core is in play, gain 1 Energy.",
+  "JOI-BOND_POWER.smartDescription": "At the start of your turn, if Axis Core is in play, gain 1 Energy."
 }
