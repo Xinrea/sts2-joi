@@ -16,7 +16,7 @@ public class Seniority : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<StrengthPower>(1)
+        new PowerVar<StrengthPower>(2)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
