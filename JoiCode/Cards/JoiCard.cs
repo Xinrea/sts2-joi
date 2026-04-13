@@ -81,9 +81,11 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "ORANGE_TREE" => [CreateStaticHoverTip("JOI-SUMMON"), CreateStaticHoverTip("JOI-ORANGE")],
         "AXIS_BITE" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "REBOOT" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "PULSAR" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "STARLIGHT_FLICKER" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "RESONANCE_CAVITY" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
-        "GRAVITATIONAL_SINGULARITY" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
+        "GRAVITATIONAL_SINGULARITY" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "AXIS_SHIELD" => [CreateStaticHoverTip("JOI-SUMMON")],
         _ => []
     };
 

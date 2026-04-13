@@ -1,5 +1,6 @@
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
+using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -14,16 +15,19 @@ public class Pulsar : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(6, ValueProp.Move)
+        new DamageVar(6, ValueProp.Move),
+        new DynamicVar("WhiteHole", 3)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
+        await CommonActions.ApplySelf<WhiteHolePower>(this, DynamicVars["WhiteHole"].BaseValue);
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2);
+        DynamicVars["WhiteHole"].UpgradeValueBy(2);
     }
 }

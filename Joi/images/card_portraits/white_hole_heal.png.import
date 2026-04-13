@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg6rj852b3oyp"
-valid=false
+uid="uid://je3uf5hre858"
+path="res://.godot/imported/white_hole_heal.png-0461f7135b0fca927b379961502aa0bc.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Joi/images/card_portraits/white_hole_heal.png"
+dest_files=["res://.godot/imported/white_hole_heal.png-0461f7135b0fca927b379961502aa0bc.ctex"]
 
 [params]
 

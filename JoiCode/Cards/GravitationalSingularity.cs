@@ -14,16 +14,19 @@ public class GravitationalSingularity : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("BlackHole", 2)
+        new DynamicVar("BlackHole", 3),
+        new DynamicVar("WhiteHole", 3)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CommonActions.ApplySelf<BlackHolePower>(this, DynamicVars["BlackHole"].BaseValue);
+        await CommonActions.ApplySelf<WhiteHolePower>(this, DynamicVars["WhiteHole"].BaseValue);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["BlackHole"].UpgradeValueBy(1);
+        DynamicVars["BlackHole"].UpgradeValueBy(2);
+        DynamicVars["WhiteHole"].UpgradeValueBy(2);
     }
 }
