@@ -74,6 +74,11 @@ public static class ZhouXinCardStorePatch
             if (!CanAcceptCard(target))
                 return true;
 
+            // 轴芯只能存储攻击牌
+            var card = __instance.NetCombatCard.ToCardModel();
+            if (card.Type != CardType.Attack)
+                return true;
+
             __result = StoreCardToZhouXin(__instance);
             return false;
         }

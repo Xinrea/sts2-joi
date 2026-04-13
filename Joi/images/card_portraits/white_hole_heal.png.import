@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpaixe2xag82w"
-path="res://.godot/imported/blackholestrike.png-cba64f0e489c3f5e0d394a94ab7afbfd.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://cg6rj852b3oyp"
+valid=false
 
 [deps]
 
-source_file="res://Joi/images/card_portraits/blackholestrike.png"
-dest_files=["res://.godot/imported/blackholestrike.png-cba64f0e489c3f5e0d394a94ab7afbfd.ctex"]
+source_file="res://Joi/images/card_portraits/white_hole_heal.png"
 
 [params]
 

@@ -29,8 +29,8 @@
   "JOI-SLEEP_POWER.title": "Sleep",
   "JOI-SLEEP_POWER.description": "Cannot act. Gains 1 Strength at the start of turn. Reduces by 1 at the end of turn.",
   "JOI-STORED_CARD_POWER.title": "Stored Card",
-  "JOI-STORED_CARD_POWER.description": "At the start of your turn, Axis Core automatically plays the stored card. If Axis Core dies, the card is returned to your hand.",
-  "JOI-STORED_CARD_POWER.smartDescription": "[blue]{Amount}[/blue] card(s) stored. Axis Core plays them at the start of your turn. If Axis Core dies, the card is returned to your hand.",
+  "JOI-STORED_CARD_POWER.description": "At the start of your turn, Axis Core plays the stored attack card. If Axis Core dies, the card is returned to your hand.",
+  "JOI-STORED_CARD_POWER.smartDescription": "[blue]{Amount}[/blue] attack card stored. Axis Core plays it at the start of your turn. If Axis Core dies, the card is returned to your hand.",
   "JOI-SLEEP_POWER.smartDescription": "Cannot act for [blue]{Amount}[/blue] turn(s). Gains 1 Strength at the start of turn.",
   "JOI-STELLAR_REQUIEM_POWER.title": "Stellar Requiem",
   "JOI-STELLAR_REQUIEM_POWER.description": "Whenever an enemy's Sleep expires, gain White Hole and apply Vulnerable to that enemy.",
@@ -42,8 +42,8 @@
   "JOI-TIME_DILATION_POWER.description": "Cards drawn this turn cost 1 less. Whenever you play a card, apply Black Hole to yourself. Removed at end of turn.",
   "JOI-TIME_DILATION_POWER.smartDescription": "Cards drawn this turn cost 1 less. Whenever you play a card, apply [blue]{Amount}[/blue] Black Hole to yourself.",
   "JOI-STORED_CARD_POWER.title": "Stored Card",
-  "JOI-STORED_CARD_POWER.description": "At the start of next turn, play the stored card twice.",
-  "JOI-STORED_CARD_POWER.smartDescription": "At the start of next turn, play the stored card twice.",
+  "JOI-STORED_CARD_POWER.description": "At the start of next turn, play the stored attack card.",
+  "JOI-STORED_CARD_POWER.smartDescription": "At the start of next turn, play the stored attack card.",
   "JOI-AXIS_CORE_HANDSOME_POWER.title": "Axis Core Handsome",
   "JOI-AXIS_CORE_HANDSOME_POWER.description": "Axis Core plays stored cards twice.",
   "JOI-AXIS_CORE_HANDSOME_POWER.smartDescription": "Axis Core plays stored cards twice.",
@@ -58,5 +58,8 @@
   "JOI-PERIODIC_TABLE_POWER.smartDescription": "At the start of next turn, choose [blue]{Amount}[/blue] card(s) from your draw pile and add to your hand, then remove this power.",
   "JOI-BOND_POWER.title": "Bond",
   "JOI-BOND_POWER.description": "At the start of your turn, if Axis Core is in play, gain 1 Energy.",
-  "JOI-BOND_POWER.smartDescription": "At the start of your turn, if Axis Core is in play, gain 1 Energy."
+  "JOI-BOND_POWER.smartDescription": "At the start of your turn, if Axis Core is in play, gain 1 Energy.",
+  "JOI-COSMIC_CONSTANT_POWER.title": "Cosmic Constant",
+  "JOI-COSMIC_CONSTANT_POWER.description": "At the start of each turn, apply Black Hole and White Hole to yourself.",
+  "JOI-COSMIC_CONSTANT_POWER.smartDescription": "At the start of each turn, apply Black Hole and White Hole to yourself."
 }

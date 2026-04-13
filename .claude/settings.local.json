@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"^[a-z]+\\\\.png$\")",
+      "Bash(grep -E \"^[^_]+\\\\.png$\")",
+      "Bash(grep -E \"^[a-z]+[a-z]\\\\.png$\")"
+    ]
+  }
+}

@@ -24,7 +24,9 @@ public class SpitSeeds : JoiCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var exhaustPile = CardPile.Get(PileType.Exhaust, Owner);
-        var orangeCount = exhaustPile?.Cards.Count(c => c is Orange) ?? 0;
+        var handPile = CardPile.Get(PileType.Hand, Owner);
+        var orangeCount = (exhaustPile?.Cards.Count(c => c is Orange) ?? 0)
+                        + (handPile?.Cards.Count(c => c is Orange) ?? 0);
 
         var multiplier = (int)DynamicVars["Multiplier"].BaseValue;
         var damage = orangeCount * multiplier;

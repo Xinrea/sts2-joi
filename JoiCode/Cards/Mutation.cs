@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Joi.JoiCode.Cards;
 
@@ -18,7 +19,8 @@ public class Mutation : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<ThornsPower>(3)
+        new PowerVar<ThornsPower>(3),
+        new BlockVar(6, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -30,6 +32,8 @@ public class Mutation : JoiCard
         {
             await PowerCmd.Apply<ThornsPower>(existing, DynamicVars["ThornsPower"].BaseValue, Owner.Creature, this);
         }
+
+        Owner.Creature.GainBlockInternal((int)DynamicVars["Block"].BaseValue);
     }
 
     protected override void OnUpgrade()

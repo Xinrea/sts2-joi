@@ -31,5 +31,6 @@ public class Emotionless : JoiCard
 
     protected override void OnUpgrade()
     {
+        DynamicVars["BlackHole"].UpgradeValueBy(2);
     }
 }

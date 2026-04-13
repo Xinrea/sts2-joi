@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt4ow2qsody3y"
-path="res://.godot/imported/eventhorizon.png-4bc4fa9dd6440be463ae357c794c5e7c.ctex"
+uid="uid://tuu2ty8ou1hg"
+path="res://.godot/imported/starlight_flicker.png-b7be1af06a942987f461a93b496b6049.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Joi/images/card_portraits/eventhorizon.png"
-dest_files=["res://.godot/imported/eventhorizon.png-4bc4fa9dd6440be463ae357c794c5e7c.ctex"]
+source_file="res://Joi/images/card_portraits/starlight_flicker.png"
+dest_files=["res://.godot/imported/starlight_flicker.png-b7be1af06a942987f461a93b496b6049.ctex"]
 
 [params]
 

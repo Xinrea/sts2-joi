@@ -58,7 +58,7 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "HEAD_CIRCUMFERENCE_MEASUREMENT" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
         "SNEEZE" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "VACUUM_FLUCTUATION" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
-        "MUA" => [CreateStaticHoverTip("JOI-SUMMON"), CreateStaticHoverTip("JOI-FEED")],
+        "MUA" => [CreateStaticHoverTip("JOI-SUMMON")],
         "WHITE_HOLE_JET" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "WHITE_HOLE_REFLUX" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "PURE_WHITE_FORM" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
@@ -74,7 +74,6 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "FEED_ZHOU_XIN" => [CreateStaticHoverTip("JOI-AXISCORE")],
         "ORANGE_PILE" => [CreateStaticHoverTip("JOI-SUMMON")],
         "ORANGE" => [CreateStaticHoverTip("JOI-AXISCORE")],
-        "AXIS_CORE_HANDSOME" => [CreateStaticHoverTip("JOI-FEED")],
         "SMELLS_GOOD" => [CreateStaticHoverTip("JOI-AXISCORE")],
         "SORRY_BUDDY" => [CreateStaticHoverTip("JOI-AXISCORE")],
         "MUTATION" => [CreateStaticHoverTip("JOI-AXISCORE")],
@@ -82,6 +81,9 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "ORANGE_TREE" => [CreateStaticHoverTip("JOI-SUMMON"), CreateStaticHoverTip("JOI-ORANGE")],
         "AXIS_BITE" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "REBOOT" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "STARLIGHT_FLICKER" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "RESONANCE_CAVITY" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
+        "GRAVITATIONAL_SINGULARITY" => [CreateStaticHoverTip("JOI-BLACKHOLE")],
         _ => []
     };
 

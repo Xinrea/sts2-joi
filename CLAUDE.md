@@ -316,3 +316,41 @@ powershell.exe -File generate_card_art.ps1 -Prompt "the character from the refer
 4. **Use Harmony patches for power triggers** - Don't try to override non-existent methods
 5. **Compile frequently** - Use `dotnet publish -c ExportRelease` to catch errors early
 6. **Use ILSpy MCP to understand game mechanics** - Decompile game code to see how built-in features work
+
+
+## Always Generate Art and Changelog
+
+After completing card creation or significant changes:
+1. Generate card art (512x384 PNG, Joi character reference)
+2. Generate/update CHANGELOG.md documenting all changes
+3. Verify localization files match the actual implementation
+
+Do NOT skip these steps even for 'quick fixes'.
+Add under ## Code Style or create new ## Localization section\n\n## Localization First
+
+Before writing ANY card names, descriptions, or tooltips:
+1. Read existing Chinese localization files (zh-CN/) to find current terminology
+2. Copy the format and style from similar entries
+3. Do NOT generate English content and ask to translate later
+
+For Chinese changelogs: Read the Chinese localization files, don't guess terminology.
+Add under a new ## Joi Mod Development section\n\n## Mod Architecture Notes
+
+- Use BaseLib references (not Harmony) for character/power registration
+- For UI patches: RegisterPetForPlayer (not PetOwner) for ZhouXin positioning
+- Remove cards at OnDestroy phase, not during CombatState transitions
+- Use CanonicalKeywords property, not AddKeyword in constructor
+Add under ## Workflow Guidelines\n\n## Iterative Development
+
+When fixing bugs or implementing complex features:
+1. Make ONE change at a time
+2. Verify build compiles
+3. Test in-game before making additional changes
+4. If a patch fails, research the game source code (use ilspy MCP) to find correct hook
+
+Avoid: Multiple simultaneous changes that cause cascading failures requiring rollbacks.
+
+
+## Reference
+
+@BASELIB.md
