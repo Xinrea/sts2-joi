@@ -46,3 +46,9 @@ sts2.dll
 
 .godot/
 android/
+
+# Jekyll
+docs/_site/
+docs/.bundle/
+docs/.jekyll-cache/
+docs/.sass-cache/
