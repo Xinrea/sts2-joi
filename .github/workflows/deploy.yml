@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for tags
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -35,6 +37,8 @@ jobs:
         run: |
           cd docs
           VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "dev")
+          # Remove 'v' prefix if exists
+          VERSION=${VERSION#v}
           echo "version: \"$VERSION\"" >> _config.yml
           bundle exec jekyll build --baseurl ""
         env:
