@@ -3,588 +3,588 @@
     "id": "joi-axial_impact",
     "name": "\u8F74\u82AF\u51B2\u649E",
     "type": "attack",
-    "base": "joi-axial_impact.attack.png",
-    "upgraded": "joi-axial_impact.attack.upgraded.png"
+    "base": "joi-axial_impact.attack.webp",
+    "upgraded": "joi-axial_impact.attack.upgraded.webp"
   },
   {
     "id": "joi-axis_bite",
     "name": "\u8F74\u54AC",
     "type": "skill",
-    "base": "joi-axis_bite.skill.png",
-    "upgraded": "joi-axis_bite.skill.upgraded.png"
+    "base": "joi-axis_bite.skill.webp",
+    "upgraded": "joi-axis_bite.skill.upgraded.webp"
   },
   {
     "id": "joi-axis_core_handsome",
     "name": "\u8F74\u82AF\u597D\u5E05",
     "type": "power",
-    "base": "joi-axis_core_handsome.power.png",
-    "upgraded": "joi-axis_core_handsome.power.upgraded.png"
+    "base": "joi-axis_core_handsome.power.webp",
+    "upgraded": "joi-axis_core_handsome.power.upgraded.webp"
   },
   {
     "id": "joi-axis_shield",
     "name": "\u8F74\u82AF\u8089\u76FE",
     "type": "skill",
-    "base": "joi-axis_shield.skill.png",
-    "upgraded": "joi-axis_shield.skill.upgraded.png"
+    "base": "joi-axis_shield.skill.webp",
+    "upgraded": "joi-axis_shield.skill.upgraded.webp"
   },
   {
     "id": "joi-binary_star_collision",
     "name": "\u53CC\u661F\u78B0\u649E",
     "type": "attack",
-    "base": "joi-binary_star_collision.attack.png",
-    "upgraded": "joi-binary_star_collision.attack.upgraded.png"
+    "base": "joi-binary_star_collision.attack.webp",
+    "upgraded": "joi-binary_star_collision.attack.upgraded.webp"
   },
   {
     "id": "joi-birth",
     "name": "\u8BDE\u751F",
     "type": "power",
-    "base": "joi-birth.power.png",
-    "upgraded": "joi-birth.power.upgraded.png"
+    "base": "joi-birth.power.webp",
+    "upgraded": "joi-birth.power.upgraded.webp"
   },
   {
     "id": "joi-black_hole_strike",
     "name": "\u9ED1\u6D1E\u6253\u51FB",
     "type": "attack",
-    "base": "joi-black_hole_strike.attack.png",
-    "upgraded": "joi-black_hole_strike.attack.upgraded.png"
+    "base": "joi-black_hole_strike.attack.webp",
+    "upgraded": "joi-black_hole_strike.attack.upgraded.webp"
   },
   {
     "id": "joi-bond",
     "name": "\u7F81\u7ECA",
     "type": "power",
-    "base": "joi-bond.power.png",
-    "upgraded": "joi-bond.power.upgraded.png"
+    "base": "joi-bond.power.webp",
+    "upgraded": "joi-bond.power.upgraded.webp"
   },
   {
     "id": "joi-burning_pact",
     "name": "\u71C3\u70E7\u5951\u7EA6",
     "type": "skill",
-    "base": "joi-burning_pact.skill.png",
-    "upgraded": "joi-burning_pact.skill.upgraded.png"
+    "base": "joi-burning_pact.skill.webp",
+    "upgraded": "joi-burning_pact.skill.upgraded.webp"
   },
   {
     "id": "joi-collect_rice",
     "name": "\u6536\u7C73",
     "type": "skill",
-    "base": "joi-collect_rice.skill.png",
-    "upgraded": "joi-collect_rice.skill.upgraded.png"
+    "base": "joi-collect_rice.skill.webp",
+    "upgraded": "joi-collect_rice.skill.upgraded.webp"
   },
   {
     "id": "joi-compress",
     "name": "\u538B\u7F29",
     "type": "skill",
-    "base": "joi-compress.skill.png",
-    "upgraded": "joi-compress.skill.upgraded.png"
+    "base": "joi-compress.skill.webp",
+    "upgraded": "joi-compress.skill.upgraded.webp"
   },
   {
     "id": "joi-confusion_ray",
     "name": "\u8FF7\u60D1\u5C04\u7EBF",
     "type": "skill",
-    "base": "joi-confusion_ray.skill.png",
-    "upgraded": "joi-confusion_ray.skill.upgraded.png"
+    "base": "joi-confusion_ray.skill.webp",
+    "upgraded": "joi-confusion_ray.skill.upgraded.webp"
   },
   {
     "id": "joi-cosmic_collapse",
     "name": "\u9ED1\u6D1E\u6536\u675F",
     "type": "attack",
-    "base": "joi-cosmic_collapse.attack.png",
-    "upgraded": "joi-cosmic_collapse.attack.upgraded.png"
+    "base": "joi-cosmic_collapse.attack.webp",
+    "upgraded": "joi-cosmic_collapse.attack.upgraded.webp"
   },
   {
     "id": "joi-cosmic_constant",
     "name": "\u5B87\u5B99\u5E38\u6570",
     "type": "power",
-    "base": "joi-cosmic_constant.power.png",
-    "upgraded": "joi-cosmic_constant.power.upgraded.png"
+    "base": "joi-cosmic_constant.power.webp",
+    "upgraded": "joi-cosmic_constant.power.upgraded.webp"
   },
   {
     "id": "joi-cosmic_explosion",
     "name": "\u5B87\u5B99\u7206\u70B8",
     "type": "attack",
-    "base": "joi-cosmic_explosion.attack.png",
-    "upgraded": "joi-cosmic_explosion.attack.upgraded.png"
+    "base": "joi-cosmic_explosion.attack.webp",
+    "upgraded": "joi-cosmic_explosion.attack.upgraded.webp"
   },
   {
     "id": "joi-cosmic_rip",
     "name": "\u5B87\u5B99\u5927\u6495\u88C2",
     "type": "attack",
-    "base": "joi-cosmic_rip.attack.png",
-    "upgraded": "joi-cosmic_rip.attack.upgraded.png"
+    "base": "joi-cosmic_rip.attack.webp",
+    "upgraded": "joi-cosmic_rip.attack.upgraded.webp"
   },
   {
     "id": "joi-dark_energy_arrow",
     "name": "\u6697\u80FD\u91CF\u7BAD",
     "type": "attack",
-    "base": "joi-dark_energy_arrow.attack.png",
-    "upgraded": "joi-dark_energy_arrow.attack.upgraded.png"
+    "base": "joi-dark_energy_arrow.attack.webp",
+    "upgraded": "joi-dark_energy_arrow.attack.upgraded.webp"
   },
   {
     "id": "joi-dark_history",
     "name": "\u9ED1\u5386\u53F2",
     "type": "skill",
-    "base": "joi-dark_history.skill.png",
-    "upgraded": "joi-dark_history.skill.upgraded.png"
+    "base": "joi-dark_history.skill.webp",
+    "upgraded": "joi-dark_history.skill.upgraded.webp"
   },
   {
     "id": "joi-dark_matter_impact",
     "name": "\u6697\u7269\u8D28\u51B2\u51FB",
     "type": "attack",
-    "base": "joi-dark_matter_impact.attack.png",
-    "upgraded": "joi-dark_matter_impact.attack.upgraded.png"
+    "base": "joi-dark_matter_impact.attack.webp",
+    "upgraded": "joi-dark_matter_impact.attack.upgraded.webp"
   },
   {
     "id": "joi-deep_space_lullaby",
     "name": "\u6DF1\u7A7A\u6447\u7BEE\u66F2",
     "type": "skill",
-    "base": "joi-deep_space_lullaby.skill.png",
-    "upgraded": "joi-deep_space_lullaby.skill.upgraded.png"
+    "base": "joi-deep_space_lullaby.skill.webp",
+    "upgraded": "joi-deep_space_lullaby.skill.upgraded.webp"
   },
   {
     "id": "joi-defend",
     "name": "\u9632\u5FA1",
     "type": "skill",
-    "base": "joi-defend.skill.png",
-    "upgraded": "joi-defend.skill.upgraded.png"
+    "base": "joi-defend.skill.webp",
+    "upgraded": "joi-defend.skill.upgraded.webp"
   },
   {
     "id": "joi-dimension_jump",
     "name": "\u7EF4\u5EA6\u8DF3\u8DC3",
     "type": "skill",
-    "base": "joi-dimension_jump.skill.png",
-    "upgraded": "joi-dimension_jump.skill.upgraded.png"
+    "base": "joi-dimension_jump.skill.webp",
+    "upgraded": "joi-dimension_jump.skill.upgraded.webp"
   },
   {
     "id": "joi-emotionless",
     "name": "\u65E0\u611F\u60C5",
     "type": "skill",
-    "base": "joi-emotionless.skill.png",
-    "upgraded": "joi-emotionless.skill.upgraded.png"
+    "base": "joi-emotionless.skill.webp",
+    "upgraded": "joi-emotionless.skill.upgraded.webp"
   },
   {
     "id": "joi-energy_level_transition",
     "name": "\u80FD\u5C42\u8DC3\u8FC1",
     "type": "skill",
-    "base": "joi-energy_level_transition.skill.png",
-    "upgraded": "joi-energy_level_transition.skill.upgraded.png"
+    "base": "joi-energy_level_transition.skill.webp",
+    "upgraded": "joi-energy_level_transition.skill.upgraded.webp"
   },
   {
     "id": "joi-event_horizon",
     "name": "\u4E8B\u4EF6\u89C6\u754C",
     "type": "power",
-    "base": "joi-event_horizon.power.png",
-    "upgraded": "joi-event_horizon.power.upgraded.png"
+    "base": "joi-event_horizon.power.webp",
+    "upgraded": "joi-event_horizon.power.upgraded.webp"
   },
   {
     "id": "joi-good_night",
     "name": "\u665A\u5B89",
     "type": "skill",
-    "base": "joi-good_night.skill.png",
-    "upgraded": "joi-good_night.skill.upgraded.png"
+    "base": "joi-good_night.skill.webp",
+    "upgraded": "joi-good_night.skill.upgraded.webp"
   },
   {
     "id": "joi-gravitational_lens",
     "name": "\u5F15\u529B\u900F\u955C",
     "type": "power",
-    "base": "joi-gravitational_lens.power.png",
-    "upgraded": "joi-gravitational_lens.power.upgraded.png"
+    "base": "joi-gravitational_lens.power.webp",
+    "upgraded": "joi-gravitational_lens.power.upgraded.webp"
   },
   {
     "id": "joi-gravitational_singularity",
     "name": "\u5F15\u529B\u5947\u70B9",
     "type": "skill",
-    "base": "joi-gravitational_singularity.skill.png",
-    "upgraded": "joi-gravitational_singularity.skill.upgraded.png"
+    "base": "joi-gravitational_singularity.skill.webp",
+    "upgraded": "joi-gravitational_singularity.skill.upgraded.webp"
   },
   {
     "id": "joi-gravitational_wave",
     "name": "\u5F15\u529B\u6CE2",
     "type": "attack",
-    "base": "joi-gravitational_wave.attack.png",
-    "upgraded": "joi-gravitational_wave.attack.upgraded.png"
+    "base": "joi-gravitational_wave.attack.webp",
+    "upgraded": "joi-gravitational_wave.attack.upgraded.webp"
   },
   {
     "id": "joi-gravity_field",
     "name": "\u5F15\u529B\u573A",
     "type": "power",
-    "base": "joi-gravity_field.power.png",
-    "upgraded": "joi-gravity_field.power.upgraded.png"
+    "base": "joi-gravity_field.power.webp",
+    "upgraded": "joi-gravity_field.power.upgraded.webp"
   },
   {
     "id": "joi-gravity_slingshot",
     "name": "\u5F15\u529B\u5F39\u5F13",
     "type": "attack",
-    "base": "joi-gravity_slingshot.attack.png",
-    "upgraded": "joi-gravity_slingshot.attack.upgraded.png"
+    "base": "joi-gravity_slingshot.attack.webp",
+    "upgraded": "joi-gravity_slingshot.attack.upgraded.webp"
   },
   {
     "id": "joi-gravity_tether",
     "name": "\u5F15\u529B\u7275\u5F15",
     "type": "attack",
-    "base": "joi-gravity_tether.attack.png",
-    "upgraded": "joi-gravity_tether.attack.upgraded.png"
+    "base": "joi-gravity_tether.attack.webp",
+    "upgraded": "joi-gravity_tether.attack.upgraded.webp"
   },
   {
     "id": "joi-hawking_radiation",
     "name": "\u970D\u91D1\u8F90\u5C04",
     "type": "skill",
-    "base": "joi-hawking_radiation.skill.png",
-    "upgraded": "joi-hawking_radiation.skill.upgraded.png"
+    "base": "joi-hawking_radiation.skill.webp",
+    "upgraded": "joi-hawking_radiation.skill.upgraded.webp"
   },
   {
     "id": "joi-head_circumference_measurement",
     "name": "\u5934\u56F4\u6D4B\u91CF",
     "type": "skill",
-    "base": "joi-head_circumference_measurement.skill.png",
-    "upgraded": "joi-head_circumference_measurement.skill.upgraded.png"
+    "base": "joi-head_circumference_measurement.skill.webp",
+    "upgraded": "joi-head_circumference_measurement.skill.upgraded.webp"
   },
   {
     "id": "joi-heavy_hammer",
     "name": "\u91CD\u5934\u69CC",
     "type": "attack",
-    "base": "joi-heavy_hammer.attack.png",
-    "upgraded": "joi-heavy_hammer.attack.upgraded.png"
+    "base": "joi-heavy_hammer.attack.webp",
+    "upgraded": "joi-heavy_hammer.attack.upgraded.webp"
   },
   {
     "id": "joi-idol_charm",
     "name": "\u5076\u50CF\u9B45\u60D1",
     "type": "skill",
-    "base": "joi-idol_charm.skill.png",
-    "upgraded": "joi-idol_charm.skill.upgraded.png"
+    "base": "joi-idol_charm.skill.webp",
+    "upgraded": "joi-idol_charm.skill.upgraded.webp"
   },
   {
     "id": "joi-light_speed_escape",
     "name": "\u5149\u901F\u9003\u9038",
     "type": "skill",
-    "base": "joi-light_speed_escape.skill.png",
-    "upgraded": "joi-light_speed_escape.skill.upgraded.png"
+    "base": "joi-light_speed_escape.skill.webp",
+    "upgraded": "joi-light_speed_escape.skill.upgraded.webp"
   },
   {
     "id": "joi-mass_energy_conversion",
     "name": "\u8D28\u80FD\u8F6C\u6362",
     "type": "power",
-    "base": "joi-mass_energy_conversion.power.png",
-    "upgraded": "joi-mass_energy_conversion.power.upgraded.png"
+    "base": "joi-mass_energy_conversion.power.webp",
+    "upgraded": "joi-mass_energy_conversion.power.upgraded.webp"
   },
   {
     "id": "joi-mua",
     "name": "MUA",
     "type": "skill",
-    "base": "joi-mua.skill.png",
-    "upgraded": "joi-mua.skill.upgraded.png"
+    "base": "joi-mua.skill.webp",
+    "upgraded": "joi-mua.skill.upgraded.webp"
   },
   {
     "id": "joi-mutation",
     "name": "\u53D8\u5F02",
     "type": "skill",
-    "base": "joi-mutation.skill.png",
-    "upgraded": "joi-mutation.skill.upgraded.png"
+    "base": "joi-mutation.skill.webp",
+    "upgraded": "joi-mutation.skill.upgraded.webp"
   },
   {
     "id": "joi-nebul_lullaby",
     "name": "\u5B89\u7720\u661F\u4E91",
     "type": "skill",
-    "base": "joi-nebul_lullaby.skill.png",
-    "upgraded": "joi-nebul_lullaby.skill.upgraded.png"
+    "base": "joi-nebul_lullaby.skill.webp",
+    "upgraded": "joi-nebul_lullaby.skill.upgraded.webp"
   },
   {
     "id": "joi-nightmare_erosion",
     "name": "\u5669\u68A6\u4FB5\u8680",
     "type": "attack",
-    "base": "joi-nightmare_erosion.attack.png",
-    "upgraded": "joi-nightmare_erosion.attack.upgraded.png"
+    "base": "joi-nightmare_erosion.attack.webp",
+    "upgraded": "joi-nightmare_erosion.attack.upgraded.webp"
   },
   {
     "id": "joi-omniscient",
     "name": "\u5168\u77E5\u5168\u80FD",
     "type": "power",
-    "base": "joi-omniscient.power.png",
-    "upgraded": "joi-omniscient.power.upgraded.png"
+    "base": "joi-omniscient.power.webp",
+    "upgraded": "joi-omniscient.power.upgraded.webp"
   },
   {
     "id": "joi-only_orange",
     "name": "\u53EA\u6709\u6A58\u5B50",
     "type": "skill",
-    "base": "joi-only_orange.skill.png",
-    "upgraded": "joi-only_orange.skill.upgraded.png"
+    "base": "joi-only_orange.skill.webp",
+    "upgraded": "joi-only_orange.skill.upgraded.webp"
   },
   {
     "id": "joi-orange",
     "name": "\u6A58\u5B50",
     "type": "skill",
-    "base": "joi-orange.skill.png",
-    "upgraded": "joi-orange.skill.upgraded.png"
+    "base": "joi-orange.skill.webp",
+    "upgraded": "joi-orange.skill.upgraded.webp"
   },
   {
     "id": "joi-orange_expert",
     "name": "\u6A58\u5B50\u4E13\u5BB6",
     "type": "skill",
-    "base": "joi-orange_expert.skill.png",
-    "upgraded": "joi-orange_expert.skill.upgraded.png"
+    "base": "joi-orange_expert.skill.webp",
+    "upgraded": "joi-orange_expert.skill.upgraded.webp"
   },
   {
     "id": "joi-orange_peel",
     "name": "\u6A58\u5B50\u76AE",
     "type": "skill",
-    "base": "joi-orange_peel.skill.png",
-    "upgraded": "joi-orange_peel.skill.upgraded.png"
+    "base": "joi-orange_peel.skill.webp",
+    "upgraded": "joi-orange_peel.skill.upgraded.webp"
   },
   {
     "id": "joi-orange_pile",
     "name": "\u6A58\u5B50\u5806",
     "type": "skill",
-    "base": "joi-orange_pile.skill.png",
-    "upgraded": "joi-orange_pile.skill.upgraded.png"
+    "base": "joi-orange_pile.skill.webp",
+    "upgraded": "joi-orange_pile.skill.upgraded.webp"
   },
   {
     "id": "joi-orange_tree",
     "name": "\u6A58\u5B50\u6811",
     "type": "power",
-    "base": "joi-orange_tree.power.png",
-    "upgraded": "joi-orange_tree.power.upgraded.png"
+    "base": "joi-orange_tree.power.webp",
+    "upgraded": "joi-orange_tree.power.upgraded.webp"
   },
   {
     "id": "joi-original_chicken",
     "name": "\u539F\u5473\u9E21",
     "type": "skill",
-    "base": "joi-original_chicken.skill.png",
-    "upgraded": "joi-original_chicken.skill.upgraded.png"
+    "base": "joi-original_chicken.skill.webp",
+    "upgraded": "joi-original_chicken.skill.upgraded.webp"
   },
   {
     "id": "joi-periodic_table",
     "name": "\u5468\u8868",
     "type": "skill",
-    "base": "joi-periodic_table.skill.png",
-    "upgraded": "joi-periodic_table.skill.upgraded.png"
+    "base": "joi-periodic_table.skill.webp",
+    "upgraded": "joi-periodic_table.skill.upgraded.webp"
   },
   {
     "id": "joi-photon_jet",
     "name": "\u5149\u5B50\u55B7\u5C04",
     "type": "skill",
-    "base": "joi-photon_jet.skill.png",
-    "upgraded": "joi-photon_jet.skill.upgraded.png"
+    "base": "joi-photon_jet.skill.webp",
+    "upgraded": "joi-photon_jet.skill.upgraded.webp"
   },
   {
     "id": "joi-pulsar",
     "name": "\u8109\u51B2\u661F",
     "type": "attack",
-    "base": "joi-pulsar.attack.png",
-    "upgraded": "joi-pulsar.attack.upgraded.png"
+    "base": "joi-pulsar.attack.webp",
+    "upgraded": "joi-pulsar.attack.upgraded.webp"
   },
   {
     "id": "joi-pulse_ray",
     "name": "\u8109\u51B2\u5C04\u7EBF",
     "type": "attack",
-    "base": "joi-pulse_ray.attack.png",
-    "upgraded": "joi-pulse_ray.attack.upgraded.png"
+    "base": "joi-pulse_ray.attack.webp",
+    "upgraded": "joi-pulse_ray.attack.upgraded.webp"
   },
   {
     "id": "joi-pure_white_form",
     "name": "\u7EAF\u767D\u5F62\u6001",
     "type": "skill",
-    "base": "joi-pure_white_form.skill.png",
-    "upgraded": "joi-pure_white_form.skill.upgraded.png"
+    "base": "joi-pure_white_form.skill.webp",
+    "upgraded": "joi-pure_white_form.skill.upgraded.webp"
   },
   {
     "id": "joi-quantum_entanglement",
     "name": "\u91CF\u5B50\u7EA0\u7F20",
     "type": "skill",
-    "base": "joi-quantum_entanglement.skill.png",
-    "upgraded": "joi-quantum_entanglement.skill.upgraded.png"
+    "base": "joi-quantum_entanglement.skill.webp",
+    "upgraded": "joi-quantum_entanglement.skill.upgraded.webp"
   },
   {
     "id": "joi-quantum_salvo",
     "name": "\u91CF\u5B50\u9F50\u5C04",
     "type": "attack",
-    "base": "joi-quantum_salvo.attack.png",
-    "upgraded": "joi-quantum_salvo.attack.upgraded.png"
+    "base": "joi-quantum_salvo.attack.webp",
+    "upgraded": "joi-quantum_salvo.attack.upgraded.webp"
   },
   {
     "id": "joi-quantum_superposition",
     "name": "\u91CF\u5B50\u53E0\u52A0",
     "type": "skill",
-    "base": "joi-quantum_superposition.skill.png",
-    "upgraded": "joi-quantum_superposition.skill.upgraded.png"
+    "base": "joi-quantum_superposition.skill.webp",
+    "upgraded": "joi-quantum_superposition.skill.upgraded.webp"
   },
   {
     "id": "joi-question_box",
     "name": "\u63D0\u95EE\u7BB1",
     "type": "skill",
-    "base": "joi-question_box.skill.png",
-    "upgraded": "joi-question_box.skill.upgraded.png"
+    "base": "joi-question_box.skill.webp",
+    "upgraded": "joi-question_box.skill.upgraded.webp"
   },
   {
     "id": "joi-reboot",
     "name": "\u91CD\u542F",
     "type": "skill",
-    "base": "joi-reboot.skill.png",
-    "upgraded": "joi-reboot.skill.upgraded.png"
+    "base": "joi-reboot.skill.webp",
+    "upgraded": "joi-reboot.skill.upgraded.webp"
   },
   {
     "id": "joi-resonance_bond",
     "name": "\u5171\u9E23\u7275\u7ECA",
     "type": "skill",
-    "base": "joi-resonance_bond.skill.png",
-    "upgraded": "joi-resonance_bond.skill.upgraded.png"
+    "base": "joi-resonance_bond.skill.webp",
+    "upgraded": "joi-resonance_bond.skill.upgraded.webp"
   },
   {
     "id": "joi-resonance_cavity",
     "name": "\u5171\u632F\u8154",
     "type": "skill",
-    "base": "joi-resonance_cavity.skill.png",
-    "upgraded": "joi-resonance_cavity.skill.upgraded.png"
+    "base": "joi-resonance_cavity.skill.webp",
+    "upgraded": "joi-resonance_cavity.skill.upgraded.webp"
   },
   {
     "id": "joi-ring_fit",
     "name": "\u5065\u8EAB\u73AF",
     "type": "power",
-    "base": "joi-ring_fit.power.png",
-    "upgraded": "joi-ring_fit.power.upgraded.png"
+    "base": "joi-ring_fit.power.webp",
+    "upgraded": "joi-ring_fit.power.upgraded.webp"
   },
   {
     "id": "joi-seniority",
     "name": "\u5E74\u529F\u5E8F\u5217",
     "type": "power",
-    "base": "joi-seniority.power.png",
-    "upgraded": "joi-seniority.power.upgraded.png"
+    "base": "joi-seniority.power.webp",
+    "upgraded": "joi-seniority.power.upgraded.webp"
   },
   {
     "id": "joi-singularity",
     "name": "\u5947\u70B9",
     "type": "skill",
-    "base": "joi-singularity.skill.png",
-    "upgraded": "joi-singularity.skill.upgraded.png"
+    "base": "joi-singularity.skill.webp",
+    "upgraded": "joi-singularity.skill.upgraded.webp"
   },
   {
     "id": "joi-singularity_shift",
     "name": "\u5947\u70B9\u504F\u79FB",
     "type": "skill",
-    "base": "joi-singularity_shift.skill.png",
-    "upgraded": "joi-singularity_shift.skill.upgraded.png"
+    "base": "joi-singularity_shift.skill.webp",
+    "upgraded": "joi-singularity_shift.skill.upgraded.webp"
   },
   {
     "id": "joi-sleepy_radio",
     "name": "\u56F0\u56F0\u7535\u53F0",
     "type": "skill",
-    "base": "joi-sleepy_radio.skill.png",
-    "upgraded": "joi-sleepy_radio.skill.upgraded.png"
+    "base": "joi-sleepy_radio.skill.webp",
+    "upgraded": "joi-sleepy_radio.skill.upgraded.webp"
   },
   {
     "id": "joi-smells_good",
     "name": "\u597D\u9999",
     "type": "skill",
-    "base": "joi-smells_good.skill.png",
-    "upgraded": "joi-smells_good.skill.upgraded.png"
+    "base": "joi-smells_good.skill.webp",
+    "upgraded": "joi-smells_good.skill.upgraded.webp"
   },
   {
     "id": "joi-sneeze",
     "name": "\u55B7\u568F",
     "type": "skill",
-    "base": "joi-sneeze.skill.png",
-    "upgraded": "joi-sneeze.skill.upgraded.png"
+    "base": "joi-sneeze.skill.webp",
+    "upgraded": "joi-sneeze.skill.upgraded.webp"
   },
   {
     "id": "joi-sorry_buddy",
     "name": "\u59D4\u5C48\u4E00\u4E0B",
     "type": "skill",
-    "base": "joi-sorry_buddy.skill.png",
-    "upgraded": "joi-sorry_buddy.skill.upgraded.png"
+    "base": "joi-sorry_buddy.skill.webp",
+    "upgraded": "joi-sorry_buddy.skill.upgraded.webp"
   },
   {
     "id": "joi-spacetime_distortion",
     "name": "\u65F6\u7A7A\u626D\u66F2",
     "type": "skill",
-    "base": "joi-spacetime_distortion.skill.png",
-    "upgraded": "joi-spacetime_distortion.skill.upgraded.png"
+    "base": "joi-spacetime_distortion.skill.webp",
+    "upgraded": "joi-spacetime_distortion.skill.upgraded.webp"
   },
   {
     "id": "joi-spit_seeds",
     "name": "\u5410\u7C7D",
     "type": "skill",
-    "base": "joi-spit_seeds.skill.png",
-    "upgraded": "joi-spit_seeds.skill.upgraded.png"
+    "base": "joi-spit_seeds.skill.webp",
+    "upgraded": "joi-spit_seeds.skill.upgraded.webp"
   },
   {
     "id": "joi-starlight_flicker",
     "name": "\u661F\u5149\u95EA\u70C1",
     "type": "skill",
-    "base": "joi-starlight_flicker.skill.png",
-    "upgraded": "joi-starlight_flicker.skill.upgraded.png"
+    "base": "joi-starlight_flicker.skill.webp",
+    "upgraded": "joi-starlight_flicker.skill.upgraded.webp"
   },
   {
     "id": "joi-strike",
     "name": "\u6253\u51FB",
     "type": "attack",
-    "base": "joi-strike.attack.png",
-    "upgraded": "joi-strike.attack.upgraded.png"
+    "base": "joi-strike.attack.webp",
+    "upgraded": "joi-strike.attack.upgraded.webp"
   },
   {
     "id": "joi-supernova",
     "name": "\u8D85\u65B0\u661F",
     "type": "attack",
-    "base": "joi-supernova.attack.png",
-    "upgraded": "joi-supernova.attack.upgraded.png"
+    "base": "joi-supernova.attack.webp",
+    "upgraded": "joi-supernova.attack.upgraded.webp"
   },
   {
     "id": "joi-teleport",
     "name": "\u77AC\u95F4\u79FB\u52A8",
     "type": "skill",
-    "base": "joi-teleport.skill.png",
-    "upgraded": "joi-teleport.skill.upgraded.png"
+    "base": "joi-teleport.skill.webp",
+    "upgraded": "joi-teleport.skill.upgraded.webp"
   },
   {
     "id": "joi-time_acceleration",
     "name": "\u65F6\u95F4\u52A0\u901F",
     "type": "skill",
-    "base": "joi-time_acceleration.skill.png",
-    "upgraded": "joi-time_acceleration.skill.upgraded.png"
+    "base": "joi-time_acceleration.skill.webp",
+    "upgraded": "joi-time_acceleration.skill.upgraded.webp"
   },
   {
     "id": "joi-time_dilation",
     "name": "\u65F6\u95F4\u81A8\u80C0",
     "type": "skill",
-    "base": "joi-time_dilation.skill.png",
-    "upgraded": "joi-time_dilation.skill.upgraded.png"
+    "base": "joi-time_dilation.skill.webp",
+    "upgraded": "joi-time_dilation.skill.upgraded.webp"
   },
   {
     "id": "joi-time_rewind",
     "name": "\u65F6\u95F4\u56DE\u6EAF",
     "type": "skill",
-    "base": "joi-time_rewind.skill.png",
-    "upgraded": "joi-time_rewind.skill.upgraded.png"
+    "base": "joi-time_rewind.skill.webp",
+    "upgraded": "joi-time_rewind.skill.upgraded.webp"
   },
   {
     "id": "joi-two_pole_reversal",
     "name": "\u4E24\u6781\u53CD\u8F6C",
     "type": "skill",
-    "base": "joi-two_pole_reversal.skill.png",
-    "upgraded": "joi-two_pole_reversal.skill.upgraded.png"
+    "base": "joi-two_pole_reversal.skill.webp",
+    "upgraded": "joi-two_pole_reversal.skill.upgraded.webp"
   },
   {
     "id": "joi-vacuum_fluctuation",
     "name": "\u771F\u7A7A\u6DA8\u843D",
     "type": "power",
-    "base": "joi-vacuum_fluctuation.power.png",
-    "upgraded": "joi-vacuum_fluctuation.power.upgraded.png"
+    "base": "joi-vacuum_fluctuation.power.webp",
+    "upgraded": "joi-vacuum_fluctuation.power.upgraded.webp"
   },
   {
     "id": "joi-white_hole_heal",
     "name": "\u6CBB\u7597",
     "type": "skill",
-    "base": "joi-white_hole_heal.skill.png",
-    "upgraded": "joi-white_hole_heal.skill.upgraded.png"
+    "base": "joi-white_hole_heal.skill.webp",
+    "upgraded": "joi-white_hole_heal.skill.upgraded.webp"
   },
   {
     "id": "joi-white_hole_jet",
     "name": "\u767D\u6D1E\u55B7\u6D41",
     "type": "skill",
-    "base": "joi-white_hole_jet.skill.png",
-    "upgraded": "joi-white_hole_jet.skill.upgraded.png"
+    "base": "joi-white_hole_jet.skill.webp",
+    "upgraded": "joi-white_hole_jet.skill.upgraded.webp"
   },
   {
     "id": "joi-white_hole_reflux",
     "name": "\u767D\u6D1E\u56DE\u6D41",
     "type": "skill",
-    "base": "joi-white_hole_reflux.skill.png",
-    "upgraded": "joi-white_hole_reflux.skill.upgraded.png"
+    "base": "joi-white_hole_reflux.skill.webp",
+    "upgraded": "joi-white_hole_reflux.skill.upgraded.webp"
   }
 ]

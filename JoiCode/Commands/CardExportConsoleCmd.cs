@@ -113,9 +113,9 @@ public class CardExportConsoleCmd : AbstractConsoleCmd
                     // Get localized card name
                     string cardName = canonicalCard.Title ?? canonicalCard.Id.Entry;
                     string cardType = canonicalCard.Type.ToString().ToLowerInvariant();
-                    string baseFilename = $"{canonicalCard.Id.Entry.ToLowerInvariant()}.{cardType}.png";
+                    string baseFilename = $"{canonicalCard.Id.Entry.ToLowerInvariant()}.{cardType}.webp";
                     string? upgradedFilename = canonicalCard.IsUpgradable
-                        ? $"{canonicalCard.Id.Entry.ToLowerInvariant()}.{cardType}.upgraded.png"
+                        ? $"{canonicalCard.Id.Entry.ToLowerInvariant()}.{cardType}.upgraded.webp"
                         : null;
 
                     // Add to metadata
@@ -196,12 +196,12 @@ public class CardExportConsoleCmd : AbstractConsoleCmd
         // Get card type
         string cardType = canonicalCard.Type.ToString().ToLowerInvariant();
 
-        // Save as PNG with format: cardname.type.png or cardname.type.upgraded.png
+        // Save as WebP
         string suffix = upgraded ? ".upgraded" : "";
-        string filename = $"{canonicalCard.Id.Entry.ToLowerInvariant()}.{cardType}{suffix}.png";
+        string filename = $"{canonicalCard.Id.Entry.ToLowerInvariant()}.{cardType}{suffix}.webp";
         string filepath = Path.Combine(outputPath, filename);
 
-        Error err = image.SavePng(filepath);
+        Error err = image.SaveWebp(filepath, false, 0.85f);
         if (err == Error.Ok)
         {
             MainFile.Logger.Info($"Exported: {filename}");
