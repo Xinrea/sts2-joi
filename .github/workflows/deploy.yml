@@ -34,6 +34,8 @@ jobs:
       - name: Build with Jekyll
         run: |
           cd docs
+          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "dev")
+          echo "version: \"$VERSION\"" >> _config.yml
           bundle exec jekyll build --baseurl ""
         env:
           JEKYLL_ENV: production

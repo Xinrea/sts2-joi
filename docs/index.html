@@ -168,6 +168,59 @@ title: 轴伊 - 杀戮尖塔2 MOD
         background: #2a2a2a;
     }
 
+    /* Announcement Banner */
+    .announcement {
+        max-width: 1200px;
+        margin: 0 auto 60px;
+        padding: 0 40px;
+    }
+
+    .announcement-content {
+        background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+        border: 1px solid #3a3a3a;
+        border-radius: 12px;
+        padding: 20px 28px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .announcement-icon {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .announcement-text {
+        flex: 1;
+        color: #e8e8e8;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .announcement-text strong {
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    .announcement-close {
+        background: transparent;
+        border: none;
+        color: #a0a0a0;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 4px 8px;
+        transition: color 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .announcement-close:hover {
+        color: #e8e8e8;
+    }
+
+    .announcement.hidden {
+        display: none;
+    }
+
     /* Feature Grid */
     .section {
         padding: 100px 40px;
@@ -491,7 +544,7 @@ title: 轴伊 - 杀戮尖塔2 MOD
 
 <div class="hero">
     <div class="hero-content">
-        <span class="hero-badge">杀戮尖塔2 自制角色</span>
+        <span class="hero-badge">杀戮尖塔2 自制角色{% if site.version %} · v{{ site.version }}{% endif %}</span>
         <h1>轴伊</h1>
         <p class="hero-subtitle">
             探索宇宙的奥秘，掌控黑洞与白洞的力量。全新的游戏机制，独特的卡牌系统，带来与众不同的策略体验。
@@ -508,6 +561,20 @@ title: 轴伊 - 杀戮尖塔2 MOD
                 <span>查看卡牌</span>
             </a>
         </div>
+    </div>
+</div>
+
+<div class="announcement" id="announcement">
+    <div class="announcement-content">
+        <span class="announcement-icon">📢</span>
+        <div class="announcement-text">
+            <strong>公告：</strong>为了实现特殊机制，使用了修改版的
+            baselib，有可能与其他 mod 冲突，请在游玩时只保留本项目提供的 mod
+            内容。后续 baselib 完善后，将迁移至原版 baselib。
+        </div>
+        <button class="announcement-close" onclick="closeAnnouncement()">
+            ×
+        </button>
     </div>
 </div>
 
@@ -546,6 +613,65 @@ title: 轴伊 - 杀戮尖塔2 MOD
 
 <div class="section">
     <div class="section-header">
+        <div class="section-label">初始遗物</div>
+        <h2 class="section-title">宇宙本源</h2>
+        <p class="section-description">
+            轴伊的初始遗物，定义了角色的核心玩法。
+        </p>
+    </div>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="feature-icon">🛡️</span>
+            <h3>伤害减免</h3>
+            <p>受到的所有伤害减免 50%，让你在战斗中更加从容。</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🕳️</span>
+            <h3>黑洞转化</h3>
+            <p>
+                当遗物减免伤害时，获得与减免伤害数值相同层数的黑洞，延迟处理所受的伤害。
+            </p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">⚙️</span>
+            <h3>轴芯召唤</h3>
+            <p>
+                召唤轴芯作为你的伙伴，它能存储一张攻击牌并在回合开始时自动打出。
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header">
+        <div class="section-label">召唤物</div>
+        <h2 class="section-title">轴芯</h2>
+        <p class="section-description">你忠实的伙伴，战斗中的核心角色。</p>
+    </div>
+    <div class="mechanics-grid">
+        <div class="mechanic-card axis">
+            <h3>🛡️ 伤害转移</h3>
+            <p>
+                轴芯会替你承受来自敌方的伤害，保护你的生命值。合理利用轴芯的血量，在进攻和防守之间找到平衡。
+            </p>
+        </div>
+        <div class="mechanic-card blackhole">
+            <h3>🃏 卡牌存储</h3>
+            <p>
+                轴芯能够存储一张攻击牌，并在你的回合开始时自动打出。选择合适的攻击牌存储，打造强力的连击。
+            </p>
+        </div>
+        <div class="mechanic-card whitehole">
+            <h3>⚡ 增强能力</h3>
+            <p>
+                通过"轴芯好帅"能力，轴芯可以打出两次存储的卡牌。配合高伤害攻击牌，造成毁灭性的输出。
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header">
         <div class="section-label">开始游戏</div>
         <h2 class="section-title">安装方法</h2>
     </div>
@@ -578,3 +704,16 @@ title: 轴伊 - 杀戮尖塔2 MOD
         >
     </p>
 </footer>
+
+<script>
+    function closeAnnouncement() {
+        const announcement = document.getElementById("announcement");
+        announcement.classList.add("hidden");
+        localStorage.setItem("announcementClosed", "true");
+    }
+
+    // Check if announcement was previously closed
+    if (localStorage.getItem("announcementClosed") === "true") {
+        document.getElementById("announcement").classList.add("hidden");
+    }
+</script>
