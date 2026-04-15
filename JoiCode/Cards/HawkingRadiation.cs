@@ -13,7 +13,7 @@ public class HawkingRadiation : JoiCard
 {
     public HawkingRadiation() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("BlockPerStack", 3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("BlockPerStack", 2)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
