@@ -12,6 +12,8 @@ public class AxisBite : JoiCard
 {
     public AxisBite() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<WhiteHolePower>(5)
