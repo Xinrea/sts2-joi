@@ -214,30 +214,229 @@ title: 卡牌图鉴
     display: flex;
     gap: 8px;
     justify-content: center;
+    align-items: center;
   }
 
-  .version-toggle {
-    padding: 8px 16px;
+  .version-label {
+    font-size: 0.75rem;
+    color: #666666;
+  }
+
+  .version-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .version-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .version-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2A2A2A;
+    border: 1px solid #3A3A3A;
+    transition: 0.3s;
+    border-radius: 24px;
+  }
+
+  .version-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #666666;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+
+  .version-switch input:checked + .version-slider {
+    background-color: #333333;
+    border-color: #4A4A4A;
+  }
+
+  .version-switch input:checked + .version-slider:before {
+    transform: translateX(20px);
+    background-color: #E8E8E8;
+  }
+
+  /* Voting */
+  .card-vote {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .vote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
     background: transparent;
     border: 1px solid #3A3A3A;
     border-radius: 6px;
     color: #A0A0A0;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
   }
 
-  .version-toggle:hover {
+  .vote-btn:hover {
     border-color: #4A4A4A;
     background: #252525;
     color: #E8E8E8;
   }
 
-  .version-toggle.active {
-    background: #E8E8E8;
-    color: #1C1C1C;
-    border-color: #E8E8E8;
+  .vote-btn.active.too-strong {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #EF4444;
+  }
+
+  .vote-btn.active.too-weak {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #3B82F6;
+  }
+
+  .vote-count {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  /* Comments (in modal) */
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .comment-input {
+    background: #1C1C1C;
+    border: 1px solid #3A3A3A;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #E8E8E8;
+    font-size: 0.85rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 60px;
+  }
+
+  .comment-input:focus {
+    outline: none;
+    border-color: #4A4A4A;
+  }
+
+  .comment-input::placeholder {
+    color: #666666;
+  }
+
+  .comment-name-input {
+    background: #1C1C1C;
+    border: 1px solid #3A3A3A;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #E8E8E8;
+    font-size: 0.85rem;
+    font-family: inherit;
+  }
+
+  .comment-name-input:focus {
+    outline: none;
+    border-color: #4A4A4A;
+  }
+
+  .comment-submit {
+    align-self: flex-start;
+    padding: 8px 16px;
+    background: #2A2A2A;
+    border: 1px solid #3A3A3A;
+    border-radius: 6px;
+    color: #E8E8E8;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .comment-submit:hover {
+    background: #333333;
+    border-color: #4A4A4A;
+  }
+
+  .comment-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .comment-item {
+    background: #1C1C1C;
+    border: 1px solid #2A2A2A;
+    border-radius: 6px;
+    padding: 12px;
+  }
+
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .comment-author {
+    color: #E8E8E8;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .comment-date {
+    color: #666666;
+    font-size: 0.75rem;
+  }
+
+  .comment-body {
+    color: #A0A0A0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+
+  .comments-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid #3A3A3A;
+    border-radius: 6px;
+    color: #A0A0A0;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+  }
+
+  .comments-toggle:hover {
+    border-color: #4A4A4A;
+    color: #E8E8E8;
   }
 
   .no-results {
@@ -260,7 +459,6 @@ title: 卡牌图鉴
     background-color: rgba(0, 0, 0, 0.95);
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
   }
 
   .modal.active {
@@ -268,22 +466,79 @@ title: 卡牌图鉴
   }
 
   .modal-content {
+    display: flex;
     max-width: 90%;
     max-height: 90vh;
+    gap: 40px;
     position: relative;
   }
 
-  .modal-content img {
-    max-width: 100%;
+  .modal-card {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .modal-card img {
+    max-width: 500px;
     max-height: 90vh;
     object-fit: contain;
     border-radius: 8px;
   }
 
+  .modal-card-versions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .modal-comments {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 400px;
+    background: #1C1C1C;
+    border: 1px solid #2A2A2A;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .modal-comments-header {
+    padding: 20px;
+    border-bottom: 1px solid #2A2A2A;
+  }
+
+  .modal-comments-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #E8E8E8;
+    margin-bottom: 4px;
+  }
+
+  .modal-comments-count {
+    font-size: 0.85rem;
+    color: #666666;
+  }
+
+  .modal-comments-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .modal-comment-form {
+    padding: 20px;
+    border-top: 1px solid #2A2A2A;
+    background: #181818;
+  }
+
   .close-modal {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: -50px;
+    right: 0;
     color: #E8E8E8;
     font-size: 36px;
     font-weight: 300;
@@ -313,6 +568,31 @@ title: 卡牌图鉴
   }
 
   /* Responsive */
+  @media (max-width: 900px) {
+    .modal-content {
+      flex-direction: column;
+      max-height: 95vh;
+      gap: 16px;
+    }
+
+    .modal-card img {
+      max-width: 280px;
+      max-height: 40vh;
+    }
+
+    .modal-comments {
+      min-width: unset;
+      max-width: unset;
+      width: 90vw;
+      max-height: 50vh;
+    }
+
+    .close-modal {
+      top: -40px;
+      right: 0;
+    }
+  }
+
   @media (max-width: 768px) {
     h1 {
       font-size: 2rem;
@@ -379,19 +659,289 @@ title: 卡牌图鉴
 </div>
 
 <div class="modal" id="modal">
-  <span class="close-modal" id="closeModal">×</span>
   <div class="modal-content">
-    <img id="modalImage" src="" alt="Card">
+    <span class="close-modal" id="closeModal">×</span>
+    <div class="modal-card">
+      <img id="modalImage" src="" alt="Card">
+      <div class="modal-card-versions" id="modalCardVersions" style="display: none;">
+        <span class="version-label">基础</span>
+        <label class="version-switch">
+          <input type="checkbox" id="modalVersionSwitch">
+          <span class="version-slider"></span>
+        </label>
+        <span class="version-label">升级</span>
+      </div>
+    </div>
+    <div class="modal-comments">
+      <div class="modal-comments-header">
+        <div class="modal-comments-title" id="modalCardName"></div>
+        <div class="modal-comments-count" id="modalCommentsCount"></div>
+      </div>
+      <div class="modal-comments-body" id="modalCommentsList"></div>
+      <div class="modal-comment-form" id="modalCommentForm"></div>
+    </div>
   </div>
 </div>
 
 <script>
   const baseUrl = "{{ site.baseurl }}";
-  let cardsData = [];
+  const SUPABASE_URL = "{{ site.supabase_url }}";
+  const SUPABASE_KEY = "{{ site.supabase_anon_key }}";
 
+  let cardsData = [];
+  let voteStats = {};   // { card_id: { too_strong: n, too_weak: n } }
+  let myVotes = {};     // { card_id: 'too_strong' | 'too_weak' }
+  let commentsData = {}; // { card_id: [comments] }
+  let currentCardId = null; // Currently viewing card in modal
+
+  // Generate a fingerprint for anonymous voting
+  function getFingerprint() {
+    let fp = localStorage.getItem('vote_fingerprint');
+    if (!fp) {
+      fp = crypto.randomUUID();
+      localStorage.setItem('vote_fingerprint', fp);
+    }
+    return fp;
+  }
+
+  const fingerprint = getFingerprint();
+
+  // Supabase REST helpers
+  function supabaseGet(table, params = '') {
+    return fetch(`${SUPABASE_URL}/rest/v1/${table}?${params}`, {
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+    }).then(r => r.json());
+  }
+
+  function supabasePost(table, data) {
+    return fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+  }
+
+  function supabaseUpsert(table, data) {
+    return fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates'
+      },
+      body: JSON.stringify(data)
+    });
+  }
+
+  function supabaseDelete(table, params) {
+    return fetch(`${SUPABASE_URL}/rest/v1/${table}?${params}`, {
+      method: 'DELETE',
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+    });
+  }
+
+  // Load vote stats and user's votes
+  async function loadVotes() {
+    if (!SUPABASE_URL || SUPABASE_URL === 'YOUR_SUPABASE_URL') return;
+    try {
+      const [statsData, myData] = await Promise.all([
+        supabaseGet('card_vote_stats', 'select=*'),
+        supabaseGet('card_votes', `select=card_id,vote_type&user_fingerprint=eq.${fingerprint}`)
+      ]);
+      statsData.forEach(s => {
+        voteStats[s.card_id] = { too_strong: s.too_strong_count, too_weak: s.too_weak_count };
+      });
+      myData.forEach(v => { myVotes[v.card_id] = v.vote_type; });
+    } catch (e) {
+      console.error('Failed to load votes:', e);
+    }
+  }
+
+  // Load public comments
+  async function loadComments() {
+    if (!SUPABASE_URL || SUPABASE_URL === 'YOUR_SUPABASE_URL') return;
+    try {
+      const data = await supabaseGet('card_comments', 'select=*&is_public=eq.true&order=created_at.desc');
+      data.forEach(c => {
+        if (!commentsData[c.card_id]) commentsData[c.card_id] = [];
+        commentsData[c.card_id].push(c);
+      });
+    } catch (e) {
+      console.error('Failed to load comments:', e);
+    }
+  }
+
+  async function submitComment(cardId, userName, commentText) {
+    if (!SUPABASE_URL || SUPABASE_URL === 'YOUR_SUPABASE_URL') return;
+    try {
+      await supabasePost('card_comments', {
+        card_id: cardId,
+        user_name: userName,
+        comment_text: commentText
+      });
+      alert('评论已提交！审核通过后将显示。');
+    } catch (e) {
+      console.error('Failed to submit comment:', e);
+      alert('提交失败，请稍后重试。');
+    }
+  }
+
+  function openModal(card, imageSrc) {
+    currentCardId = card.id;
+    const modalImg = document.getElementById('modalImage');
+    const modalVersions = document.getElementById('modalCardVersions');
+    const modalSwitch = document.getElementById('modalVersionSwitch');
+
+    modalImg.src = imageSrc;
+    document.getElementById('modalCardName').textContent = card.name;
+
+    // Show version switch if card has upgraded version
+    if (card.upgraded) {
+      modalVersions.style.display = 'flex';
+      const currentVer = cardStates[card.id] || 'base';
+      modalSwitch.checked = currentVer === 'upgraded';
+
+      // Remove old listener and add new one
+      modalSwitch.onchange = () => {
+        const newVer = modalSwitch.checked ? 'upgraded' : 'base';
+        cardStates[card.id] = newVer;
+        const newFile = newVer === 'upgraded' ? card.upgraded : card.base;
+        modalImg.src = baseUrl + '/static/cards/' + newFile;
+        renderCards(); // Update the grid
+      };
+    } else {
+      modalVersions.style.display = 'none';
+    }
+
+    renderModalComments();
+    modal.classList.add('active');
+  }
+
+  function renderModalComments() {
+    const comments = commentsData[currentCardId] || [];
+    const countEl = document.getElementById('modalCommentsCount');
+    const listEl = document.getElementById('modalCommentsList');
+    const formEl = document.getElementById('modalCommentForm');
+
+    countEl.textContent = `${comments.length} 条评论`;
+
+    // Render comments list
+    if (comments.length > 0) {
+      listEl.innerHTML = '';
+      const commentsList = document.createElement('div');
+      commentsList.className = 'comments-list';
+
+      comments.forEach(c => {
+        const item = document.createElement('div');
+        item.className = 'comment-item';
+
+        const header = document.createElement('div');
+        header.className = 'comment-header';
+
+        const author = document.createElement('span');
+        author.className = 'comment-author';
+        author.textContent = c.user_name;
+
+        const date = document.createElement('span');
+        date.className = 'comment-date';
+        date.textContent = new Date(c.created_at).toLocaleDateString('zh-CN');
+
+        header.appendChild(author);
+        header.appendChild(date);
+
+        const body = document.createElement('div');
+        body.className = 'comment-body';
+        body.textContent = c.comment_text;
+
+        item.appendChild(header);
+        item.appendChild(body);
+        commentsList.appendChild(item);
+      });
+
+      listEl.appendChild(commentsList);
+    } else {
+      listEl.innerHTML = '<div style="text-align: center; color: #666666; padding: 40px 20px;">暂无评论</div>';
+    }
+
+    // Render comment form only if empty
+    if (formEl.children.length === 0) {
+      const form = document.createElement('div');
+      form.className = 'comment-form';
+
+      const nameInput = document.createElement('input');
+      nameInput.type = 'text';
+      nameInput.className = 'comment-name-input';
+      nameInput.placeholder = '你的昵称';
+      nameInput.maxLength = 50;
+      nameInput.id = 'commentNameInput';
+
+      const textInput = document.createElement('textarea');
+      textInput.className = 'comment-input';
+      textInput.placeholder = '分享你的想法...（评论需审核后显示）';
+      textInput.maxLength = 500;
+      textInput.id = 'commentTextInput';
+
+      const submitBtn = document.createElement('button');
+      submitBtn.className = 'comment-submit';
+      submitBtn.textContent = '提交评论';
+      submitBtn.id = 'commentSubmitBtn';
+      submitBtn.onclick = async () => {
+        const name = nameInput.value.trim();
+        const text = textInput.value.trim();
+        if (!name || !text) {
+          alert('请填写昵称和评论内容');
+          return;
+        }
+        submitBtn.disabled = true;
+        await submitComment(currentCardId, name, text);
+        nameInput.value = '';
+        textInput.value = '';
+        submitBtn.disabled = false;
+      };
+
+      form.appendChild(nameInput);
+      form.appendChild(textInput);
+      form.appendChild(submitBtn);
+      formEl.appendChild(form);
+    }
+  }
+
+  async function vote(cardId, voteType) {
+    if (!SUPABASE_URL || SUPABASE_URL === 'YOUR_SUPABASE_URL') return;
+
+    const existing = myVotes[cardId];
+
+    if (existing === voteType) {
+      // Cancel vote
+      await supabaseDelete('card_votes', `card_id=eq.${cardId}&user_fingerprint=eq.${fingerprint}`);
+      delete myVotes[cardId];
+      if (voteStats[cardId]) voteStats[cardId][voteType]--;
+    } else {
+      // Upsert vote
+      await supabaseUpsert('card_votes', { card_id: cardId, vote_type: voteType, user_fingerprint: fingerprint });
+      if (existing && voteStats[cardId]) voteStats[cardId][existing]--;
+      if (!voteStats[cardId]) voteStats[cardId] = { too_strong: 0, too_weak: 0 };
+      voteStats[cardId][voteType]++;
+      myVotes[cardId] = voteType;
+    }
+
+    renderCards();
+  }
+
+  // Load data then init
   fetch(baseUrl + '/static/cards/meta.json')
     .then(r => r.json())
-    .then(data => { cardsData = data; init(); });
+    .then(async data => {
+      cardsData = data;
+      await Promise.all([loadVotes(), loadComments()]);
+      init();
+    });
 
   const cardsGrid = document.getElementById('cardsGrid');
   const noResults = document.getElementById('noResults');
@@ -440,7 +990,7 @@ title: 卡牌图鉴
 
       const cardDiv = document.createElement('div');
       cardDiv.className = 'card-item';
-      cardDiv.onclick = () => { modalImage.src = baseUrl + '/static/cards/' + file; modal.classList.add('active'); };
+      cardDiv.onclick = () => openModal(card, baseUrl + '/static/cards/' + file);
 
       const img = document.createElement('img');
       img.src = baseUrl + '/static/cards/' + file;
@@ -459,20 +1009,68 @@ title: 卡牌图鉴
         const toggleDiv = document.createElement('div');
         toggleDiv.className = 'card-versions';
 
-        const baseBtn = document.createElement('button');
-        baseBtn.className = 'version-toggle' + (ver === 'base' ? ' active' : '');
-        baseBtn.textContent = '基础';
-        baseBtn.onclick = () => { cardStates[card.id] = 'base'; renderCards(); };
+        const baseLabel = document.createElement('span');
+        baseLabel.className = 'version-label';
+        baseLabel.textContent = '基础';
 
-        const upgradedBtn = document.createElement('button');
-        upgradedBtn.className = 'version-toggle' + (ver === 'upgraded' ? ' active' : '');
-        upgradedBtn.textContent = '升级';
-        upgradedBtn.onclick = () => { cardStates[card.id] = 'upgraded'; renderCards(); };
+        const switchLabel = document.createElement('label');
+        switchLabel.className = 'version-switch';
 
-        toggleDiv.appendChild(baseBtn);
-        toggleDiv.appendChild(upgradedBtn);
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = ver === 'upgraded';
+        checkbox.onchange = () => {
+          cardStates[card.id] = checkbox.checked ? 'upgraded' : 'base';
+          renderCards();
+        };
+
+        const slider = document.createElement('span');
+        slider.className = 'version-slider';
+
+        switchLabel.appendChild(checkbox);
+        switchLabel.appendChild(slider);
+
+        const upgradedLabel = document.createElement('span');
+        upgradedLabel.className = 'version-label';
+        upgradedLabel.textContent = '升级';
+
+        toggleDiv.appendChild(baseLabel);
+        toggleDiv.appendChild(switchLabel);
+        toggleDiv.appendChild(upgradedLabel);
         wrapper.appendChild(toggleDiv);
       }
+
+      // Voting buttons
+      const vs = voteStats[card.id] || { too_strong: 0, too_weak: 0 };
+      const mv = myVotes[card.id];
+
+      const voteDiv = document.createElement('div');
+      voteDiv.className = 'card-vote';
+
+      const strongBtn = document.createElement('button');
+      strongBtn.className = 'vote-btn too-strong' + (mv === 'too_strong' ? ' active' : '');
+      strongBtn.innerHTML = `<span>太强了</span>${vs.too_strong ? `<span class="vote-count">${vs.too_strong}</span>` : ''}`;
+      strongBtn.onclick = () => vote(card.id, 'too_strong');
+
+      const weakBtn = document.createElement('button');
+      weakBtn.className = 'vote-btn too-weak' + (mv === 'too_weak' ? ' active' : '');
+      weakBtn.innerHTML = `<span>太弱了</span>${vs.too_weak ? `<span class="vote-count">${vs.too_weak}</span>` : ''}`;
+      weakBtn.onclick = () => vote(card.id, 'too_weak');
+
+      voteDiv.appendChild(strongBtn);
+      voteDiv.appendChild(weakBtn);
+      wrapper.appendChild(voteDiv);
+
+      // Comments button
+      const comments = commentsData[card.id] || [];
+      const commentBtn = document.createElement('button');
+      commentBtn.className = 'comments-toggle';
+      commentBtn.innerHTML = `<span>💬</span><span>评论 (${comments.length})</span>`;
+      commentBtn.onclick = (e) => {
+        e.stopPropagation();
+        openModal(card, baseUrl + '/static/cards/' + file);
+      };
+      wrapper.appendChild(commentBtn);
 
       cardsGrid.appendChild(wrapper);
     });

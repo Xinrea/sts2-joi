@@ -4,4 +4,8 @@ baseurl: ""
 url: "https://sts2.vjoi.cn"
 author: Xinrea
 
+# Supabase configuration (set these in your Supabase project)
+supabase_url: "https://ybbooetztxmvagmfvkuo.supabase.co"
+supabase_anon_key: "sb_publishable_fbS96dyR0-zsKQo9T9n6EA_QIIeXx4f"
+
 markdown: kramdown
