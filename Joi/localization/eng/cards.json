@@ -120,7 +120,7 @@
   "JOI-SORRY_BUDDY.title": "Sorry Buddy",
   "JOI-SORRY_BUDDY.description": "Draw {Cards:diff()} card.\nIf [gold]Axis Core[/gold] is in play, it dies. Draw {BonusCards:diff()} additional card and gain {Energy:energyIcons()}.",
   "JOI-MUTATION.title": "Mutation",
-  "JOI-MUTATION.description": "Apply {ThornsPower:diff()} [gold]Thorns[/gold] to [gold]Axis Core[/gold].",
+  "JOI-MUTATION.description": "Gain {Block:diff()} Block.\nIf [gold]Axis Core[/gold] is in play, gain {ZhouXinThornsPower:diff()} [gold]Thorns Guard[/gold].",
   "JOI-ORANGE_EXPERT.title": "Orange Expert",
   "JOI-ORANGE_EXPERT.description": "Whenever an [gold]Orange[/gold] card is played, deal {Damage:diff()} damage to a random enemy.",
   "JOI-ORANGE_TREE.title": "Orange Tree",

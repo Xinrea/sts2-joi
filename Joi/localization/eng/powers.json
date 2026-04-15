@@ -61,5 +61,8 @@
   "JOI-BOND_POWER.smartDescription": "At the start of your turn, if Axis Core is in play, gain 1 Energy.",
   "JOI-COSMIC_CONSTANT_POWER.title": "Cosmic Constant",
   "JOI-COSMIC_CONSTANT_POWER.description": "At the start of each turn, apply Black Hole and White Hole to yourself.",
-  "JOI-COSMIC_CONSTANT_POWER.smartDescription": "At the start of each turn, apply Black Hole and White Hole to yourself."
+  "JOI-COSMIC_CONSTANT_POWER.smartDescription": "At the start of each turn, apply Black Hole and White Hole to yourself.",
+  "JOI-ZHOU_XIN_THORNS_POWER.title": "Thorns Guard",
+  "JOI-ZHOU_XIN_THORNS_POWER.description": "When you take attack damage, deal damage equal to stacks to the attacker. Removed when Axis Core dies.",
+  "JOI-ZHOU_XIN_THORNS_POWER.smartDescription": "When you take attack damage, deal [blue]{Amount}[/blue] damage to the attacker. Removed when Axis Core dies."
 }

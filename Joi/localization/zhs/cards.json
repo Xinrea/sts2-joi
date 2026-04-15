@@ -120,7 +120,7 @@
   "JOI-SORRY_BUDDY.title": "委屈一下",
   "JOI-SORRY_BUDDY.description": "抽{Cards:diff()}张牌。\n如果[gold]轴芯[/gold]在场，轴芯死亡，额外抽{BonusCards:diff()}张牌并获得{Energy:energyIcons()}。",
   "JOI-MUTATION.title": "变异",
-  "JOI-MUTATION.description": "给[gold]轴芯[/gold]附加{ThornsPower:diff()}点[gold]荆棘[/gold]。",
+  "JOI-MUTATION.description": "获得{Block:diff()}点格挡。\n如果[gold]轴芯[/gold]在场，为自身附加{ZhouXinThornsPower:diff()}层[gold]荆棘守护[/gold]。",
   "JOI-ORANGE_EXPERT.title": "橘子专家",
   "JOI-ORANGE_EXPERT.description": "每打出一张[gold]橘子[/gold]，对随机敌人造成{Damage:diff()}点伤害。",
   "JOI-ORANGE_TREE.title": "橘子树",

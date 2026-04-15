@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Joi.JoiCode.Powers;
 
 namespace Joi.JoiCode.Cards;
 
@@ -19,7 +20,7 @@ public class Mutation : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<ThornsPower>(3),
+        new PowerVar<ZhouXinThornsPower>(3),
         new BlockVar(6, ValueProp.Move)
     ];
 
@@ -28,9 +29,10 @@ public class Mutation : JoiCard
         var definition = ZhouXin.GetSummonDefinition();
         var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
 
+        // 只有轴芯在场时才能打出，给 Joi 本人加荆棘
         if (existing != null && existing.IsAlive)
         {
-            await PowerCmd.Apply<ThornsPower>(existing, DynamicVars["ThornsPower"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<ZhouXinThornsPower>(Owner.Creature, DynamicVars["ZhouXinThornsPower"].BaseValue, Owner.Creature, this);
         }
 
         Owner.Creature.GainBlockInternal((int)DynamicVars["Block"].BaseValue);

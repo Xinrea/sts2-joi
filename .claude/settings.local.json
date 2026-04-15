@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ilspy__decompile_type",
+      "mcp__ilspy__search_members_by_name"
+    ]
+  }
+}

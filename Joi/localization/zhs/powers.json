@@ -58,5 +58,8 @@
   "JOI-BOND_POWER.smartDescription": "回合开始时，如果轴芯在场，获得1点能量。",
   "JOI-COSMIC_CONSTANT_POWER.title": "宇宙常数",
   "JOI-COSMIC_CONSTANT_POWER.description": "回合开始时，为自身附加黑洞和白洞。",
-  "JOI-COSMIC_CONSTANT_POWER.smartDescription": "回合开始时，为自身附加黑洞和白洞。"
+  "JOI-COSMIC_CONSTANT_POWER.smartDescription": "回合开始时，为自身附加黑洞和白洞。",
+  "JOI-ZHOU_XIN_THORNS_POWER.title": "荆棘守护",
+  "JOI-ZHOU_XIN_THORNS_POWER.description": "受到攻击伤害时，对攻击者造成等同于层数的伤害。轴芯死亡时移除。",
+  "JOI-ZHOU_XIN_THORNS_POWER.smartDescription": "受到攻击伤害时，对攻击者造成[blue]{Amount}[/blue]点伤害。轴芯死亡时移除。"
 }
