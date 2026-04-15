@@ -21,7 +21,7 @@ public class Mutation : JoiCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<ZhouXinThornsPower>(3),
-        new BlockVar(6, ValueProp.Move)
+        new BlockVar(3, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
