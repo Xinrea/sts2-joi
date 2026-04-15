@@ -13,7 +13,7 @@ public class OrangeTreePower : JoiPower
     private const string ZhouXinSummonKey = "zhou-xin-core";
 
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.None;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
     {
@@ -22,27 +22,29 @@ public class OrangeTreePower : JoiPower
             return;
         }
 
-        var definition = ZhouXin.GetSummonDefinition();
-        var existing = SummonActions.FindExistingSummon(Owner, definition);
-
-        if (existing != null)
+        for (int i = 0; i < Amount; i++)
         {
-            var newMaxHp = existing.MaxHp + 1;
-            existing.SetMaxHpInternal(newMaxHp);
-            existing.HealInternal(1);
-        }
-        else
-        {
-            ZhouXin.RandomizeName();
-            var zhouXin = await SummonActions.SummonPet(definition, Owner.Player!);
-            zhouXin.SetMaxHpInternal(1);
-            zhouXin.HealInternal(1);
+            var definition = ZhouXin.GetSummonDefinition();
+            var existing = SummonActions.FindExistingSummon(Owner, definition);
 
-            // 播放召唤特效
-            VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
-        }
+            if (existing != null)
+            {
+                var newMaxHp = existing.MaxHp + 1;
+                existing.SetMaxHpInternal(newMaxHp);
+                existing.HealInternal(1);
+            }
+            else
+            {
+                ZhouXin.RandomizeName();
+                var zhouXin = await SummonActions.SummonPet(definition, Owner.Player!);
+                zhouXin.SetMaxHpInternal(1);
+                zhouXin.HealInternal(1);
 
-        var card = combatState.CreateCard<Orange>(Owner.Player!);
-        await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, true);
+                VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
+            }
+
+            var card = combatState.CreateCard<Orange>(Owner.Player!);
+            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, true);
+        }
     }
 }
