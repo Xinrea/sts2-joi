@@ -15,6 +15,8 @@ public class CosmicExplosion : JoiCard
 {
     public CosmicExplosion() : base(-1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies) { }
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
     protected override bool HasEnergyCostX => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
