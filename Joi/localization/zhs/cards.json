@@ -163,7 +163,7 @@
   "JOI-QUANTUM_SALVO.title": "量子齐射",
   "JOI-QUANTUM_SALVO.description": "对随机敌人造成{Damage:diff()}点伤害{Hits:diff()}次。",
   "JOI-ENERGY_LEVEL_TRANSITION.title": "能层跃迁",
-  "JOI-ENERGY_LEVEL_TRANSITION.description": "获得{Energy:diff()}点[gold]能量[/gold]。如果手牌中有[gold]黑洞[/gold]或[gold]白洞[/gold]卡牌，改为获得{BonusEnergy:diff()}点[gold]能量[/gold]。",
+  "JOI-ENERGY_LEVEL_TRANSITION.description": "将你的[gold]能量[/gold]设置为0到当前最大能量之间的随机值。",
   "JOI-DARK_HISTORY.title": "黑历史",
   "JOI-DARK_HISTORY.description": "所有敌人获得{VulnerablePower:diff()}层[gold]易伤[/gold]。为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
   "JOI-WHITE_HOLE_HEAL.title": "治疗",

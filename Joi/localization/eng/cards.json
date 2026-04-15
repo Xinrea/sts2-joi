@@ -163,7 +163,7 @@
   "JOI-QUANTUM_SALVO.title": "Quantum Salvo",
   "JOI-QUANTUM_SALVO.description": "Deal {Damage:diff()} damage to a random enemy {Hits:diff()} times.",
   "JOI-ENERGY_LEVEL_TRANSITION.title": "Energy Level Transition",
-  "JOI-ENERGY_LEVEL_TRANSITION.description": "Gain {Energy:diff()} [gold]Energy[/gold]. If you have [gold]Black Hole[/gold] or [gold]White Hole[/gold] cards in hand, gain {BonusEnergy:diff()} [gold]Energy[/gold] instead.",
+  "JOI-ENERGY_LEVEL_TRANSITION.description": "Set your [gold]Energy[/gold] to a random value between 0 and your max energy.",
   "JOI-DARK_HISTORY.title": "Dark History",
   "JOI-DARK_HISTORY.description": "Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies. Apply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
   "JOI-WHITE_HOLE_HEAL.title": "White Hole Heal",
