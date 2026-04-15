@@ -21,7 +21,7 @@ public class Mua : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Heal", 6)
+        new DynamicVar("Heal", 8)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -42,8 +42,8 @@ public class Mua : JoiCard
             // 召唤新的轴芯
             ZhouXin.RandomizeName();
             var zhouXin = await SummonActions.SummonPet(definition, Owner);
-            zhouXin.SetMaxHpInternal(6);
-            zhouXin.HealInternal(6);
+            zhouXin.SetMaxHpInternal(8);
+            zhouXin.HealInternal(8);
 
             VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
         }
@@ -51,6 +51,6 @@ public class Mua : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Heal"].UpgradeValueBy(3);
+        DynamicVars["Heal"].UpgradeValueBy(4);
     }
 }
