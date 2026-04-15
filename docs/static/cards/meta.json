@@ -261,9 +261,9 @@
   {
     "id": "joi-mass_energy_conversion",
     "name": "\u8D28\u80FD\u8F6C\u6362",
-    "type": "power",
-    "base": "joi-mass_energy_conversion.power.webp",
-    "upgraded": "joi-mass_energy_conversion.power.upgraded.webp"
+    "type": "skill",
+    "base": "joi-mass_energy_conversion.skill.webp",
+    "upgraded": "joi-mass_energy_conversion.skill.upgraded.webp"
   },
   {
     "id": "joi-mua",
