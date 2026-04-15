@@ -169,7 +169,8 @@
   "JOI-WHITE_HOLE_HEAL.title": "White Hole Heal",
   "JOI-WHITE_HOLE_HEAL.description": "Remove up to {WhiteHole:diff()} [gold]White Hole[/gold]. Heal 1 HP for each removed.",
   "JOI-MASS_ENERGY_CONVERSION.title": "Mass-Energy Conversion",
-  "JOI-MASS_ENERGY_CONVERSION.description": "Convert {BlackHole:diff()} [gold]Black Hole[/gold] into Block equal to {Multiplier:diff()} times the amount converted.",
+  "JOI-MASS_ENERGY_CONVERSION.description": "Exhaust a card from your hand. Gain Energy equal to its cost.",
+  "JOI-MASS_ENERGY_CONVERSION.selectionPrompt": "Choose a card to exhaust",
   "JOI-COSMIC_CONSTANT.title": "Cosmic Constant",
   "JOI-COSMIC_CONSTANT.description": "At the start of each turn, apply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself."
 }

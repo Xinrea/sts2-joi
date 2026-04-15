@@ -169,7 +169,8 @@
   "JOI-WHITE_HOLE_HEAL.title": "治疗",
   "JOI-WHITE_HOLE_HEAL.description": "移除最多{WhiteHole:diff()}层[gold]白洞[/gold]，每移除1层，回复1点生命。",
   "JOI-MASS_ENERGY_CONVERSION.title": "质能转换",
-  "JOI-MASS_ENERGY_CONVERSION.description": "将{BlackHole:diff()}层[gold]黑洞[/gold]转化为等于转化量{Multiplier:diff()}倍的格挡。",
+  "JOI-MASS_ENERGY_CONVERSION.description": "消耗一张手牌，获得等于其费用的能量。",
+  "JOI-MASS_ENERGY_CONVERSION.selectionPrompt": "选择一张卡牌消耗",
   "JOI-COSMIC_CONSTANT.title": "宇宙常数",
   "JOI-COSMIC_CONSTANT.description": "回合开始时，为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]和{WhiteHole:diff()}层[gold]白洞[/gold]。"
 }
