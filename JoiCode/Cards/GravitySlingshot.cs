@@ -16,7 +16,7 @@ public class GravitySlingshot : JoiCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar("Damage1", 6, ValueProp.Move),
-        new DamageVar("Damage2", 12, ValueProp.Move)
+        new DamageVar("Damage2", 9, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -33,7 +33,7 @@ public class GravitySlingshot : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Damage1"].UpgradeValueBy(4);
-        DynamicVars["Damage2"].UpgradeValueBy(4);
+        DynamicVars["Damage1"].UpgradeValueBy(3);
+        DynamicVars["Damage2"].UpgradeValueBy(3);
     }
 }
