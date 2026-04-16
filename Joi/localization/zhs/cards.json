@@ -87,7 +87,7 @@
   "JOI-ORIGINAL_CHICKEN.title": "原味鸡",
   "JOI-ORIGINAL_CHICKEN.description": "将[gold]白洞[/gold]层数翻倍。",
   "JOI-QUESTION_BOX.title": "提问箱",
-  "JOI-QUESTION_BOX.description": "选择手牌中的{Cards:diff()}张牌，将其费用变为0。",
+  "JOI-QUESTION_BOX.description": "选择手牌中的{Cards:diff()}张牌，将其本回合费用变为0。",
   "JOI-QUESTION_BOX.selectionPrompt": "选择要变为0费的牌。",
   "JOI-COLLECT_RICE.title": "收米",
   "JOI-COLLECT_RICE.description": "每有一名敌人，获得{Gold:diff()}金币。",

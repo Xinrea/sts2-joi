@@ -45,7 +45,7 @@ public class QuestionBox : JoiCard
 
         foreach (var selectedCard in selectedCards)
         {
-            selectedCard.EnergyCost.SetThisCombat(0, reduceOnly: false);
+            selectedCard.EnergyCost.SetThisTurn(0, reduceOnly: false);
         }
     }
 
