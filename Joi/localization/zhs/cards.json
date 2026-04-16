@@ -26,7 +26,7 @@
   "JOI-SINGULARITY.title": "奇点",
   "JOI-SINGULARITY.description": "为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]。",
   "JOI-PHOTON_JET.title": "光子喷射",
-  "JOI-PHOTON_JET.description": "抽{Cards:diff()}张牌。\n为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
+  "JOI-PHOTON_JET.description": "触发{Triggers:diff()}次[gold]白洞[/gold]效果。",
   "JOI-BINARY_STAR_COLLISION.title": "双星碰撞",
   "JOI-BINARY_STAR_COLLISION.description": "造成{Damage:diff()}点伤害。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]和{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-HAWKING_RADIATION.title": "霍金辐射",

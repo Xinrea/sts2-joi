@@ -26,7 +26,7 @@
   "JOI-SINGULARITY.title": "Singularity",
   "JOI-SINGULARITY.description": "Apply {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
   "JOI-PHOTON_JET.title": "Photon Jet",
-  "JOI-PHOTON_JET.description": "Draw {Cards:diff()} card(s).\nApply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
+  "JOI-PHOTON_JET.description": "Trigger [gold]White Hole[/gold] effect {Triggers:diff()} time(s).",
   "JOI-BINARY_STAR_COLLISION.title": "Binary Star Collision",
   "JOI-BINARY_STAR_COLLISION.description": "Deal {Damage:diff()} damage.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-HAWKING_RADIATION.title": "Hawking Radiation",
