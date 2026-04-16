@@ -125,7 +125,7 @@ public class CardExportConsoleCmd : AbstractConsoleCmd
                         ["name"] = cardName,
                         ["type"] = cardType,
                         ["base"] = baseFilename,
-                        ["upgraded"] = upgradedFilename
+                        ["upgraded"] = upgradedFilename ?? (object)""
                     };
                     metadata.Add(cardMeta);
 

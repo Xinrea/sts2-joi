@@ -511,6 +511,13 @@
     "upgraded": "joi-starlight_flicker.skill.upgraded.webp"
   },
   {
+    "id": "joi-store",
+    "name": "\u5B58\u50A8",
+    "type": "skill",
+    "base": "joi-store.skill.webp",
+    "upgraded": "joi-store.skill.upgraded.webp"
+  },
+  {
     "id": "joi-strike",
     "name": "\u6253\u51FB",
     "type": "attack",
