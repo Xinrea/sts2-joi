@@ -1,8 +1,11 @@
 using BaseLib.Abstracts;
+using BaseLib.Hooks;
 using BaseLib.Utils;
 using BaseLib.Utils.NodeFactories;
 using Godot;
+using Joi.JoiCode.Powers;
 using Joi.JoiCode.Services;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
@@ -12,7 +15,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Joi.JoiCode.Minions;
 
-public class ZhouXin : CustomMonsterModel
+public class ZhouXin : CustomMonsterModel, IOnCreatureSpawned, IOnCreatureDied
 {
     private const string DefaultUniqueKey = "zhou-xin-core";
 
@@ -79,5 +82,37 @@ public class ZhouXin : CustomMonsterModel
         }
 
         return target;
+    }
+
+    public async Task OnCreatureSpawned(CreatureSpawnContext context)
+    {
+        // 当任何轴芯被召唤时，给玩家添加 StoragePower
+        if (context.Monster is not ZhouXin)
+            return;
+
+        var player = context.CombatState.PlayerCreatures.FirstOrDefault(c => !c.IsPet && c.IsAlive);
+        if (player != null && player.GetPower<StoragePower>() == null)
+        {
+            MainFile.Logger.Info("[ZhouXin] Spawned, adding StoragePower to player");
+            await PowerCmd.Apply<StoragePower>(player, 1, player, null);
+        }
+    }
+
+    public async Task OnCreatureDied(CreatureLifecycleContext context)
+    {
+        // 当任何轴芯死亡时，移除玩家的 StoragePower
+        if (context.Kind != CreatureLifecycleKind.Died || context.Monster is not ZhouXin)
+            return;
+
+        var player = context.CombatState.PlayerCreatures.FirstOrDefault(c => !c.IsPet);
+        if (player != null)
+        {
+            var power = player.GetPower<StoragePower>();
+            if (power != null)
+            {
+                MainFile.Logger.Info("[ZhouXin] Died, removing StoragePower from player");
+                await PowerCmd.Remove(power);
+            }
+        }
     }
 }

@@ -25,6 +25,7 @@ public class StoredCardPower : JoiPower
 {
     private CardModel? _storedCard;
     private bool _played;
+    private PlayerChoiceContext? _cachedChoiceContext;
 
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
@@ -71,14 +72,25 @@ public class StoredCardPower : JoiPower
         await CardPileCmd.Add(card, PileType.Hand);
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+    public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+    {
+        if (side == CombatSide.Player)
+        {
+            _cachedChoiceContext = choiceContext;
+        }
+        return Task.CompletedTask;
+    }
+
+    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
     {
         if (side != CombatSide.Player) return;
-        if (_storedCard == null || _played) return;
+        if (_storedCard == null || _played || _cachedChoiceContext == null) return;
 
         _played = true;
         var card = _storedCard;
         _storedCard = null;
+        var choiceContext = _cachedChoiceContext;
+        _cachedChoiceContext = null;
 
         ClearStoredCardVisual();
 
@@ -92,7 +104,6 @@ public class StoredCardPower : JoiPower
             int playCount = hasAxisCoreHandsome ? 2 : 1;
 
             MainFile.Logger.Info($"[StoredCardPower] Auto-playing stored card {card.Id} x{playCount}");
-            await CardPileCmd.Add(card, PileType.Hand);
 
             for (int i = 0; i < playCount; i++)
             {
@@ -101,6 +112,7 @@ public class StoredCardPower : JoiPower
         }
         else
         {
+            // 轴芯死亡，卡牌返回弃牌堆
             await CardPileCmd.Add(card, PileType.Discard);
         }
 
