@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sts2.vjoi.cn/sitemap.xml
