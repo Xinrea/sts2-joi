@@ -16,8 +16,8 @@ public class AxisShield : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Heal", 5),
-        new BlockVar(5, ValueProp.Move)
+        new DynamicVar("Heal", 4),
+        new BlockVar(4, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -45,7 +45,7 @@ public class AxisShield : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Heal"].UpgradeValueBy(3);
-        DynamicVars.Block.UpgradeValueBy(3);
+        DynamicVars["Heal"].UpgradeValueBy(2);
+        DynamicVars.Block.UpgradeValueBy(2);
     }
 }
