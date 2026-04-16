@@ -30,7 +30,6 @@ public class Sneeze : JoiCard
         }
 
         await CommonActions.ApplySelf<WhiteHolePower>(this, DynamicVars["WhiteHole"].BaseValue);
-        await CommonActions.Draw(this, 1, choiceContext);
     }
 
     protected override void OnUpgrade()
