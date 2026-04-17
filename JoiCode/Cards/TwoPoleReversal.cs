@@ -32,8 +32,8 @@ public class TwoPoleReversal : JoiCard
         if (blackHole != null && whiteHole != null)
         {
             var temp = blackHole.Amount;
-            blackHole.Amount = whiteHole.Amount;
-            whiteHole.Amount = temp;
+            blackHole.SetAmount(whiteHole.Amount, true);
+            whiteHole.SetAmount(temp, true);
         }
     }
 

@@ -28,7 +28,7 @@ public class Compress : JoiCard
             if (newAmount == 0)
                 await PowerCmd.Remove(power);
             else
-                power.Amount = newAmount;
+                power.SetAmount(newAmount, true);
         }
 
         await CommonActions.Draw(this, choiceContext);

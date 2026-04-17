@@ -68,13 +68,19 @@
         <NoWarn>$(NoWarn);MSB3270</NoWarn>
     </PropertyGroup>
 
+    <!-- Override Sts2DataDir for local development if LocalSts2DataDir is set -->
+    <PropertyGroup Condition="'$(LocalSts2DataDir)' != ''">
+        <LocalSts2DataDir>$(LocalSts2DataDir)</LocalSts2DataDir>
+    </PropertyGroup>
+
     <ItemGroup Condition="Exists('$(Sts2DataDir)')">
         <Reference Include="0Harmony">
             <HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath>
             <Private>false</Private>
         </Reference>
         <Reference Include="sts2">
-            <HintPath>$(Sts2DataDir)/sts2.dll</HintPath>
+            <HintPath Condition="'$(LocalSts2DataDir)' != ''">$(LocalSts2DataDir)/sts2.dll</HintPath>
+            <HintPath Condition="'$(LocalSts2DataDir)' == ''">$(Sts2DataDir)/sts2.dll</HintPath>
             <Private>false</Private>
         </Reference>
     </ItemGroup>
