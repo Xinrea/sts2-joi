@@ -17,8 +17,8 @@ public class CosmicConstantPower : JoiPower, IAfterTurnStart
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("BlackHole", 1),
-        new DynamicVar("WhiteHole", 1)
+        new DynamicVar("BlackHole", 2),
+        new DynamicVar("WhiteHole", 2)
     ];
 
     public async Task AfterTurnStart(TurnContext context)
