@@ -13,6 +13,8 @@ public class PureWhiteForm : JoiCard
 {
     public PureWhiteForm() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
