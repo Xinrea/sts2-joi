@@ -24,6 +24,7 @@ public class Birth : JoiCard
 
     protected override void OnUpgrade()
     {
+        EnergyCost.UpgradeBy(-1);
         DynamicVars["Amount"].UpgradeValueBy(5);
     }
 }
