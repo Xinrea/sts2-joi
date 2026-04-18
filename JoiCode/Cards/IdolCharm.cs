@@ -15,6 +15,8 @@ public class IdolCharm : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var target = cardPlay.Target;
