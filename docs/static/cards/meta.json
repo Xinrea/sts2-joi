@@ -317,9 +317,9 @@
   {
     "id": "joi-orange_expert",
     "name": "\u6A58\u5B50\u4E13\u5BB6",
-    "type": "skill",
-    "base": "joi-orange_expert.skill.webp",
-    "upgraded": "joi-orange_expert.skill.upgraded.webp"
+    "type": "power",
+    "base": "joi-orange_expert.power.webp",
+    "upgraded": "joi-orange_expert.power.upgraded.webp"
   },
   {
     "id": "joi-orange_peel",
