@@ -1,37 +1,45 @@
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
 using Joi.JoiCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Joi.JoiCode.Cards;
 
 [Pool(typeof(JoiCardPool))]
 public class GravitationalWave : JoiCard
 {
-    public GravitationalWave() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
+    public GravitationalWave() : base(1, CardType.Skill, CardRarity.Common, TargetType.AllEnemies) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(9, ValueProp.Move),
+        new PowerVar<WeakPower>(1),
         new DynamicVar("WhiteHole", 1)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.CardAttack(this, cardPlay).Execute(choiceContext);
+        var enemies = CombatState?.Enemies.ToList() ?? [];
+        int enemyCount = 0;
 
-        var target = cardPlay.Target;
-        if (target?.Powers.Any(p => p.Type == MegaCrit.Sts2.Core.Entities.Powers.PowerType.Debuff) == true)
+        foreach (var enemy in enemies)
         {
-            await CommonActions.ApplySelf<WhiteHolePower>(this, DynamicVars["WhiteHole"].BaseValue);
+            await PowerCmd.Apply<WeakPower>(enemy, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+            enemyCount++;
+        }
+
+        if (enemyCount > 0)
+        {
+            await CommonActions.ApplySelf<WhiteHolePower>(this, enemyCount);
         }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Weak.UpgradeValueBy(1);
     }
 }
