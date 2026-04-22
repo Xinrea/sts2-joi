@@ -14,7 +14,7 @@ public class ResonanceCavity : JoiCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("WhiteHole", 2)
+        new DynamicVar("WhiteHole", 3)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -24,6 +24,6 @@ public class ResonanceCavity : JoiCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars["WhiteHole"].UpgradeValueBy(1);
+        DynamicVars["WhiteHole"].UpgradeValueBy(2);
     }
 }
