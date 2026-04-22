@@ -150,7 +150,7 @@
   "JOI-RESONANCE_CAVITY.title": "Resonance Cavity",
   "JOI-RESONANCE_CAVITY.description": "Apply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-GRAVITATIONAL_SINGULARITY.title": "Gravitational Singularity",
-  "JOI-GRAVITATIONAL_SINGULARITY.description": "Apply {WhiteHole:diff()} [gold]White Hole[/gold] and {BlackHole:diff()} [gold]Black Hole[/gold] to yourself.",
+  "JOI-GRAVITATIONAL_SINGULARITY.description": "Trigger your current [gold]Black Hole[/gold] effect.\nApply {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-AXIS_SHIELD.title": "Axis Shield",
   "JOI-AXIS_SHIELD.description": "[gold]Summon[/gold] {Heal:diff()}. Gain {Block:diff()} Block.",
   "JOI-STARLIGHT_FLICKER.title": "Starlight Flicker",

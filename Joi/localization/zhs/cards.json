@@ -150,7 +150,7 @@
   "JOI-RESONANCE_CAVITY.title": "共振腔",
   "JOI-RESONANCE_CAVITY.description": "为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-GRAVITATIONAL_SINGULARITY.title": "引力奇点",
-  "JOI-GRAVITATIONAL_SINGULARITY.description": "为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]和{BlackHole:diff()}层[gold]黑洞[/gold]。",
+  "JOI-GRAVITATIONAL_SINGULARITY.description": "触发当前[gold]黑洞[/gold]效果。\n为自身附加{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-AXIS_SHIELD.title": "轴芯肉盾",
   "JOI-AXIS_SHIELD.description": "[gold]召唤[/gold]{Heal:diff()}。获得{Block:diff()}点格挡。",
   "JOI-STARLIGHT_FLICKER.title": "星光闪烁",
