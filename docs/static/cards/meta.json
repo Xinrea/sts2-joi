@@ -198,9 +198,9 @@
   {
     "id": "joi-gravitational_wave",
     "name": "\u5F15\u529B\u6CE2",
-    "type": "attack",
-    "base": "joi-gravitational_wave.attack.webp",
-    "upgraded": "joi-gravitational_wave.attack.upgraded.webp"
+    "type": "skill",
+    "base": "joi-gravitational_wave.skill.webp",
+    "upgraded": "joi-gravitational_wave.skill.upgraded.webp"
   },
   {
     "id": "joi-gravity_field",
