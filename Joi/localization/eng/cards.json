@@ -177,5 +177,7 @@
   "JOI-COSMIC_CONSTANT.title": "Cosmic Constant",
   "JOI-COSMIC_CONSTANT.description": "At the start of each turn, apply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
   "JOI-PRIMORDIAL_COVENANT.title": "Primordial Covenant",
-  "JOI-PRIMORDIAL_COVENANT.description": "Gain {Block:diff()} Block.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself."
+  "JOI-PRIMORDIAL_COVENANT.description": "Gain {Block:diff()} Block.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
+  "JOI-TENFOLD_MANIFEST.title": "Tenfold Manifest",
+  "JOI-TENFOLD_MANIFEST.description": "[gold]Summon[/gold] {Heal:diff()}.\nCan be upgraded infinitely at [gold]Rest Sites[/gold]."
 }

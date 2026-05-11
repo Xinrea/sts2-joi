@@ -364,6 +364,13 @@
     "upgraded": "joi-photon_jet.skill.upgraded.webp"
   },
   {
+    "id": "joi-primordial_covenant",
+    "name": "\u592A\u53E4\u76DF\u7EA6",
+    "type": "skill",
+    "base": "joi-primordial_covenant.skill.webp",
+    "upgraded": "joi-primordial_covenant.skill.upgraded.webp"
+  },
+  {
     "id": "joi-pulsar",
     "name": "\u8109\u51B2\u661F",
     "type": "attack",
@@ -537,6 +544,13 @@
     "type": "skill",
     "base": "joi-teleport.skill.webp",
     "upgraded": "joi-teleport.skill.upgraded.webp"
+  },
+  {
+    "id": "joi-tenfold_manifest",
+    "name": "\u5341\u91CD\u663E\u5316",
+    "type": "skill",
+    "base": "joi-tenfold_manifest.skill.webp",
+    "upgraded": "joi-tenfold_manifest.skill.upgraded.webp"
   },
   {
     "id": "joi-time_acceleration",

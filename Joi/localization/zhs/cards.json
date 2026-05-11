@@ -177,5 +177,7 @@
   "JOI-COSMIC_CONSTANT.title": "宇宙常数",
   "JOI-COSMIC_CONSTANT.description": "回合开始时，为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]和{WhiteHole:diff()}层[gold]白洞[/gold]。",
   "JOI-PRIMORDIAL_COVENANT.title": "太古盟约",
-  "JOI-PRIMORDIAL_COVENANT.description": "获得{Block:diff()}点格挡。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]与{WhiteHole:diff()}层[gold]白洞[/gold]。"
+  "JOI-PRIMORDIAL_COVENANT.description": "获得{Block:diff()}点格挡。\n为自身附加{BlackHole:diff()}层[gold]黑洞[/gold]与{WhiteHole:diff()}层[gold]白洞[/gold]。",
+  "JOI-TENFOLD_MANIFEST.title": "十重显化",
+  "JOI-TENFOLD_MANIFEST.description": "[gold]召唤[/gold]{Heal:diff()}。\n可在[gold]休息处[/gold]无限升级。"
 }
