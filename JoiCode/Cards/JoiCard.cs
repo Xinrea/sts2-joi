@@ -66,6 +66,7 @@ public abstract class JoiCard(int cost, CardType type, CardRarity rarity, Target
         "ORIGINAL_CHICKEN" => [CreateStaticHoverTip("JOI-WHITEHOLE")],
         "SLEEPY_RADIO" => [CreateStaticHoverTip("JOI-SLEEP")],
         "NEBUL_LULLABY" => [CreateStaticHoverTip("JOI-SLEEP")],
+        "PRIMORDIAL_COVENANT" => [CreateStaticHoverTip("JOI-BLACKHOLE"), CreateStaticHoverTip("JOI-WHITEHOLE")],
         "NIGHTMARE_EROSION" => [CreateStaticHoverTip("JOI-SLEEP"), CreateStaticHoverTip("JOI-WHITEHOLE")],
         "DEEP_SPACE_LULLABY" => [CreateStaticHoverTip("JOI-SLEEP")],
         "RESONANCE_BOND" => [CreateStaticHoverTip("JOI-CHARM"), CreateStaticHoverTip("JOI-WHITEHOLE"), CreateStaticHoverTip("JOI-BLACKHOLE")],

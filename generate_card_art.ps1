@@ -5,7 +5,12 @@ param(
     [Parameter(Mandatory=$true)]
     [string]$OutputName,
 
-    [string]$ReferenceImage = "Joi.png"
+    [string]$ReferenceImage = "Joi.png",
+
+    # Normal: 与多数角色卡一致，API 请求 4:3，导出 512x384（模组常用小图）。
+    # Ancient: 与原版 Ancient 立绘一致，API 请求竖版 3:4，导出 606x852。
+    [ValidateSet('Normal', 'Ancient')]
+    [string]$PortraitKind = 'Normal'
 )
 
 $apiKey = $env:OPENROUTER_API_KEY
@@ -18,8 +23,14 @@ if (-not $apiKey) {
 $imageBytes = [IO.File]::ReadAllBytes($ReferenceImage)
 $base64Image = [Convert]::ToBase64String($imageBytes)
 
+$apiAspectRatio = if ($PortraitKind -eq 'Ancient') { "3:4" } else { "4:3" }
+
 $body = @{
-    model = "google/gemini-3-pro-image-preview"
+    model = "openai/gpt-5.4-image-2"
+    modalities = @("image", "text")
+    image_config = @{
+        aspect_ratio = $apiAspectRatio
+    }
     messages = @(
         @{
             role = "user"
@@ -39,7 +50,7 @@ $body = @{
     )
 } | ConvertTo-Json -Depth 10
 
-Write-Host "Generating image..."
+Write-Host "Generating image (PortraitKind=$PortraitKind, API aspect_ratio=$apiAspectRatio)..."
 
 $response = Invoke-RestMethod -Uri "https://openrouter.ai/api/v1/chat/completions" `
     -Method Post `
@@ -49,36 +60,52 @@ $response = Invoke-RestMethod -Uri "https://openrouter.ai/api/v1/chat/completion
     } `
     -Body $body
 
-$imageUrl = $response.choices[0].message.images[0].image_url.url
-$base64Data = $imageUrl.Split(',')[1]
+$images = $response.choices[0].message.images
+if (-not $images -or $images.Count -lt 1) {
+    Write-Error "No images in API response (check modalities and model output)."
+    exit 1
+}
+
+$imageUrl = $images[0].image_url.url
+if ($imageUrl -match '^data:image/[^;]+;base64,(.+)$') {
+    $base64Data = $Matches[1]
+} else {
+    $base64Data = $imageUrl.Split(',')[1]
+}
 $bytes = [Convert]::FromBase64String($base64Data)
 
-# Save as temporary JPEG first
-$tempJpeg = [IO.Path]::GetTempFileName() + ".jpg"
-[IO.File]::WriteAllBytes($tempJpeg, $bytes)
-
-# Convert JPEG to PNG and crop to 4:3 aspect ratio (512x384)
 Add-Type -AssemblyName System.Drawing
-$image = [System.Drawing.Image]::FromFile($tempJpeg)
+$ms = New-Object System.IO.MemoryStream(,$bytes)
+$image = [System.Drawing.Image]::FromStream($ms)
 
-# Calculate crop dimensions (top crop to 4:3)
-$targetWidth = 512
-$targetHeight = 384
+# Export size: Normal = 小图 4:3；Ancient = 原版 Ancient 竖版立绘 606x852
+if ($PortraitKind -eq 'Ancient') {
+    $targetWidth = 606
+    $targetHeight = 852
+} else {
+    $targetWidth = 512
+    $targetHeight = 384
+}
+
 $sourceAspect = $image.Width / $image.Height
 $targetAspect = $targetWidth / $targetHeight
 
 if ($sourceAspect -gt $targetAspect) {
-    # Image is wider, crop width from center
+    # Image is wider than target frame: crop width from center
     $cropHeight = $image.Height
     $cropWidth = [int]($cropHeight * $targetAspect)
     $cropX = [int](($image.Width - $cropWidth) / 2)
     $cropY = 0
 } else {
-    # Image is taller, crop from top
+    # Image is taller / narrower: crop height
     $cropWidth = $image.Width
     $cropHeight = [int]($cropWidth / $targetAspect)
     $cropX = 0
-    $cropY = 0  # Crop from top instead of center
+    if ($PortraitKind -eq 'Ancient') {
+        $cropY = [int](($image.Height - $cropHeight) / 2)
+    } else {
+        $cropY = 0
+    }
 }
 
 $cropped = New-Object System.Drawing.Bitmap($targetWidth, $targetHeight)
@@ -96,7 +123,6 @@ $graphics.Dispose()
 $cropped.Dispose()
 $image.Dispose()
 
-# Clean up temp file
-Remove-Item $tempJpeg
+$ms.Dispose()
 
-Write-Host "✓ Image saved to $outputPath (512x384, 4:3 aspect ratio)"
+Write-Host "✓ Image saved to $outputPath (${targetWidth}x${targetHeight}, PortraitKind=$PortraitKind)"

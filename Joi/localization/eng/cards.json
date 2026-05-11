@@ -175,5 +175,7 @@
   "JOI-MASS_ENERGY_CONVERSION.description": "Exhaust a card from your hand. Gain Energy equal to its cost.",
   "JOI-MASS_ENERGY_CONVERSION.selectionPrompt": "Choose a card to exhaust",
   "JOI-COSMIC_CONSTANT.title": "Cosmic Constant",
-  "JOI-COSMIC_CONSTANT.description": "At the start of each turn, apply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself."
+  "JOI-COSMIC_CONSTANT.description": "At the start of each turn, apply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself.",
+  "JOI-PRIMORDIAL_COVENANT.title": "Primordial Covenant",
+  "JOI-PRIMORDIAL_COVENANT.description": "Gain {Block:diff()} Block.\nApply {BlackHole:diff()} [gold]Black Hole[/gold] and {WhiteHole:diff()} [gold]White Hole[/gold] to yourself."
 }
