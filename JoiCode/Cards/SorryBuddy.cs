@@ -11,8 +11,6 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class SorryBuddy : JoiCard
 {
-    private const string ZhouXinSummonKey = "zhou-xin-core";
-
     public SorryBuddy() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -26,12 +24,13 @@ public class SorryBuddy : JoiCard
     {
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
 
-        var definition = ZhouXin.GetSummonDefinition();
-        var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
+        var combatState = Owner.Creature.CombatState;
+        if (combatState == null) return;
 
-        if (existing != null && existing.IsAlive)
+        var existing = ZhouXin.FindExisting(combatState, Owner);
+        if (existing != null && existing.Creature.IsAlive)
         {
-            await CreatureCmd.Kill(existing, true);
+            await CreatureCmd.Kill(existing.Creature);
             await CardPileCmd.Draw(choiceContext, DynamicVars["BonusCards"].IntValue, Owner);
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
         }

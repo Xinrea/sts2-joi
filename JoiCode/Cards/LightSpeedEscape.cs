@@ -23,7 +23,7 @@ public class LightSpeedEscape : JoiCard
         var whiteHole = Owner.Creature.GetPower<WhiteHolePower>();
         if (whiteHole != null && whiteHole.Amount > 0)
         {
-            await PowerCmd.Apply<DexterityPower>(Owner.Creature, whiteHole.Amount, Owner.Creature, this);
+            await CommonActions.Apply<DexterityPower>(Owner.Creature, this, whiteHole.Amount);
             await PowerCmd.Remove(whiteHole);
         }
     }

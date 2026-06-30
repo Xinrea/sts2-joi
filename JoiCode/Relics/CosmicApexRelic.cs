@@ -1,4 +1,5 @@
 using System.Linq;
+using BaseLib.Utils;
 using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Combat;
@@ -48,8 +49,8 @@ public class CosmicApexRelic : JoiRelic
 
                 if (blackHoleStacks > 0)
                 {
-                    _ = PowerCmd.Apply<BlackHolePower>(target, blackHoleStacks, target, null);
-                    _ = PowerCmd.Apply<WhiteHolePower>(target, blackHoleStacks, target, null);
+                    _ = CommonActions.Apply<BlackHolePower>(target, null!, blackHoleStacks);
+                    _ = CommonActions.Apply<WhiteHolePower>(target, null!, blackHoleStacks);
                 }
                 return processed;
             }
@@ -59,8 +60,8 @@ public class CosmicApexRelic : JoiRelic
             var blackHoleStacks2 = (int)Math.Ceiling(amount - reduced);
             if (blackHoleStacks2 > 0)
             {
-                _ = PowerCmd.Apply<BlackHolePower>(target, blackHoleStacks2, target, null);
-                _ = PowerCmd.Apply<WhiteHolePower>(target, blackHoleStacks2, target, null);
+                _ = CommonActions.Apply<BlackHolePower>(target, null!, blackHoleStacks2);
+                _ = CommonActions.Apply<WhiteHolePower>(target, null!, blackHoleStacks2);
             }
             return reduced;
         }

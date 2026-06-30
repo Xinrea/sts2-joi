@@ -28,7 +28,7 @@ public class DeepSpaceLullaby : JoiCard
         // First apply Sleep to all enemies
         foreach (var enemy in enemies)
         {
-            await PowerCmd.Apply<SleepPower>(enemy, DynamicVars["SleepPower"].BaseValue, Owner.Creature, this);
+            await CommonActions.Apply<SleepPower>(enemy, this, DynamicVars["SleepPower"].BaseValue);
         }
 
         // Then count how many have Sleep and draw cards

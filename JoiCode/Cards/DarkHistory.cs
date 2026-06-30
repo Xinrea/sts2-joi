@@ -26,7 +26,7 @@ public class DarkHistory : JoiCard
         var enemies = CombatState?.Enemies.ToList() ?? [];
         foreach (var enemy in enemies)
         {
-            await PowerCmd.Apply<VulnerablePower>(enemy, DynamicVars["VulnerablePower"].BaseValue, Owner.Creature, this);
+            await CommonActions.Apply<VulnerablePower>(enemy, this, DynamicVars["VulnerablePower"].BaseValue);
         }
         await CommonActions.ApplySelf<Joi.JoiCode.Powers.BlackHolePower>(this, DynamicVars["BlackHole"].BaseValue);
     }

@@ -1,8 +1,7 @@
-using System.Collections.Generic;
-using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -37,10 +36,10 @@ public class TimeDilationPower : JoiPower
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
         _discountedCards.Remove(cardPlay.Card);
-        await PowerCmd.Apply<BlackHolePower>(Owner, Amount, Owner, null);
+        await PowerCmd.Apply<BlackHolePower>(context, [Owner], Amount, Owner, cardPlay.Card, false);
     }
 
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == Owner.Side)
         {

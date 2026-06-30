@@ -14,17 +14,14 @@ public class SleepPower : JoiPower
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == Owner.Side && Amount > 0)
         {
             await CreatureCmd.Stun(Owner);
-            await PowerCmd.Apply<StrengthPower>(Owner, 1, null, null, false);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, [Owner], 1, null, null, false);
         }
-    }
 
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-    {
         if (side == Owner.Side)
         {
             await PowerCmd.Decrement(this);

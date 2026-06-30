@@ -27,7 +27,7 @@ public class NebulLullaby : JoiCard
         var target = cardPlay.Target;
         if (target != null)
         {
-            await PowerCmd.Apply<SleepPower>(target, DynamicVars["SleepPower"].BaseValue, Owner.Creature, this);
+            await CommonActions.Apply<SleepPower>(target, this, DynamicVars["SleepPower"].BaseValue);
         }
 
         Owner.Creature.GainBlockInternal(DynamicVars.Block.BaseValue);

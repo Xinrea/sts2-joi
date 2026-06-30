@@ -22,22 +22,23 @@ public class AxisShield : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var definition = ZhouXin.GetSummonDefinition();
-        var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
+        var combatState = Owner.Creature.CombatState;
+        if (combatState == null) return;
+
+        var existing = ZhouXin.FindExisting(combatState, Owner);
 
         if (existing != null)
         {
-            var newMaxHp = existing.MaxHp + DynamicVars["Heal"].IntValue;
-            existing.SetMaxHpInternal(newMaxHp);
-            existing.HealInternal(DynamicVars["Heal"].IntValue);
+            var newMaxHp = existing.Creature.MaxHp + (int)DynamicVars["Heal"].BaseValue;
+            existing.Creature.SetMaxHpInternal(newMaxHp);
+            existing.Creature.HealInternal((int)DynamicVars["Heal"].BaseValue);
         }
         else
         {
-            ZhouXin.RandomizeName();
-            var zhouXin = await SummonActions.SummonPet(definition, Owner);
-            zhouXin.SetMaxHpInternal(DynamicVars["Heal"].IntValue);
-            zhouXin.HealInternal(DynamicVars["Heal"].IntValue);
-            VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
+            var creature = await ZhouXin.SummonAsPet(Owner);
+            creature.SetMaxHpInternal((int)DynamicVars["Heal"].BaseValue);
+            creature.HealInternal((int)DynamicVars["Heal"].BaseValue);
+            VfxCmd.PlayOnCreature(creature, VfxCmd.healPath);
         }
 
         Owner.Creature.GainBlockInternal((int)DynamicVars["Block"].BaseValue);

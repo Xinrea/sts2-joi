@@ -1,4 +1,5 @@
 using System.Linq;
+using BaseLib.Utils;
 using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Combat;
@@ -55,7 +56,7 @@ public class CosmicOriginRelic : JoiRelic
 
                 if (blackHoleStacks > 0)
                 {
-                    _ = PowerCmd.Apply<BlackHolePower>(target, blackHoleStacks, target, null);
+                    _ = CommonActions.Apply<BlackHolePower>(target, null!, blackHoleStacks);
                 }
                 return processed;
             }
@@ -66,7 +67,7 @@ public class CosmicOriginRelic : JoiRelic
             MainFile.Logger.Info($"[CosmicOriginRelic] Applying relic effect: reduced={reduced}, blackHoleStacks={blackHoleStacks2}");
             if (blackHoleStacks2 > 0)
             {
-                _ = PowerCmd.Apply<BlackHolePower>(target, blackHoleStacks2, target, null);
+                _ = CommonActions.Apply<BlackHolePower>(target, null!, blackHoleStacks2);
             }
             return reduced;
         }

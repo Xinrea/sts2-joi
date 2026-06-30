@@ -23,7 +23,7 @@ public class SleepyRadio : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<SleepPower>(cardPlay.Target!, DynamicVars["SleepPower"].BaseValue, Owner.Creature, this);
+        await CommonActions.Apply<SleepPower>(cardPlay.Target!, this, DynamicVars["SleepPower"].BaseValue);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
     }
 

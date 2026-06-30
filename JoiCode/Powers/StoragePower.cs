@@ -1,45 +1,36 @@
-using BaseLib.Hooks;
-using BaseLib.Utils;
 using Joi.JoiCode.Cards;
 using Joi.JoiCode.Minions;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 namespace Joi.JoiCode.Powers;
 
 /// <summary>
-/// 羁绊：回合开始时，如果有轴芯在场，则获得一张[存储]
-/// 当轴芯死亡时自动移除
+/// Bond: At the start of turn, if ZhouXin is on the field, gain a [Store] card.
+/// Automatically removed when ZhouXin dies.
 /// </summary>
-public class StoragePower : JoiPower, IOnCreatureDied
+public class StoragePower : JoiPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+    public override async Task BeforeSideTurnStart(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
         if (side != CombatSide.Player) return;
 
-        var definition = ZhouXin.GetSummonDefinition();
-        var zhouXin = SummonActions.FindExistingSummon(Owner, definition);
-
-        if (zhouXin != null && zhouXin.IsAlive)
+        var zhouXin = ZhouXin.FindExisting(combatState, Owner.Player!);
+        if (zhouXin != null && zhouXin.Creature.IsAlive)
         {
             var card = combatState.CreateCard<Store>(Owner.Player!);
-            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, true);
+            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner.Player);
         }
-    }
-
-    public async Task OnCreatureDied(CreatureLifecycleContext context)
-    {
-        if (context.Kind != CreatureLifecycleKind.Died || context.Monster is not ZhouXin)
-            return;
-
-        // 轴芯死亡，移除自己
-        MainFile.Logger.Info("[StoragePower] ZhouXin died, removing StoragePower from player");
-        await PowerCmd.Remove(this);
     }
 }

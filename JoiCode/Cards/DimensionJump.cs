@@ -23,7 +23,7 @@ public class DimensionJump : JoiCard
         var blackHole = Owner.Creature.GetPower<Joi.JoiCode.Powers.BlackHolePower>();
         if (blackHole != null && blackHole.Amount > 0)
         {
-            await PowerCmd.Apply<StrengthPower>(Owner.Creature, blackHole.Amount, Owner.Creature, this);
+            await CommonActions.Apply<StrengthPower>(Owner.Creature, this, blackHole.Amount);
             await PowerCmd.Remove(blackHole);
         }
     }

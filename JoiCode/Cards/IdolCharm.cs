@@ -39,7 +39,7 @@ public class IdolCharm : JoiCard
             }
         }
 
-        await PowerCmd.Apply<IdolCharmPower>(target, 1, Owner.Creature, this);
+        await CommonActions.Apply<IdolCharmPower>(target, this, 1);
     }
 
     protected override void OnUpgrade()

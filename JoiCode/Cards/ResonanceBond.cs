@@ -41,7 +41,7 @@ public class ResonanceBond : JoiCard
         }
 
         // Apply charm to target
-        await PowerCmd.Apply<IdolCharmPower>(target, 1, Owner.Creature, this);
+        await CommonActions.Apply<IdolCharmPower>(target, this, 1);
 
         // Apply White Hole and Black Hole to self
         await CommonActions.ApplySelf<WhiteHolePower>(this, DynamicVars["WhiteHole"].BaseValue);

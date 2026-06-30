@@ -30,7 +30,7 @@ public class Reboot : JoiCard
 
         foreach (var card in cardsToDiscard)
         {
-            await CommonActions.MoveCardToPile(this, card, PileType.Discard, CardPilePosition.Random, false);
+            await CardPileCmd.Add(card, PileType.Discard, CardPilePosition.Random, this, false);
         }
 
         if (count > 0)

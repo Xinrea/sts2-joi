@@ -1,4 +1,3 @@
-using BaseLib.Abstracts;
 using BaseLib.Utils;
 using Joi.JoiCode.Character;
 using Joi.JoiCode.Minions;
@@ -12,11 +11,7 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class Orange : JoiCard
 {
-    private const string ZhouXinSummonKey = "zhou-xin-core";
-
     public Orange() : base(0, CardType.Skill, CardRarity.Token, TargetType.Self) { }
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain, CardKeyword.Exhaust];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -24,32 +19,30 @@ public class Orange : JoiCard
         new DynamicVar("Heal", 4)
     ];
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain, CardKeyword.Exhaust];
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var definition = ZhouXin.GetSummonDefinition();
-        var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
+        var combatState = Owner.Creature.CombatState;
+        if (combatState == null) return;
+
+        var existing = ZhouXin.FindExisting(combatState, Owner);
 
         if (existing != null)
         {
-            // 增加轴芯的最大生命值
-            var newMaxHp = existing.MaxHp + DynamicVars["Summon"].IntValue;
-            existing.SetMaxHpInternal(newMaxHp);
-            // 恢复生命值
-            existing.HealInternal(DynamicVars["Heal"].IntValue);
+            var newMaxHp = existing.Creature.MaxHp + (int)DynamicVars["Summon"].BaseValue;
+            existing.Creature.SetMaxHpInternal(newMaxHp);
+            existing.Creature.HealInternal((int)DynamicVars["Heal"].BaseValue);
         }
         else
         {
-            // 召唤新的轴芯
-            ZhouXin.RandomizeName();
-            var zhouXin = await SummonActions.SummonPet(definition, Owner);
-            zhouXin.SetMaxHpInternal(DynamicVars["Summon"].IntValue);
-            zhouXin.HealInternal(DynamicVars["Summon"].IntValue);
-
-            // 播放召唤特效
-            VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
+            var creature = await ZhouXin.SummonAsPet(Owner);
+            creature.SetMaxHpInternal((int)DynamicVars["Summon"].BaseValue);
+            creature.HealInternal((int)DynamicVars["Summon"].BaseValue);
+            VfxCmd.PlayOnCreature(creature, VfxCmd.healPath);
         }
 
-        await CommonActions.Draw(this, 1, choiceContext);
+        await CardPileCmd.Draw(choiceContext, 1, Owner);
     }
 
     protected override void OnUpgrade()

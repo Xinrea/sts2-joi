@@ -1,4 +1,5 @@
 using HarmonyLib;
+using BaseLib.Utils;
 using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -42,7 +43,7 @@ public static class UniversalGravitationPatch
                 case Creature target:
                     if (target.GetPower<IdolCharmPower>() != null)
                     {
-                        await PowerCmd.Apply<BlackHolePower>(dealer, power.Amount, dealer, null);
+                        await CommonActions.Apply<BlackHolePower>(dealer, null!, power.Amount);
                     }
                     break;
                 case IEnumerable<Creature> targets:
@@ -50,7 +51,7 @@ public static class UniversalGravitationPatch
                     {
                         if (target.GetPower<IdolCharmPower>() != null)
                         {
-                            await PowerCmd.Apply<BlackHolePower>(dealer, power.Amount, dealer, null);
+                            await CommonActions.Apply<BlackHolePower>(dealer, null!, power.Amount);
                         }
                     }
                     break;

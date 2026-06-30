@@ -1,30 +1,31 @@
 using BaseLib.Abstracts;
-using BaseLib.Hooks;
-using BaseLib.Utils;
 using BaseLib.Utils.NodeFactories;
 using Godot;
 using Joi.JoiCode.Powers;
 using Joi.JoiCode.Services;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Joi.JoiCode.Minions;
 
-public class ZhouXin : CustomMonsterModel, IOnCreatureSpawned, IOnCreatureDied
+public class ZhouXin : CustomMonsterModel
 {
-    private const string DefaultUniqueKey = "zhou-xin-core";
+    public const string DefaultUniqueKey = "zhou-xin-core";
 
     private static string? _customName;
 
-    public override string? DefaultMoveState => "idle";
-
-    public override int MinInitialHp => 1;
-    public override int MaxInitialHp => 1;
+    public override int MinInitialHp => 5;
+    public override int MaxInitialHp => 5;
 
     public override bool ShouldReceiveCombatHooks => true;
 
@@ -44,16 +45,57 @@ public class ZhouXin : CustomMonsterModel, IOnCreatureSpawned, IOnCreatureDied
         _customName = BiliGuardService.GetRandomGuardName();
     }
 
-    public static SummonDefinition GetSummonDefinition(string uniqueKey = DefaultUniqueKey)
+    /// <summary>
+    /// Find an existing ZhouXin pet for the player.
+    /// Checks both Allies and Enemies (creature may be on either side).
+    /// </summary>
+    public static ZhouXin? FindExisting(ICombatState? combatState, Player player)
     {
-        return SummonDefinition.For<ZhouXin>(
-            uniqueKey: uniqueKey,
-            visuals: new CreatureVisualSpec
+        if (combatState == null) return null;
+        return combatState.Allies.Concat(combatState.Enemies)
+            .Where(c => !c.IsDead && c.PetOwner == player)
+            .Select(c => c.Monster)
+            .OfType<ZhouXin>()
+            .FirstOrDefault();
+    }
+
+    /// <summary>
+    /// Summon ZhouXin into combat as a real player pet.
+    /// </summary>
+    public static async Task<Creature> SummonAsPet(Player player)
+    {
+        RandomizeName();
+        var combatState = player.Creature.CombatState;
+        if (combatState == null)
+            throw new InvalidOperationException("Player has no combat state");
+        if (player.PlayerCombatState == null)
+            throw new InvalidOperationException("Player has no player combat state");
+
+        var creature = await CreatureCmd.Add(ModelDb.Monster<ZhouXin>().ToMutable(), combatState, player.Creature.Side);
+        player.PlayerCombatState.AddPetInternal(creature);
+
+        // Apply StoragePower to player if not already present
+        if (player.Creature.GetPower<StoragePower>() == null)
+        {
+            await PowerCmd.Apply<StoragePower>(new BlockingPlayerChoiceContext(), [player.Creature], 1, player.Creature, null, true);
+        }
+
+        // Position next to the player
+        var room = NCombatRoom.Instance;
+        if (room != null)
+        {
+            var petNode = room.GetCreatureNode(creature);
+            var ownerNode = room.GetCreatureNode(player.Creature);
+            if (petNode != null && ownerNode != null)
             {
-                ImagePath = "res://Joi/images/creatures/zhou_xin.png",
-                BoundsOffset = new Vector2(-250, 0)
+                petNode.Position = new Vector2(
+                    ownerNode.Position.X + ownerNode.Visuals.Bounds.Size.X * 0.5f + 150f,
+                    ownerNode.Position.Y
+                );
             }
-        );
+        }
+
+        return creature;
     }
 
     public override NCreatureVisuals CreateCustomVisuals()
@@ -66,13 +108,18 @@ public class ZhouXin : CustomMonsterModel, IOnCreatureSpawned, IOnCreatureDied
 
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
     {
-        MoveState idle = new("idle", _ => Task.CompletedTask, Array.Empty<AbstractIntent>());
+        MoveState idle = new("idle", _ => Task.CompletedTask, Array.Empty<AbstractIntent>())
+        {
+            FollowUpStateId = "idle"
+        };
+        idle.FollowUpState = idle;
         return new MonsterMoveStateMachine([idle], idle);
     }
 
     public override Creature ModifyUnblockedDamageTarget(Creature target, decimal amount, ValueProp props, Creature? dealer)
     {
-        if (target.Side == Creature.Side
+        // Bodyguard: redirect damage targeting the pet owner to ZhouXin
+        if (target == Creature.PetOwner?.Creature
             && !Creature.IsDead
             && Creature.CurrentHp > 0
             && dealer != null
@@ -82,37 +129,5 @@ public class ZhouXin : CustomMonsterModel, IOnCreatureSpawned, IOnCreatureDied
         }
 
         return target;
-    }
-
-    public async Task OnCreatureSpawned(CreatureSpawnContext context)
-    {
-        // 当任何轴芯被召唤时，给玩家添加 StoragePower
-        if (context.Monster is not ZhouXin)
-            return;
-
-        var player = context.CombatState.PlayerCreatures.FirstOrDefault(c => !c.IsPet && c.IsAlive);
-        if (player != null && player.GetPower<StoragePower>() == null)
-        {
-            MainFile.Logger.Info("[ZhouXin] Spawned, adding StoragePower to player");
-            await PowerCmd.Apply<StoragePower>(player, 1, player, null);
-        }
-    }
-
-    public async Task OnCreatureDied(CreatureLifecycleContext context)
-    {
-        // 当任何轴芯死亡时，移除玩家的 StoragePower
-        if (context.Kind != CreatureLifecycleKind.Died || context.Monster is not ZhouXin)
-            return;
-
-        var player = context.CombatState.PlayerCreatures.FirstOrDefault(c => !c.IsPet);
-        if (player != null)
-        {
-            var power = player.GetPower<StoragePower>();
-            if (power != null)
-            {
-                MainFile.Logger.Info("[ZhouXin] Died, removing StoragePower from player");
-                await PowerCmd.Remove(power);
-            }
-        }
     }
 }

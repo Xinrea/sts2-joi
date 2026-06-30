@@ -21,13 +21,13 @@ public class Seniority : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars["StrengthPower"].BaseValue, Owner.Creature, this);
+        await CommonActions.Apply<StrengthPower>(Owner.Creature, this, DynamicVars["StrengthPower"].BaseValue);
 
         var enemies = CombatState?.Enemies.ToList() ?? [];
         if (enemies != null && enemies.Count > 0)
         {
             var target = enemies[Random.Shared.Next(enemies.Count)];
-            await PowerCmd.Apply<StrengthPower>(target, -1, Owner.Creature, this);
+            await CommonActions.Apply<StrengthPower>(target, this, -1);
         }
     }
 

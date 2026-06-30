@@ -20,7 +20,7 @@ public class RingFit : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars["StrengthPower"].BaseValue, Owner.Creature, this);
+        await CommonActions.Apply<StrengthPower>(Owner.Creature, this, DynamicVars["StrengthPower"].BaseValue);
     }
 
     protected override void OnUpgrade()

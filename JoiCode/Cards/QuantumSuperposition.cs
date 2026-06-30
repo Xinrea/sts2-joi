@@ -46,7 +46,7 @@ public class QuantumSuperposition : JoiCard
         foreach (var selectedCard in selectedCards)
         {
             var copy = selectedCard.CreateDupe();
-            await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, true, CardPilePosition.Random);
+            await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner, CardPilePosition.Random);
         }
     }
 

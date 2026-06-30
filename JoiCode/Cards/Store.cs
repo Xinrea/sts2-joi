@@ -5,6 +5,7 @@ using Joi.JoiCode.Minions;
 using Joi.JoiCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Cards;
@@ -22,24 +23,24 @@ public class Store : JoiCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var definition = ZhouXin.GetSummonDefinition();
-        var zhouXin = SummonActions.FindExistingSummon(Owner.Creature, definition);
+        var combatState = Owner.Creature.CombatState;
+        if (combatState == null) return;
 
-        // 检查轴芯是否存在且可以接受卡牌
-        if (zhouXin == null || !zhouXin.IsAlive)
+        var zhouXin = ZhouXin.FindExisting(combatState, Owner);
+
+        if (zhouXin == null || !zhouXin.Creature.IsAlive)
         {
             MainFile.Logger.Info("[Store] No living ZhouXin found");
             return;
         }
 
-        var storedCardPower = zhouXin.GetPower<StoredCardPower>();
+        var storedCardPower = zhouXin.Creature.GetPower<StoredCardPower>();
         if (storedCardPower != null && storedCardPower.HasStoredCard)
         {
             MainFile.Logger.Info("[Store] ZhouXin already has a stored card");
             return;
         }
 
-        // 选择一张手牌
         var card = await CommonActions.SelectSingleCard(this, new LocString("cards", "JOI-STORE.selectionPrompt"), choiceContext, PileType.Hand);
         if (card == null)
         {
@@ -49,16 +50,14 @@ public class Store : JoiCard
 
         MainFile.Logger.Info($"[Store] Storing card {card.Id} to ZhouXin");
 
-        // 获取或创建 StoredCardPower
         if (storedCardPower == null)
         {
-            await PowerCmd.Apply<StoredCardPower>(zhouXin, 1, Owner.Creature, null);
-            storedCardPower = zhouXin.GetPower<StoredCardPower>();
+            await PowerCmd.Apply<StoredCardPower>(choiceContext, [zhouXin.Creature], 1, Owner.Creature, null, true);
+            storedCardPower = zhouXin.Creature.GetPower<StoredCardPower>();
         }
 
         storedCardPower?.SetStoredCard(card);
 
-        // 从手牌中移除（数据层和 UI 层）
         var nCard = NCard.FindOnTable(card);
         if (nCard != null)
         {
@@ -67,8 +66,7 @@ public class Store : JoiCard
         }
         card.Pile?.RemoveInternal(card, silent: true);
 
-        // 在轴芯头顶创建 NCard 展示
-        var creatureNode = NCombatRoom.Instance?.GetCreatureNode(zhouXin);
+        var creatureNode = NCombatRoom.Instance?.GetCreatureNode(zhouXin.Creature);
         var storedCardPos = creatureNode?.GetSpecialNode<Marker2D>("%StoredCardPos");
         if (storedCardPos != null)
         {
@@ -81,7 +79,7 @@ public class Store : JoiCard
             }
         }
 
-        VfxCmd.PlayOnCreature(zhouXin, VfxCmd.healPath);
+        VfxCmd.PlayOnCreature(zhouXin.Creature, VfxCmd.healPath);
     }
 
     protected override void OnUpgrade()

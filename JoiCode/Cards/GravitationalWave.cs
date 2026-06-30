@@ -28,7 +28,7 @@ public class GravitationalWave : JoiCard
 
         foreach (var enemy in enemies)
         {
-            await PowerCmd.Apply<WeakPower>(enemy, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+            await CommonActions.Apply<WeakPower>(enemy, this, DynamicVars.Weak.BaseValue);
             enemyCount++;
         }
 

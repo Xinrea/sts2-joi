@@ -27,7 +27,7 @@ public class GoodNight : JoiCard
         var enemies = CombatState?.Enemies.ToList() ?? [];
         foreach (var enemy in enemies)
         {
-            await PowerCmd.Apply<SleepPower>(enemy, DynamicVars["SleepPower"].BaseValue, Owner.Creature, this);
+            await CommonActions.Apply<SleepPower>(enemy, this, DynamicVars["SleepPower"].BaseValue);
         }
     }
 

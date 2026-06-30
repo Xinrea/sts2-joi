@@ -52,7 +52,7 @@ public class OnlyOrange : JoiCard
             oranges.Add(orange);
         }
 
-        await CardPileCmd.AddGeneratedCardsToCombat(oranges, PileType.Hand, true, CardPilePosition.Random);
+        await CardPileCmd.AddGeneratedCardsToCombat(oranges, PileType.Hand, Owner, CardPilePosition.Random);
     }
 
     protected override void OnUpgrade()

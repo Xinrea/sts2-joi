@@ -37,15 +37,15 @@ public class ConfusionRay : JoiCard
             var enemies = CombatState?.Enemies.ToList() ?? [];
             foreach (var enemy in enemies)
             {
-                await PowerCmd.Apply<WeakPower>(enemy, DynamicVars.Weak.BaseValue, Owner.Creature, this);
-                await PowerCmd.Apply<VulnerablePower>(enemy, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
+                await CommonActions.Apply<WeakPower>(enemy, this, DynamicVars.Weak.BaseValue);
+                await CommonActions.Apply<VulnerablePower>(enemy, this, DynamicVars.Vulnerable.BaseValue);
             }
         }
         else
         {
             // Apply to single target
-            await PowerCmd.Apply<WeakPower>(target, DynamicVars.Weak.BaseValue, Owner.Creature, this);
-            await PowerCmd.Apply<VulnerablePower>(target, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
+            await CommonActions.Apply<WeakPower>(target, this, DynamicVars.Weak.BaseValue);
+            await CommonActions.Apply<VulnerablePower>(target, this, DynamicVars.Vulnerable.BaseValue);
         }
     }
 

@@ -11,8 +11,6 @@ namespace Joi.JoiCode.Cards;
 [Pool(typeof(JoiCardPool))]
 public class SmellsGood : JoiCard
 {
-    private const string ZhouXinSummonKey = "zhou-xin-core";
-
     public SmellsGood() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -27,12 +25,13 @@ public class SmellsGood : JoiCard
     {
         await CreatureCmd.Heal(Owner.Creature, DynamicVars.Heal.BaseValue, true);
 
-        var definition = ZhouXin.GetSummonDefinition();
-        var existing = SummonActions.FindExistingSummon(Owner.Creature, definition);
+        var combatState = Owner.Creature.CombatState;
+        if (combatState == null) return;
 
-        if (existing != null && existing.IsAlive)
+        var existing = ZhouXin.FindExisting(combatState, Owner);
+        if (existing != null && existing.Creature.IsAlive)
         {
-            await CreatureCmd.Kill(existing, true);
+            await CreatureCmd.Kill(existing.Creature);
             await CreatureCmd.Heal(Owner.Creature, DynamicVars["BonusHeal"].BaseValue, true);
         }
     }
