@@ -7,10 +7,6 @@
         <DefaultItemExcludes>packages/**;tools/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
         <PathMap>$(AppOutputBase)=.\</PathMap>
-        <BaseLibDir>$(MSBuildProjectDirectory)\BaseLib</BaseLibDir>
-        <BaseLibDllPath>$(BaseLibDir)\BaseLib.dll</BaseLibDllPath>
-        <BaseLibJsonPath>$(BaseLibDir)\BaseLib.json</BaseLibJsonPath>
-        <BaseLibPckPath>$(BaseLibDir)\BaseLib.pck</BaseLibPckPath>
     </PropertyGroup>
 
     <!-- OS Detection -->
@@ -85,15 +81,9 @@
         </Reference>
     </ItemGroup>
 
-    <ItemGroup Condition="Exists('$(BaseLibDllPath)')">
-        <Reference Include="BaseLib">
-            <HintPath>$(BaseLibDllPath)</HintPath>
-            <Private>false</Private>
-        </Reference>
-    </ItemGroup>
-
     <ItemGroup>
         <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="*" />
+        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="*" />
         <AdditionalFiles Include="Joi/localization/**/*.json" />
     </ItemGroup>
 
@@ -125,17 +115,18 @@
     <Target Name="CheckDependencyPaths">
         <Error Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'" Condition="'$(Sts2DataDir)' == '' or !Exists('$(Sts2DataDir)')" />
         <Error Text=" Godot not found at path '$(GodotPath)'" Condition="'$(GodotPath)' == '' or !Exists('$(GodotPath)')" />
-        <Error Text=" BaseLib.dll not found at path '$(BaseLibDllPath)'" Condition="'$(BaseLibDllPath)' == '' or !Exists('$(BaseLibDllPath)')" />
-        <Error Text=" BaseLib.json not found at path '$(BaseLibJsonPath)'" Condition="'$(BaseLibJsonPath)' == '' or !Exists('$(BaseLibJsonPath)')" />
-        <Error Text=" BaseLib.pck not found at path '$(BaseLibPckPath)'" Condition="'$(BaseLibPckPath)' == '' or !Exists('$(BaseLibPckPath)')" />
     </Target>
 
     <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
         <Message Text="Copying .dll and manifest to mods folder." Importance="high" />
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="Joi.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-        <Message Text="Copying fixed BaseLib files to mods folder." Importance="high" />
-        <Copy SourceFiles="$(BaseLibDllPath);$(BaseLibJsonPath);$(BaseLibPckPath)" DestinationFolder="$(ModsPath)BaseLib/" />
+        <Message Text="Copying BaseLib resource files to mods folder." Importance="high" />
+        <Copy SourceFiles="$(MSBuildProjectDirectory)\BaseLib\BaseLib.json;$(MSBuildProjectDirectory)\BaseLib\BaseLib.pck" DestinationFolder="$(ModsPath)BaseLib/" />
+        <ItemGroup>
+            <_BaseLibNuGetDll Include="$(MSBuildProjectDirectory)\packages\alchyr.sts2.baselib\*\lib\net9.0\BaseLib.dll" />
+        </ItemGroup>
+        <Copy SourceFiles="@(_BaseLibNuGetDll)" DestinationFolder="$(ModsPath)BaseLib\" />
     </Target>
 
     <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
