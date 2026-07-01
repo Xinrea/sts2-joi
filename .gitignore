@@ -12,6 +12,7 @@ bin/
 obj/
 /packages/
 /_mods_test/
+dist/
 *.cs.uid
 *.user
 *.suo
