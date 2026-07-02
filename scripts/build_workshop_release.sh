@@ -49,6 +49,15 @@ DIST_DIR="${ROOT_DIR}/dist/workshop"
 STAGING_DIR="${DIST_DIR}/Joi-${VERSION}"
 CONTENT_DIR="${STAGING_DIR}/content"
 PCK_PATH="${CONTENT_DIR}/Joi.pck"
+MOD_ID_TMP=""
+
+if [[ -f "${ROOT_DIR}/mod_id.txt" ]]; then
+  MOD_ID_TMP="$(mktemp)"
+  cp "${ROOT_DIR}/mod_id.txt" "${MOD_ID_TMP}"
+elif [[ -f "${STAGING_DIR}/mod_id.txt" ]]; then
+  MOD_ID_TMP="$(mktemp)"
+  cp "${STAGING_DIR}/mod_id.txt" "${MOD_ID_TMP}"
+fi
 
 echo "Building Joi ${VERSION}..."
 dotnet build Joi.sln -c ExportRelease
@@ -65,6 +74,10 @@ fi
 
 rm -rf "${STAGING_DIR}"
 mkdir -p "${CONTENT_DIR}"
+if [[ -n "${MOD_ID_TMP}" ]]; then
+  cp "${MOD_ID_TMP}" "${STAGING_DIR}/mod_id.txt"
+  rm -f "${MOD_ID_TMP}"
+fi
 
 echo "Exporting Joi.pck..."
 mkdir -p packages

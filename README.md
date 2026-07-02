@@ -25,3 +25,5 @@ The generated folder follows the ModUploader template:
 - `content/Joi.dll`, `content/Joi.pck`, `content/Joi.json`: mod files.
 
 Edit root `workshop.json` before building to set visibility, change notes, tags, and Workshop dependencies. Workshop dependencies must be numeric Steam Workshop item IDs, for example `3737335127` for BaseLib. BaseLib remains a dependency declared in `content/Joi.json`.
+
+`mod_id.txt` at the project root stores the Workshop item ID. The build script copies it into the generated upload folder so ModUploader updates the existing item instead of creating a new one.
