@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Context;
 using Godot;
-using BaseLib;
 using System;
 using System.Collections.Generic;
 
@@ -17,6 +16,8 @@ namespace Joi.JoiCode.Patches;
 [HarmonyPatch(typeof(NMerchantRoom), "AfterRoomIsLoaded")]
 public static class JoiMerchantRoomPatch
 {
+    private const string JoiTexturePath = "res://Joi.png";
+
     [HarmonyPrefix]
     static bool Prefix(NMerchantRoom __instance)
     {
@@ -28,7 +29,7 @@ public static class JoiMerchantRoomPatch
         bool hasJoi = false;
         foreach (var p in players)
         {
-            if (p.Character.Id.Entry.Contains("JOI"))
+            if (IsJoi(p))
             {
                 hasJoi = true;
                 break;
@@ -69,16 +70,9 @@ public static class JoiMerchantRoomPatch
                     var player = players[idx];
                     NMerchantCharacter character;
 
-                    if (player.Character.Id.Entry.Contains("JOI"))
+                    if (IsJoi(player))
                     {
-                        // 轴伊：使用自定义场景
-                        var scenePath = player.Character.MerchantAnimPath;
-                        var scene = GD.Load<PackedScene>(scenePath);
-                        var sceneInstance = scene.Instantiate<Node2D>();
-
-                        var wrapper = new JoiMerchantCharacter();
-                        wrapper.AddChild(sceneInstance);
-                        character = wrapper;
+                        character = CreateJoiMerchantCharacter();
                     }
                     else
                     {
@@ -104,6 +98,37 @@ public static class JoiMerchantRoomPatch
             MainFile.Logger.Error($"[JOI] Failed in merchant room patch: {e.Message}");
             return true;
         }
+    }
+
+    private static bool IsJoi(Player player)
+    {
+        return player.Character.Id.Entry.Contains("Joi", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static JoiMerchantCharacter CreateJoiMerchantCharacter()
+    {
+        var character = new JoiMerchantCharacter
+        {
+            Name = "JoiMerchant"
+        };
+
+        var visualRoot = new Node2D
+        {
+            Name = "JoiMerchantVisual",
+            Position = new Vector2(-2f, 42f),
+            Scale = new Vector2(0.760006f, 0.760006f)
+        };
+
+        visualRoot.AddChild(new Sprite2D
+        {
+            Name = "Joi",
+            Position = new Vector2(-14.473569f, -385.5233f),
+            Scale = new Vector2(1.964991f, 1.964991f),
+            Texture = GD.Load<Texture2D>(JoiTexturePath)
+        });
+
+        character.AddChild(visualRoot);
+        return character;
     }
 }
 

@@ -45,7 +45,10 @@ public static class GameOverScreenPatch
         {
             foreach (NMerchantCharacter playerVisual in NMerchantRoom.Instance.PlayerVisuals)
             {
-                playerVisual.PlayAnimation("die");
+                if (HasMerchantSpineAnimation(playerVisual))
+                {
+                    playerVisual.PlayAnimation("die");
+                }
                 playerVisual.Reparent(creatureContainer);
             }
         }
@@ -98,5 +101,10 @@ public static class GameOverScreenPatch
 
         // 跳过原始方法
         return false;
+    }
+
+    private static bool HasMerchantSpineAnimation(NMerchantCharacter character)
+    {
+        return character.GetChildCount() > 0 && character.GetChild(0).GetClass() == "SpineSprite";
     }
 }
