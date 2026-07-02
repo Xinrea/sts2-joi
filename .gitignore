@@ -53,3 +53,5 @@ docs/_site/
 docs/.bundle/
 docs/.jekyll-cache/
 docs/.sass-cache/
+
+mod-uploader.log

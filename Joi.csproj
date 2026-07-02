@@ -117,24 +117,4 @@
         <Error Text=" Godot not found at path '$(GodotPath)'" Condition="'$(GodotPath)' == '' or !Exists('$(GodotPath)')" />
     </Target>
 
-    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
-        <Message Text="Copying .dll and manifest to mods folder." Importance="high" />
-        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-        <Copy SourceFiles="Joi.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-        <Message Text="Copying BaseLib resource files to mods folder." Importance="high" />
-        <Copy SourceFiles="$(MSBuildProjectDirectory)\BaseLib\BaseLib.json;$(MSBuildProjectDirectory)\BaseLib\BaseLib.pck" DestinationFolder="$(ModsPath)BaseLib/" />
-        <ItemGroup>
-            <_BaseLibNuGetDll Include="$(MSBuildProjectDirectory)\packages\alchyr.sts2.baselib\*\lib\net9.0\BaseLib.dll" />
-        </ItemGroup>
-        <Copy SourceFiles="@(_BaseLibNuGetDll)" DestinationFolder="$(ModsPath)BaseLib\" />
-    </Target>
-
-    <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
-        <Message Text="Exporting Godot .pck to mods folder" Importance="high" />
-        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)$(MSBuildProjectName)/$(MSBuildProjectName).pck&quot;" EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1" ContinueOnError="WarnAndContinue" />
-    </Target>
-
-    <Target Name="GodotPublishSkipped" AfterTargets="Publish" Condition="'$(GodotPath)' == '' or !Exists('$(GodotPath)')">
-        <Message Text="Skipping Godot .pck export because GodotPath is not configured." Importance="high" />
-    </Target>
 </Project>

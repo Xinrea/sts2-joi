@@ -1,0 +1,9 @@
+{
+  "title": "轴伊Joi",
+  "description": "以虚拟主播轴伊Joi为原型的角色模组，欢迎关注：https://space.bilibili.com/61639371\nMOD 详情以及源码请见专题站：https://sts2.vjoi.cn/",
+  "visibility": "private",
+  "changeNote": "初始版本",
+  "tags": ["Character", "Joi", "VirtuaReal", "Vtuber"],
+  "dependencies": [3737335127],
+  "contentDescriptors": []
+}

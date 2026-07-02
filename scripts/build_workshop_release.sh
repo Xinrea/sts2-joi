@@ -47,13 +47,11 @@ fi
 
 DIST_DIR="${ROOT_DIR}/dist/workshop"
 STAGING_DIR="${DIST_DIR}/Joi-${VERSION}"
-ZIP_PATH="${DIST_DIR}/Joi-${VERSION}-workshop.zip"
-PCK_PATH="${STAGING_DIR}/Joi.pck"
-BUILD_MODS_DIR="${DIST_DIR}/.build_mods"
+CONTENT_DIR="${STAGING_DIR}/content"
+PCK_PATH="${CONTENT_DIR}/Joi.pck"
 
 echo "Building Joi ${VERSION}..."
-mkdir -p "${BUILD_MODS_DIR}"
-dotnet build Joi.sln -c ExportRelease -p:ModsPath="${BUILD_MODS_DIR}/"
+dotnet build Joi.sln -c ExportRelease
 
 DLL_PATH="${ROOT_DIR}/.godot/mono/temp/bin/ExportRelease/Joi.dll"
 if [[ ! -f "${DLL_PATH}" ]]; then
@@ -65,20 +63,20 @@ if [[ -z "${DLL_PATH}" || ! -f "${DLL_PATH}" ]]; then
   exit 1
 fi
 
-rm -rf "${BUILD_MODS_DIR}"
-rm -rf "${STAGING_DIR}" "${ZIP_PATH}"
-mkdir -p "${STAGING_DIR}"
+rm -rf "${STAGING_DIR}"
+mkdir -p "${CONTENT_DIR}"
 
 echo "Exporting Joi.pck..."
 mkdir -p packages
 touch packages/.gdignore
 "${GODOT_BIN}" --headless --export-pack "BasicExport" "${PCK_PATH}"
 
-cp "${DLL_PATH}" "${STAGING_DIR}/Joi.dll"
-cp Joi.json "${STAGING_DIR}/Joi.json"
-cp Joi/mod_image.png "${STAGING_DIR}/mod_image.png"
+cp "${DLL_PATH}" "${CONTENT_DIR}/Joi.dll"
+cp Joi.json "${CONTENT_DIR}/Joi.json"
+cp Joi/mod_image.png "${STAGING_DIR}/image.png"
+cp workshop.json "${STAGING_DIR}/workshop.json"
 
-python3 - "${STAGING_DIR}/Joi.json" "${VERSION}" <<'PY'
+python3 - "${CONTENT_DIR}/Joi.json" "${VERSION}" <<'PY'
 import json
 import sys
 from pathlib import Path
@@ -90,14 +88,16 @@ data["version"] = version
 manifest.write_text(json.dumps(data, indent=2) + "\n")
 PY
 
-(
-  cd "${STAGING_DIR}"
-  zip -qr "${ZIP_PATH}" .
-)
+cat > "${STAGING_DIR}/README.md" <<'EOF'
+# Steam Workshop Mod
+
+Upload this directory with ModUploader.
+
+- `workshop.json` configures the Steam Workshop item.
+- `image.png` is the Workshop preview image.
+- `content/` contains the mod files uploaded to Workshop.
+EOF
 
 echo
-echo "Workshop content folder:"
+echo "Workshop upload folder:"
 echo "  ${STAGING_DIR}"
-echo
-echo "Workshop zip:"
-echo "  ${ZIP_PATH}"
