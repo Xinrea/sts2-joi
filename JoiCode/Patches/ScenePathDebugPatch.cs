@@ -1,6 +1,4 @@
 using HarmonyLib;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Nodes.RestSite;
 using MegaCrit.Sts2.Core.Nodes.Screens.Shops;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -12,41 +10,6 @@ using System;
 using System.Collections.Generic;
 
 namespace Joi.JoiCode.Patches;
-
-/// <summary>
-/// 拦截 NRestSiteCharacter.Create，为轴伊加载自定义静态图片场景
-/// </summary>
-[HarmonyPatch(typeof(NRestSiteCharacter), nameof(NRestSiteCharacter.Create))]
-public static class JoiRestSiteCreatePatch
-{
-    [HarmonyPrefix]
-    static bool Prefix(Player player, int characterIndex, ref NRestSiteCharacter __result)
-    {
-        if (!player.Character.Id.Entry.Contains("JOI"))
-            return true;
-
-        try
-        {
-            var scenePath = player.Character.RestSiteAnimPath;
-            var scene = GD.Load<PackedScene>(scenePath);
-            var instance = scene.Instantiate<Node2D>();
-
-            var wrapper = new JoiRestSiteCharacter();
-            wrapper.AddChild(instance);
-
-            AccessTools.Field(typeof(NRestSiteCharacter), "_player")?.SetValue(wrapper, player);
-            AccessTools.Field(typeof(NRestSiteCharacter), "_characterIndex")?.SetValue(wrapper, characterIndex);
-
-            __result = wrapper;
-            return false;
-        }
-        catch (Exception e)
-        {
-            MainFile.Logger.Error($"[JOI] Failed to create custom rest site: {e.Message}");
-            return true;
-        }
-    }
-}
 
 /// <summary>
 /// 拦截 NMerchantRoom.AfterRoomIsLoaded，为轴伊加载自定义静态图片场景
@@ -142,11 +105,6 @@ public static class JoiMerchantRoomPatch
             return true;
         }
     }
-}
-
-public partial class JoiRestSiteCharacter : NRestSiteCharacter
-{
-    public override void _Ready() { }
 }
 
 public partial class JoiMerchantCharacter : NMerchantCharacter
