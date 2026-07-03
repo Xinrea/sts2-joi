@@ -169,59 +169,6 @@ description: 杀戮尖塔2自制角色模组「轴伊」，掌控黑洞与白洞
         background: #2a2a2a;
     }
 
-    /* Announcement Banner */
-    .announcement {
-        max-width: 1200px;
-        margin: 0 auto 60px;
-        padding: 0 40px;
-    }
-
-    .announcement-content {
-        background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
-        border: 1px solid #3a3a3a;
-        border-radius: 12px;
-        padding: 20px 28px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .announcement-icon {
-        font-size: 1.5rem;
-        flex-shrink: 0;
-    }
-
-    .announcement-text {
-        flex: 1;
-        color: #e8e8e8;
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    .announcement-text strong {
-        color: #ffffff;
-        font-weight: 500;
-    }
-
-    .announcement-close {
-        background: transparent;
-        border: none;
-        color: #a0a0a0;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 4px 8px;
-        transition: color 0.2s ease;
-        flex-shrink: 0;
-    }
-
-    .announcement-close:hover {
-        color: #e8e8e8;
-    }
-
-    .announcement.hidden {
-        display: none;
-    }
-
     /* Feature Grid */
     .section {
         padding: 100px 40px;
@@ -570,21 +517,6 @@ description: 杀戮尖塔2自制角色模组「轴伊」，掌控黑洞与白洞
     </div>
 </div>
 
-<div class="announcement" id="announcement">
-    <div class="announcement-content">
-        <span class="announcement-icon">📢</span>
-        <div class="announcement-text">
-            <strong>公告：</strong>为了实现特殊机制，使用了修改版的
-            baselib，有可能与其他 mod 冲突，请在游玩时只保留本项目提供的 mod
-            内容。后续 baselib 完善后，将迁移至原版 baselib。目前仍处于 EA
-            阶段，可以在卡牌图鉴中评论反馈相关问题。
-        </div>
-        <button class="announcement-close" onclick="closeAnnouncement()">
-            ×
-        </button>
-    </div>
-</div>
-
 <div class="section cards-section">
     <div class="section-header">
         <div class="section-label">卡牌预览</div>
@@ -711,16 +643,3 @@ description: 杀戮尖塔2自制角色模组「轴伊」，掌控黑洞与白洞
         >
     </p>
 </footer>
-
-<script>
-    function closeAnnouncement() {
-        const announcement = document.getElementById("announcement");
-        announcement.classList.add("hidden");
-        localStorage.setItem("announcementClosed", "true");
-    }
-
-    // Check if announcement was previously closed
-    if (localStorage.getItem("announcementClosed") === "true") {
-        document.getElementById("announcement").classList.add("hidden");
-    }
-</script>
